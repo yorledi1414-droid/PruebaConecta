@@ -1,20 +1,104 @@
-﻿/* Set padding to keep content from hitting the edges */
-.body-content {
-    margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
+
+.back-arrow, .settings {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Contenido */
+.main-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Tarjetas de juegos */
+.juego-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.juego-img {
+
+    width: 150px; /* ancho más grande */
+    height: 150px; /* alto proporcional */
+    object-fit: contain; /* asegura que no se deformen */
+    margin-right: 20px; /* espacio entre imagen y texto */
+    border-radius: 8px; /* opcional: esquinas redondeadas */
+}
+
+.juego-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 22px;
+    color: #444;
+}
+
+/* Navbar inferior */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a9bd8, #c58ad3);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .nav-item .icon {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .nav-item.active {
+        text-decoration: underline;
+    }
