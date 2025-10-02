@@ -8,7 +8,7 @@ namespace PruebaConecta.Controllers
 {
     public class HomeController : Controller
     {
-        public ActionResult Index()
+        public ActionResult home()
         {
             return View();
         }

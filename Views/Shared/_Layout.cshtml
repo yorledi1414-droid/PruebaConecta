@@ -1,64 +1,23 @@
-﻿@* Layout especial para la vista Registro *@
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="es">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - ConectaTea</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - Conectar Terapeutas</title>
 
-    <!-- FontAwesome para íconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!-- Google Fonts y FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Bootstrap -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Tu CSS -->
+    <link rel="stylesheet" href="~/Content/Site.css" />
 
-    <title>@ViewBag.Title - Registro</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
-
-    <!-- Tus estilos personalizados -->
-    <link rel="stylesheet" href="~/Content/site.css" />
+    @RenderSection("Head", required: false)
 </head>
 <body>
-    <div class="app-container">
-        <!-- Header -->
-        <header class="header">
-            <span class="back-arrow"><i class="fa-solid fa-arrow-left"></i></span>
-            <h1>JUEGOS</h1>
-            <span class="settings"><i class="fa-solid fa-gear"></i></span>
-        </header>
-
-        <!-- Contenido dinámico -->
-        <main class="main-content">
-            @RenderBody()
-        </main>
-
-        <!-- Footer -->
-        <footer class="footer-nav">
-            <div class="nav-item">
-                <i class="fa-solid fa-calendar-days icon"></i>
-                <p>Mis Citas</p>
-            </div>
-            <div class="nav-item active">
-                <i class="fa-solid fa-gamepad icon"></i>
-                <p>Juegos</p>
-            </div>
-            <div class="nav-item">
-                <i class="fa-solid fa-paintbrush icon"></i>
-                <p>ExpresArte</p>
-            </div>
-            <div class="nav-item">
-                <i class="fa-solid fa-user icon"></i>
-                <p>Mi Perfil</p>
-            </div>
-        </footer>
-    </div>
     @RenderBody()
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <script src="~/Scripts/app.js"></script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>
