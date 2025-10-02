@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Registro de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Registro.css" />
+
+<div class="registro-container">
+    <div class="registro-box">
+        <h2>BIENVENIDO</h2>
+        <p class="chk-title">¿Eres?</p>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="terapeuta" /> TERAPEUTA</label>
+            <label><input type="checkbox" name="tutor" /> TUTOR</label>
+        </div>
+
+        @using (Html.BeginForm("Index", "Registro", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <label>NOMBRE</label>
+                <input type="text" name="nombre" class="input-field" />
+            </div>
+            <div class="form-group">
+                <label>APELLIDO</label>
+                <input type="text" name="apellido" class="input-field" />
+            </div>
+            <div class="form-group">
+                <label>CÉDULA</label>
+                <input type="text" name="cedula" class="input-field" />
+            </div>
+            <div class="form-group">
+                <label>EMAIL</label>
+                <input type="email" name="email" class="input-field" />
+            </div>
+
+            <button type="submit" class="btn-guardar">Guardar</button>
+        }
+    </div>
+</div>
