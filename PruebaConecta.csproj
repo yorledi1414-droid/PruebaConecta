@@ -121,8 +121,8 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\JuegosController.cs" />
+    <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -150,10 +150,10 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
-    <Content Include="Content\Registro.css" />
     <Content Include="Content\Images\Memoria.png" />
     <Content Include="Content\Images\Rompecabezas.png" />
     <Content Include="Content\Juegos.css" />
+    <Content Include="Content\Registro.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -190,10 +190,10 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
-    <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\Juegos\Index.cshtml" />
     <Content Include="Views\Juegos\Rompecabezas.cshtml" />
     <Content Include="Views\Juegos\Memoria.cshtml" />
+    <Content Include="Views\Registro\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
