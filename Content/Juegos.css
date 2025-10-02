@@ -1,0 +1,75 @@
+﻿/* Content/Juegos.css */
+.juegos-page {
+    max-width: 420px;
+    margin: 0 auto;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    color: #222;
+}
+
+.juegos-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(90deg,#5ea7d9,#c08fc9);
+    color: white;
+    padding: 14px;
+    border-radius: 6px;
+    margin: 12px 0;
+}
+
+    .juegos-header h1 {
+        margin: 0;
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+.juego-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 10px;
+    margin: 14px 6px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+    padding: 12px;
+    cursor: pointer;
+    border: 3px solid rgba(0,0,0,0.04);
+}
+
+.juego-img img {
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.juego-title {
+    font-size: 22px;
+    font-weight: 600;
+    flex: 1;
+    text-align: left;
+}
+
+    .juego-title .arrow {
+        float: right;
+        font-size: 20px;
+    }
+
+.bottom-nav {
+    display: flex;
+    justify-content: space-around;
+    background: linear-gradient(90deg,#93b7d9,#d3a9e3);
+    padding: 10px 0;
+    margin-top: 18px;
+    border-radius: 6px;
+}
+
+    .bottom-nav a {
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+        .bottom-nav a.active {
+            text-decoration: underline;
+        }
