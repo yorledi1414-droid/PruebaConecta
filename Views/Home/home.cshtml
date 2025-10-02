@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Inicio";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="login-page">
+    <div class="logo-wrap">
+        <img src="~/Content/Images/Logo.png" alt="Logo" class="logo" />
+    </div>
+
+    <form class="login-form" method="post" action="#">
+        <div class="input-row">
+            <i class="fa-solid fa-user icon"></i>
+            <input type="text" name="username" placeholder="USUARIO" autocomplete="username" required />
+        </div>
+
+        <div class="input-row">
+            <i class="fa-solid fa-lock icon"></i>
+            <input id="password" type="password" name="password" placeholder="CONTRASEÑA" autocomplete="current-password" required />
+            <button type="button" class="show-pass" aria-label="Mostrar contraseña"><i class="fa-regular fa-eye"></i></button>
+        </div>
+
+        <button class="btn-primary" type="submit">INICIAR SESIÓN</button>
+
+        <div class="links">
+            <a class="create" href="@Url.Action("Index","Registrar")">CREAR CUENTA</a>
+            <a class="forgot" href="@Url.Action("ForgotPassword","Account")">¿Olvidaste la contraseña?</a>
+        </div>
+    </form>
+</main>

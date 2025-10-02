@@ -53,7 +53,6 @@
 }
 
 .juego-img {
-
     width: 150px; /* ancho más grande */
     height: 150px; /* alto proporcional */
     object-fit: contain; /* asegura que no se deformen */
@@ -102,3 +101,173 @@
     .nav-item.active {
         text-decoration: underline;
     }
+
+
+/* reset simple */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* fondo (gradiente parecido al mockup) */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #6b9be8 0%, #9fb0e6 35%, #c9a8d9 70%, #f0c7d8 100%);
+    color: #fff;
+}
+
+/* logo circular grande */
+.logo-wrap {
+    margin-bottom: 22px;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    padding: 16px;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.25);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* formulario (transparente para que se vea el fondo) */
+.login-form {
+    width: 520px;
+    max-width: 94%;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* fila input con icono */
+.input-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    justify-content: center;
+}
+
+/* icono a la izquierda */
+.icon {
+    color: rgba(255,255,255,0.95);
+    font-size: 20px;
+    width: 36px;
+    text-align: center;
+    margin-left: 8%;
+}
+
+/* inputs con solo linea inferior (una sola linea) */
+.input-row input {
+    flex: 0 0 60%;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid rgba(0,0,0,0.75); /* línea oscura como mockup */
+    padding: 10px 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111; /* texto oscuro */
+    text-align: center;
+    outline: none;
+}
+
+/* botón mostrar contraseña (a la derecha del input) */
+.show-pass {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.9);
+}
+
+/* botón principal estilo mockup morado con sombra */
+.btn-primary {
+    margin-top: 14px;
+    width: 45%;
+    min-width: 200px;
+    padding: 12px 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 6px rgba(0,0,0,0.35);
+    background: linear-gradient(180deg, #7d4cb3 0%, #8f6bd6 100%);
+    color: #fff;
+}
+
+/* enlaces inferiores: crear cuenta (izquierda) y olvidar (derecha) */
+.links {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 520px;
+    max-width: 94%;
+    padding: 0 28px;
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+}
+
+    .links a {
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .links .create {
+        color: rgba(120,80,185,0.85);
+    }
+
+    .links .forgot {
+        color: rgba(255,255,255,0.95);
+    }
+
+/* responsive */
+@media (max-width:640px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding: 12px;
+    }
+
+    .input-row input {
+        font-size: 16px;
+        flex: 1;
+    }
+
+    .input-row .icon {
+        margin-left: 6%;
+    }
+
+    .btn-primary {
+        width: 70%;
+        min-width: unset;
+    }
+
+    .links {
+        width: 92%;
+        padding: 0 6%;
+    }
+}
