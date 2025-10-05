@@ -337,3 +337,180 @@ html, body {
     .btn-guardar:hover {
         background: #357ab8;
     }
+
+/* ====================
+   ESTILOS SOLO PARA JUEGOS
+   ==================== */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.back-arrow, .settings {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Tarjetas de juegos */
+.juego-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.juego-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.juego-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 22px;
+    color: #444;
+}
+
+/* Navbar inferior */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a9bd8, #c58ad3);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .nav-item .icon {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .nav-item.active {
+        text-decoration: underline;
+    }
+
+/* ======== Estilos para el módulo Juegos ======== */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
+}
+
+    /* Contenido central */
+    .app-container .main-content {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    /* Tarjetas de juegos */
+    .app-container .juego-card {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .app-container .juego-img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    .app-container .juego-info {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .app-container .arrow {
+        font-size: 22px;
+        color: #444;
+    }
+
+    /* Navbar inferior */
+    .app-container .footer-nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        background: linear-gradient(to right, #6a9bd8, #c58ad3);
+        color: white;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .app-container .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+        .app-container .nav-item .icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .app-container .nav-item.active {
+            text-decoration: underline;
+        }
