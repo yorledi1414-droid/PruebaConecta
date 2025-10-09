@@ -160,6 +160,8 @@
     <Content Include="Content\Images\usuarioLogo.jpg" />
     <Content Include="Content\Juegos.css" />
     <Content Include="Content\Registro.css" />
+    <Content Include="Content\RContrasena.css" />
+    <Content Include="Content\CambiarContrasena.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
