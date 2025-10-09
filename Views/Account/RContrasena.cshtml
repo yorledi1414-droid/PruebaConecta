@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "RContrasena";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <!-- CSS específico para esta vista -->
+    <link rel="stylesheet" href="~/Content/Recover.css" />
+}
+
+<main class="recover-page">
+    <header class="recover-header">
+        <a class="back" href="javascript:history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+        <h2>                              </h2> <!-- si quieres "Recuperar Contraseña" cambia el texto -->
+        <button class="settings" aria-label="Ajustes"><i class="fa-solid fa-gear"></i></button>
+    </header>
+
+    <div class="recover-card" role="region" aria-labelledby="recover-title">
+        <h3 id="recover-title">Recuperar Contraseña</h3>
+        <p class="recover-sub">Ingresa tu correo registrado para recuperar tu contraseña</p>
+
+        <form class="recover-form" method="post" action="#">
+            <div class="input-row">
+                <i class="fa-regular fa-envelope icon"></i>
+                <input type="email" name="email" id="email" placeholder="Correo electrónico" autocomplete="email" required />
+            </div>
+
+            <div class="actions">
+                <button type="submit" class="btn-send">Enviar</button>
+                <button type="button" class="btn-cancel">Cancelar</button>
+            </div>
+        </form>
+
+        <p class="note">Recibirás un correo con instrucciones para restablecer tu contraseña.</p>
+    </div>
+
+    <!-- Modal de confirmación (solo markup; oculto por CSS) -->
+    <div class="modal-confirm" aria-hidden="true">
+        <div class="modal-box">
+            <p>¿Desea cancelar el proceso de recuperación?</p>
+            <div class="modal-actions">
+                <button class="btn-secondary">No</button>
+                <button class="btn-primary">Sí, cancelar</button>
+            </div>
+        </div>
+    </div>
+</main>
+

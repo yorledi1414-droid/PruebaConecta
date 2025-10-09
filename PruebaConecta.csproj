@@ -120,8 +120,10 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CambiarContrasenaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuegosController.cs" />
+    <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
     <Compile Include="Dtos\UserDto.cs" />
@@ -151,8 +153,10 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\logoUsuario.jpg" />
     <Content Include="Content\Images\Memoria.png" />
     <Content Include="Content\Images\Rompecabezas.png" />
+    <Content Include="Content\Images\usuarioLogo.jpg" />
     <Content Include="Content\Juegos.css" />
     <Content Include="Content\Registro.css" />
     <Content Include="favicon.ico" />
@@ -195,10 +199,13 @@
     <Content Include="Views\Juegos\Memoria.cshtml" />
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\Home\home.cshtml" />
+    <Content Include="Views\Account\RContrasena.cshtml" />
+    <Content Include="Views\CambiarContrasena\CambiarContrasena.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\RContraseña\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

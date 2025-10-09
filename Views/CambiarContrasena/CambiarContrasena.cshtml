@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "CambiarContrasena";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/css/CambiarContrasena.css" />
+
+<div class="cambiar-container">
+    <div class="formulario">
+        <!-- Campo Usuario -->
+        <div class="input-group">
+            <img src="~/Content/Images/usuarioLogo.jpg" alt="Usuario" class="icono">
+            <input type="text" placeholder="Ingresar Usuario" />
+        </div>
+
+        <!-- Campo Contraseña Enviada -->
+        <div class="input-group">
+            <img src="~/Content/Images/logoUsuario.jpg" alt="Contraseña" class="icono">
+            <input type="text" placeholder="Ingresar Contraseña Enviada" />
+        </div>
+
+        <!-- Título central -->
+        <h3>Por favor Cambiar Contraseña</h3>
+
+        <!-- Recuadro de nueva contraseña -->
+        <div class="recuadro">
+            <label for="nueva">Nueva Contraseña</label>
+            <input type="password" id="nueva" placeholder="xxxxxxxxx" />
+        </div>
+
+        <!-- Botón inferior -->
+        <button class="btn-iniciar">INICIAR SESIÓN</button>
+    </div>
+</div>
