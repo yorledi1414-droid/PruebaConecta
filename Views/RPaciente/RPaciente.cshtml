@@ -1,0 +1,51 @@
+﻿@{
+    ViewBag.Title = "Añadir paciente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main class="add-patient">
+    <h1>Añadir paciente/pacientes</h1>
+
+    <form class="patient-form" enctype="multipart/form-data" method="post">
+        <!-- Nombre -->
+        <div class="form-row">
+            <label for="Nombre">NOMBRE</label>
+            <input type="text" id="Nombre" name="Nombre" required />
+        </div>
+
+        <!-- Apellido -->
+        <div class="form-row">
+            <label for="Apellido">APELLIDO</label>
+            <input type="text" id="Apellido" name="Apellido" required />
+        </div>
+
+        <!-- Tipo documento -->
+        <div class="form-row">
+            <label for="TipoDocumento">Documento</label>
+            <select id="TipoDocumento" name="TipoDocumento" required>
+                <option value="">Seleccione...</option>
+                <option value="CC">CC</option>
+                <option value="TI">TI</option>
+                <option value="CE">CE</option>
+                <option value="RC">RC</option>
+            </select>
+        </div>
+
+        <!-- Número documento -->
+        <div class="form-row">
+            <label for="NumeroDocumento">NÚMERO DOCUMENTO</label>
+            <input type="text" id="NumeroDocumento" name="NumeroDocumento" required />
+        </div>
+
+        <!-- Subir diagnóstico -->
+        <div class="form-row">
+            <label for="Diagnostico">SUBIR DIAGNÓSTICO</label>
+            <input type="file" id="Diagnostico" name="Diagnostico" accept=".pdf,.jpg,.png" />
+        </div>
+
+        <!-- Botón -->
+        <div class="form-row">
+            <button type="submit" class="btn-guardar">Guardar</button>
+        </div>
+    </form>
+</main>

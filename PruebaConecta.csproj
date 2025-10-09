@@ -125,6 +125,7 @@
     <Compile Include="Controllers\JuegosController.cs" />
     <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
+    <Compile Include="Controllers\RPacienteController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -199,6 +200,7 @@
     <Content Include="Views\Juegos\Memoria.cshtml" />
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\Home\home.cshtml" />
+    <Content Include="Views\RPaciente\RPaciente.cshtml" />
     <Content Include="Views\Account\RContrasena.cshtml" />
     <Content Include="Views\CambiarContrasena\CambiarContrasena.cshtml" />
   </ItemGroup>
