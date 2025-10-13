@@ -120,6 +120,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ConfiguracionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuegosController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
@@ -156,6 +157,7 @@
     <Content Include="Content\Images\Rompecabezas.png" />
     <Content Include="Content\Juegos.css" />
     <Content Include="Content\Registro.css" />
+    <Content Include="Content\Configuraciones.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -197,6 +199,7 @@
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\Home\home.cshtml" />
     <Content Include="Views\RPaciente\RPaciente.cshtml" />
+    <Content Include="Views\Configuraciones\Configuraciones.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
