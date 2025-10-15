@@ -120,9 +120,14 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+
+    <Compile Include="Controllers\CambiarContrasenaController.cs" />
+
     <Compile Include="Controllers\ConfiguracionesController.cs" />
+
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuegosController.cs" />
+    <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\RPacienteController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
@@ -153,11 +158,18 @@
     <Content Include="Content\bootstrap.rtl.css" />
     <Content Include="Content\bootstrap.rtl.min.css" />
     <Content Include="Content\Images\Logo.png" />
+    <Content Include="Content\Images\logoUsuario.jpg" />
     <Content Include="Content\Images\Memoria.png" />
     <Content Include="Content\Images\Rompecabezas.png" />
+    <Content Include="Content\Images\usuarioLogo.jpg" />
     <Content Include="Content\Juegos.css" />
     <Content Include="Content\Registro.css" />
+
+    <Content Include="Content\RContrasena.css" />
+    <Content Include="Content\CambiarContrasena.css" />
+
     <Content Include="Content\Configuraciones.css" />
+
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -199,11 +211,17 @@
     <Content Include="Views\Registro\Index.cshtml" />
     <Content Include="Views\Home\home.cshtml" />
     <Content Include="Views\RPaciente\RPaciente.cshtml" />
+
+    <Content Include="Views\Account\RContrasena.cshtml" />
+    <Content Include="Views\CambiarContrasena\CambiarContrasena.cshtml" />
+
     <Content Include="Views\Configuraciones\Configuraciones.cshtml" />
+
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\RContraseña\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

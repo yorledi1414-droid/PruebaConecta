@@ -1,0 +1,167 @@
+﻿/* Cambiar Contraseña */
+
+/* Fondo general */
+body {
+    margin: 0;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(160deg, #4C7DC0 0%, #8A69D6 50%, #C9A2E3 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Contenedor principal */
+.cambiar-container {
+    text-align: center;
+}
+
+/* Caja principal del formulario */
+.formulario {
+    background: rgba(255, 255, 255, 0.35); /* Aumenté opacidad */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Delicado borde blanco */
+    border-radius: 20px;
+    padding: 45px;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 400px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Nueva sombra suave */
+}
+
+/* Input con icono */
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #fff;
+    width: 100%;
+    padding: 5px;
+}
+
+.icono {
+    width: 22px;
+    margin-right: 10px;
+}
+
+.input-group input {
+    background: transparent;
+    border: none;
+    color: #fff;
+    outline: none;
+    font-size: 15px;
+    flex: 1;
+}
+
+    .input-group input::placeholder {
+        color: rgba(255, 255, 255, 0.8);
+    }
+
+/* Título */
+h3 {
+    color: #fff;
+    margin: 25px 0 10px 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Recuadro blanco interior */
+.recuadro {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+    .recuadro label {
+        font-weight: 600;
+    }
+
+    .recuadro input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #000;
+        margin-top: 10px;
+        font-size: 14px;
+        outline: none;
+        background: transparent;
+    }
+
+/* Botón inferior */
+.btn-iniciar {
+    margin-top: 35px;
+    background: linear-gradient(90deg, #6B4CF0, #8A61F7);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 45px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+    .btn-iniciar:hover {
+        transform: translateY(-3px);
+    }
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Título central */
+h3 {
+    color: #fff;
+    margin: 25px 0 10px 0;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+/* Recuadro blanco */
+.recuadro {
+    background: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    color: #000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+    .recuadro label {
+        font-weight: 600;
+    }
+
+    .recuadro input {
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 2px solid #000;
+        margin-top: 10px;
+        font-size: 14px;
+        outline: none;
+        background: transparent;
+    }
+
+/* Botón inferior */
+.btn-iniciar {
+    margin-top: 35px;
+    background: linear-gradient(90deg, #6B4CF0, #8A61F7);
+    border: none;
+    border-radius: 25px;
+    color: #fff;
+    padding: 10px 45px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+
+    .btn-iniciar:hover {
+        transform: translateY(-3px);
+    }
