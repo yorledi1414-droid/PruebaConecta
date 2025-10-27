@@ -1,7 +1,5 @@
-﻿
-@{
-    ViewBag.Title = "RContrasena";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@{
+    ViewBag.Title = "Recuperar Contraseña";
 }
 
 @section Head {
@@ -12,7 +10,7 @@
 <main class="recover-page">
     <header class="recover-header">
         <a class="back" href="javascript:history.back()"><i class="fa-solid fa-chevron-left"></i></a>
-        <h2>                              </h2> <!-- si quieres "Recuperar Contraseña" cambia el texto -->
+        <h2>Recuperar Contraseña</h2>
         <button class="settings" aria-label="Ajustes"><i class="fa-solid fa-gear"></i></button>
     </header>
 
@@ -20,7 +18,11 @@
         <h3 id="recover-title">Recuperar Contraseña</h3>
         <p class="recover-sub">Ingresa tu correo registrado para recuperar tu contraseña</p>
 
-        <form class="recover-form" method="post" action="#">
+        <!-- 🔹 FORMULARIO FUNCIONAL -->
+        @using (Html.BeginForm("RContrasena", "Account", FormMethod.Post, new { @class = "recover-form" }))
+        {
+            @Html.AntiForgeryToken()
+
             <div class="input-row">
                 <i class="fa-regular fa-envelope icon"></i>
                 <input type="email" name="email" id="email" placeholder="Correo electrónico" autocomplete="email" required />
@@ -28,11 +30,21 @@
 
             <div class="actions">
                 <button type="submit" class="btn-send">Enviar</button>
-                <button type="button" class="btn-cancel">Cancelar</button>
+                <button type="button" class="btn-cancel" onclick="window.history.back()">Cancelar</button>
             </div>
-        </form>
+        }
 
         <p class="note">Recibirás un correo con instrucciones para restablecer tu contraseña.</p>
+
+        <!-- 🔹 MENSAJE DE CONFIRMACIÓN O ERROR -->
+        @if (ViewBag.Mensaje != null)
+        {
+            <div class="alert success">@ViewBag.Mensaje</div>
+        }
+        else if (ViewBag.Error != null)
+        {
+            <div class="alert error">@ViewBag.Error</div>
+        }
     </div>
 
     <!-- Modal de confirmación (solo markup; oculto por CSS) -->
@@ -46,4 +58,3 @@
         </div>
     </div>
 </main>
-

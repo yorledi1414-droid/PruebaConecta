@@ -133,6 +133,7 @@
     <Compile Include="Controllers\ConfiguracionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JuegosController.cs" />
+    <Compile Include="Controllers\MiPerfilTController.cs" />
     <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\RPacienteController.cs" />
@@ -210,6 +211,7 @@
     </Compile>
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Services\UserService.cs" />
+    <Compile Include="Utilities\GestorCorreo.cs" />
     <Compile Include="Utilities\PasswordUtility.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -239,6 +241,7 @@
     <Content Include="Content\RContrasena.css" />
     <Content Include="Content\CambiarContrasena.css" />
     <Content Include="Content\Configuraciones.css" />
+    <Content Include="Content\MiPerfilT.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -300,6 +303,7 @@
     <Content Include="Views\Account\RContrasena.cshtml" />
     <Content Include="Views\CambiarContrasena\CambiarContrasena.cshtml" />
     <Content Include="Views\Configuraciones\Configuraciones.cshtml" />
+    <Content Include="Views\MiPerfilT\MiPerfilT.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,91 @@
+﻿/* Fondo general */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(to bottom, #5a9bd5, #c38ac9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Contenedor */
+.container {
+    width: 360px;
+    background: transparent;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+/* Barra superior */
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 15px 20px;
+    font-size: 1.2em;
+}
+
+    .top-bar h1 {
+        margin: 0;
+        font-weight: bold;
+    }
+
+.back-icon, .menu-icon {
+    cursor: default;
+}
+
+/* Caja principal */
+.profile-box {
+    background-color: rgba(255, 255, 255, 0.25);
+    margin: 10px 15px;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+/* Cada fila */
+.profile-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(186, 160, 231, 0.9);
+    color: white;
+    padding: 12px 15px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 0.95em;
+}
+
+    .profile-item i {
+        margin-right: 10px;
+    }
+
+    .profile-item span {
+        flex: 1;
+    }
+
+/* Flechas */
+.arrow {
+    color: white;
+}
+
+/* Barra inferior */
+.bottom-bar {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(255,255,255,0.3);
+    padding: 10px 0;
+    border-top: 1px solid rgba(255,255,255,0.5);
+}
+
+    .bottom-bar a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+    }
+
+        .bottom-bar a.active {
+            border-bottom: 2px solid white;
+        }
