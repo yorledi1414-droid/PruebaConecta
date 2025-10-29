@@ -1,20 +1,516 @@
-﻿/* Set padding to keep content from hitting the edges */
-.body-content {
-    margin-top: 15px;
-    padding-left: 15px;
-    padding-right: 15px;
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
 }
+
+.back-arrow, .settings {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Contenido */
+.main-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Tarjetas de juegos */
+.juego-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.juego-img {
+    width: 150px; /* ancho más grande */
+    height: 150px; /* alto proporcional */
+    object-fit: contain; /* asegura que no se deformen */
+    margin-right: 20px; /* espacio entre imagen y texto */
+    border-radius: 8px; /* opcional: esquinas redondeadas */
+}
+
+.juego-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 22px;
+    color: #444;
+}
+
+/* Navbar inferior */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a9bd8, #c58ad3);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .nav-item .icon {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .nav-item.active {
+        text-decoration: underline;
+    }
+
+
+/* reset simple */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* fondo (gradiente parecido al mockup) */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #6b9be8 0%, #9fb0e6 35%, #c9a8d9 70%, #f0c7d8 100%);
+    color: #fff;
+}
+
+/* logo circular grande */
+.logo-wrap {
+    margin-bottom: 22px;
+}
+
+.logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.85);
+    padding: 16px;
+    box-shadow: 0 8px 0 rgba(0,0,0,0.25);
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* formulario (transparente para que se vea el fondo) */
+.login-form {
+    width: 520px;
+    max-width: 94%;
+    text-align: center;
+    margin-top: 6px;
+}
+
+/* fila input con icono */
+.input-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 18px 0;
+    justify-content: center;
+}
+
+/* icono a la izquierda */
+.icon {
+    color: rgba(255,255,255,0.95);
+    font-size: 20px;
+    width: 36px;
+    text-align: center;
+    margin-left: 8%;
+}
+
+/* inputs con solo linea inferior (una sola linea) */
+.input-row input {
+    flex: 0 0 60%;
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid rgba(0,0,0,0.75); /* línea oscura como mockup */
+    padding: 10px 8px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111; /* texto oscuro */
+    text-align: center;
+    outline: none;
+}
+
+/* botón mostrar contraseña (a la derecha del input) */
+.show-pass {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 8px;
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.9);
+}
+
+/* botón principal estilo mockup morado con sombra */
+.btn-primary {
+    margin-top: 14px;
+    width: 45%;
+    min-width: 200px;
+    padding: 12px 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    box-shadow: 0 6px rgba(0,0,0,0.35);
+    background: linear-gradient(180deg, #7d4cb3 0%, #8f6bd6 100%);
+    color: #fff;
+}
+
+/* enlaces inferiores: crear cuenta (izquierda) y olvidar (derecha) */
+.links {
+    margin-top: 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 520px;
+    max-width: 94%;
+    padding: 0 28px;
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+}
+
+    .links a {
+        text-decoration: none;
+        font-size: 16px;
+    }
+
+    .links .create {
+        color: rgba(120,80,185,0.85);
+    }
+
+    .links .forgot {
+        color: rgba(255,255,255,0.95);
+    }
+
+/* responsive */
+@media (max-width:640px) {
+    .logo {
+        width: 150px;
+        height: 150px;
+        padding: 12px;
+    }
+
+    .input-row input {
+        font-size: 16px;
+        flex: 1;
+    }
+
+    .input-row .icon {
+        margin-left: 6%;
+    }
+
+    .btn-primary {
+        width: 70%;
+        min-width: unset;
+    }
+
+    .links {
+        width: 92%;
+        padding: 0 6%;
+    }
+}
+
+.add-patient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4a90e2, #b06ab3); /* degradado */
+    color: #fff;
+}
+
+    .add-patient h1 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+.patient-form {
+    background: #fff;
+    color: #333;
+    padding: 20px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    width: 300px;
+}
+
+    .patient-form .form-row {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .patient-form label {
+        font-size: 0.9rem;
+        margin-bottom: 5px;
+        font-weight: 600;
+    }
+
+    .patient-form input,
+    .patient-form select {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        outline: none;
+    }
+
+        .patient-form input[type="file"] {
+            border: none;
+        }
+
+.btn-guardar {
+    width: 100%;
+    padding: 10px;
+    background: #4a90e2;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn-guardar:hover {
+        background: #357ab8;
+    }
+
+/* ====================
+   ESTILOS SOLO PARA JUEGOS
+   ==================== */
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.back-arrow, .settings {
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 22px;
+}
+
+/* Contenido principal */
+.main-content {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+}
+
+/* Tarjetas de juegos */
+.juego-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+.juego-img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin-right: 20px;
+    border-radius: 8px;
+}
+
+.juego-info {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.arrow {
+    font-size: 22px;
+    color: #444;
+}
+
+/* Navbar inferior */
+.footer-nav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: linear-gradient(to right, #6a9bd8, #c58ad3);
+    color: white;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+    .nav-item .icon {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .nav-item.active {
+        text-decoration: underline;
+    }
+
+/* ======== Estilos para el módulo Juegos ======== */
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
+}
+
+    /* Contenido central */
+    .app-container .main-content {
+        flex: 1;
+        padding: 15px;
+        overflow-y: auto;
+    }
+
+    /* Tarjetas de juegos */
+    .app-container .juego-card {
+        display: flex;
+        align-items: center;
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0px 3px 6px rgba(0,0,0,0.15);
+        margin-bottom: 15px;
+        padding: 10px;
+    }
+
+    .app-container .juego-img {
+        width: 150px;
+        height: 150px;
+        object-fit: contain;
+        margin-right: 20px;
+        border-radius: 8px;
+    }
+
+    .app-container .juego-info {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .app-container .arrow {
+        font-size: 22px;
+        color: #444;
+    }
+
+    /* Navbar inferior */
+    .app-container .footer-nav {
+        display: flex;
+        justify-content: space-around;
+        padding: 10px 0;
+        background: linear-gradient(to right, #6a9bd8, #c58ad3);
+        color: white;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+
+    .app-container .nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+        .app-container .nav-item .icon {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .app-container .nav-item.active {
+            text-decoration: underline;
+        }

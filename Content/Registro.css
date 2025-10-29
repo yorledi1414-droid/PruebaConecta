@@ -1,0 +1,83 @@
+﻿body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(to bottom, #6a9bd8, #c58ad3);
+}
+
+/* Centro */
+.registro-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+    padding: 20px;
+}
+
+/* Caja */
+.registro-box {
+    background: white;
+    padding: 26px 22px;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    width: 320px;
+    text-align: center;
+    border: 3px solid rgba(0,0,0,0.04);
+}
+
+    .registro-box h2 {
+        margin: 0 0 6px;
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+.chk-title {
+    margin-top: 6px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.checkbox-group {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 14px;
+    font-weight: 700;
+}
+
+.form-group {
+    margin-bottom: 14px;
+    text-align: left;
+}
+
+    .form-group label {
+        display: block;
+        font-size: 13px;
+        font-weight: 700;
+        margin-bottom: 6px;
+    }
+
+.input-field {
+    width: 100%;
+    padding: 8px 6px;
+    border: none;
+    border-bottom: 2px solid #d2d2d2;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.btn-guardar {
+    background: linear-gradient(90deg,#6a11cb,#2575fc);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 24px;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+}
+
+    .btn-guardar:hover {
+        opacity: 0.95;
+    }

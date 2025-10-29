@@ -1,0 +1,1308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TherapyDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Appointment_States">
+          <Key>
+            <PropertyRef Name="Appointment_State_ID" />
+          </Key>
+          <Property Name="Appointment_State_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Appointments">
+          <Key>
+            <PropertyRef Name="Appointment_ID" />
+          </Key>
+          <Property Name="Appointment_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Therapist_ID" Type="int" Nullable="false" />
+          <Property Name="Appointment_Date" Type="date" Nullable="false" />
+          <Property Name="Appointment_Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="Appointment_State_ID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Configurations">
+          <Key>
+            <PropertyRef Name="Configuration_ID" />
+          </Key>
+          <Property Name="Configuration_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Dark_Mode" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Games">
+          <Key>
+            <PropertyRef Name="Game_ID" />
+          </Key>
+          <Property Name="Game_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Game_Type" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Messages">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sender_ID" Type="int" Nullable="false" />
+          <Property Name="Recipient_ID" Type="int" Nullable="false" />
+          <Property Name="Appointment_ID" Type="int" Nullable="false" />
+          <Property Name="Content" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Sent_DateTime" Type="datetime" Nullable="false" />
+          <Property Name="Is_Read" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Notifications">
+          <Key>
+            <PropertyRef Name="Notification_ID" />
+          </Key>
+          <Property Name="Notification_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Type" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Sent_DateTime" Type="datetime" Nullable="false" />
+          <Property Name="Is_Read" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Password_Resets">
+          <Key>
+            <PropertyRef Name="Reset_ID" />
+          </Key>
+          <Property Name="Reset_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Token" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Expiration_DateTime" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Patients">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Tutor_ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Birth_Date" Type="date" Nullable="false" />
+          <Property Name="Diagnosis" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Autism_Level" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Profile_Picture" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Progress">
+          <Key>
+            <PropertyRef Name="Progress_ID" />
+          </Key>
+          <Property Name="Progress_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Game_ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Score" Type="int" Nullable="false" />
+          <Property Name="Observations" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reports">
+          <Key>
+            <PropertyRef Name="Report_ID" />
+          </Key>
+          <Property Name="Report_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Patient_ID" Type="int" Nullable="false" />
+          <Property Name="Therapist_ID" Type="int" Nullable="false" />
+          <Property Name="Date" Type="date" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="Progress_Summary" Type="varchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Role_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Schedules">
+          <Key>
+            <PropertyRef Name="Schedule_ID" />
+          </Key>
+          <Property Name="Schedule_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Therapist_ID" Type="int" Nullable="false" />
+          <Property Name="Day_Of_Week" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Start_Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="End_Time" Type="time" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="States">
+          <Key>
+            <PropertyRef Name="State_ID" />
+          </Key>
+          <Property Name="State_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Description" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Support_Tickets">
+          <Key>
+            <PropertyRef Name="Support_ID" />
+          </Key>
+          <Property Name="Support_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Description" Type="text" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Therapists">
+          <Key>
+            <PropertyRef Name="Therapist_ID" />
+          </Key>
+          <Property Name="Therapist_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Document_Type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Document" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Professional_Certificate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Specialty" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Verification_Status" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Tutors">
+          <Key>
+            <PropertyRef Name="Tutor_ID" />
+          </Key>
+          <Property Name="Tutor_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User_ID" Type="int" Nullable="false" />
+          <Property Name="Document_Type" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Document" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Certificate" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Address" Type="varchar" MaxLength="150" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="150" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Registration_Date" Type="datetime" Nullable="false" />
+          <Property Name="Avatar" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Role_ID" Type="int" Nullable="false" />
+          <Property Name="State_ID" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK__Appointme__Appoi__628FA481">
+          <End Role="Appointment_States" Type="Self.Appointment_States" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appointment_States">
+              <PropertyRef Name="Appointment_State_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Appointment_State_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Patie__60A75C0F">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Thera__619B8048">
+          <End Role="Therapists" Type="Self.Therapists" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Configura__User___7F2BE32F">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Configurations" Type="Self.Configurations" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Configurations">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Appoin__73BA3083">
+          <End Role="Appointments" Type="Self.Appointments" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appointments">
+              <PropertyRef Name="Appointment_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Appointment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Recipi__72C60C4A">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Sender__71D1E811">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Messages" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__User___76969D2E">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Notifications" Type="Self.Notifications" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Password___User___797309D9">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Password_Resets" Type="Self.Password_Resets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Password_Resets">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients__Tutor___5BE2A6F2">
+          <End Role="Tutors" Type="Self.Tutors" Multiplicity="1" />
+          <End Role="Patients" Type="Self.Patients" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutors">
+              <PropertyRef Name="Tutor_ID" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Tutor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Progress__Game_I__6B24EA82">
+          <End Role="Games" Type="Self.Games" Multiplicity="1" />
+          <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="Game_ID" />
+            </Principal>
+            <Dependent Role="Progress">
+              <PropertyRef Name="Game_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Progress__Patien__6A30C649">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Progress">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Patient__6E01572D">
+          <End Role="Patients" Type="Self.Patients" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Therapi__6EF57B66">
+          <End Role="Therapists" Type="Self.Therapists" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Reports" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Schedules__Thera__656C112C">
+          <End Role="Therapists" Type="Self.Therapists" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedules" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Support_T__User___7C4F7684">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Support_Tickets" Type="Self.Support_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Support_Tickets">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Therapist__User___59063A47">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Therapists" Type="Self.Therapists" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Therapists">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tutors__User_ID__5535A963">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Tutors" Type="Self.Tutors" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Tutors">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__Role_ID__5070F446">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__State_ID__5165187F">
+          <End Role="States" Type="Self.States" Multiplicity="1" />
+          <End Role="Users" Type="Self.Users" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="State_ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="State_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TherapyDBModelStoreContainer">
+          <EntitySet Name="Appointment_States" EntityType="Self.Appointment_States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Appointments" EntityType="Self.Appointments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Configurations" EntityType="Self.Configurations" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Games" EntityType="Self.Games" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Messages" EntityType="Self.Messages" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Notifications" EntityType="Self.Notifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Password_Resets" EntityType="Self.Password_Resets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Patients" EntityType="Self.Patients" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Progress" EntityType="Self.Progress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reports" EntityType="Self.Reports" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="States" EntityType="Self.States" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Support_Tickets" EntityType="Self.Support_Tickets" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Therapists" EntityType="Self.Therapists" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tutors" EntityType="Self.Tutors" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Appointme__Appoi__628FA481" Association="Self.FK__Appointme__Appoi__628FA481">
+            <End Role="Appointment_States" EntitySet="Appointment_States" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Patie__60A75C0F" Association="Self.FK__Appointme__Patie__60A75C0F">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Thera__619B8048" Association="Self.FK__Appointme__Thera__619B8048">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Configura__User___7F2BE32F" Association="Self.FK__Configura__User___7F2BE32F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Configurations" EntitySet="Configurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Appoin__73BA3083" Association="Self.FK__Messages__Appoin__73BA3083">
+            <End Role="Appointments" EntitySet="Appointments" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Recipi__72C60C4A" Association="Self.FK__Messages__Recipi__72C60C4A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Sender__71D1E811" Association="Self.FK__Messages__Sender__71D1E811">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__User___76969D2E" Association="Self.FK__Notificat__User___76969D2E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Password___User___797309D9" Association="Self.FK__Password___User___797309D9">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Password_Resets" EntitySet="Password_Resets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients__Tutor___5BE2A6F2" Association="Self.FK__Patients__Tutor___5BE2A6F2">
+            <End Role="Tutors" EntitySet="Tutors" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Progress__Game_I__6B24EA82" Association="Self.FK__Progress__Game_I__6B24EA82">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Progress" EntitySet="Progress" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Progress__Patien__6A30C649" Association="Self.FK__Progress__Patien__6A30C649">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Progress" EntitySet="Progress" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Patient__6E01572D" Association="Self.FK__Reports__Patient__6E01572D">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Therapi__6EF57B66" Association="Self.FK__Reports__Therapi__6EF57B66">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Schedules__Thera__656C112C" Association="Self.FK__Schedules__Thera__656C112C">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Support_T__User___7C4F7684" Association="Self.FK__Support_T__User___7C4F7684">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Support_Tickets" EntitySet="Support_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Therapist__User___59063A47" Association="Self.FK__Therapist__User___59063A47">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Therapists" EntitySet="Therapists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tutors__User_ID__5535A963" Association="Self.FK__Tutors__User_ID__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tutors" EntitySet="Tutors" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__Role_ID__5070F446" Association="Self.FK__Users__Role_ID__5070F446">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__State_ID__5165187F" Association="Self.FK__Users__State_ID__5165187F">
+            <End Role="States" EntitySet="States" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TherapyDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Appointment_States">
+          <Key>
+            <PropertyRef Name="Appointment_State_ID" />
+          </Key>
+          <Property Name="Appointment_State_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Appoi__628FA481" FromRole="Appointment_States" ToRole="Appointments" />
+        </EntityType>
+        <EntityType Name="Appointment">
+          <Key>
+            <PropertyRef Name="Appointment_ID" />
+          </Key>
+          <Property Name="Appointment_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Therapist_ID" Type="Int32" Nullable="false" />
+          <Property Name="Appointment_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Appointment_Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="Appointment_State_ID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Appointment_States" Relationship="Self.FK__Appointme__Appoi__628FA481" FromRole="Appointments" ToRole="Appointment_States" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Appointme__Patie__60A75C0F" FromRole="Appointments" ToRole="Patients" />
+          <NavigationProperty Name="Therapist" Relationship="Self.FK__Appointme__Thera__619B8048" FromRole="Appointments" ToRole="Therapists" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK__Messages__Appoin__73BA3083" FromRole="Appointments" ToRole="Messages" />
+        </EntityType>
+        <EntityType Name="Configuration">
+          <Key>
+            <PropertyRef Name="Configuration_ID" />
+          </Key>
+          <Property Name="Configuration_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Dark_Mode" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Configura__User___7F2BE32F" FromRole="Configurations" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Game">
+          <Key>
+            <PropertyRef Name="Game_ID" />
+          </Key>
+          <Property Name="Game_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Game_Type" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Progresses" Relationship="Self.FK__Progress__Game_I__6B24EA82" FromRole="Games" ToRole="Progress" />
+        </EntityType>
+        <EntityType Name="Message">
+          <Key>
+            <PropertyRef Name="Message_ID" />
+          </Key>
+          <Property Name="Message_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sender_ID" Type="Int32" Nullable="false" />
+          <Property Name="Recipient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Appointment_ID" Type="Int32" Nullable="false" />
+          <Property Name="Content" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sent_DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Is_Read" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Appointment" Relationship="Self.FK__Messages__Appoin__73BA3083" FromRole="Messages" ToRole="Appointments" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Messages__Recipi__72C60C4A" FromRole="Messages" ToRole="Users" />
+          <NavigationProperty Name="User1" Relationship="Self.FK__Messages__Sender__71D1E811" FromRole="Messages" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Notification">
+          <Key>
+            <PropertyRef Name="Notification_ID" />
+          </Key>
+          <Property Name="Notification_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Message" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sent_DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Is_Read" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Notificat__User___76969D2E" FromRole="Notifications" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Password_Resets">
+          <Key>
+            <PropertyRef Name="Reset_ID" />
+          </Key>
+          <Property Name="Reset_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Token" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Expiration_DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Password___User___797309D9" FromRole="Password_Resets" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Patient">
+          <Key>
+            <PropertyRef Name="Patient_ID" />
+          </Key>
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tutor_ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Birth_Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Diagnosis" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Autism_Level" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Profile_Picture" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Patie__60A75C0F" FromRole="Patients" ToRole="Appointments" />
+          <NavigationProperty Name="Tutor" Relationship="Self.FK__Patients__Tutor___5BE2A6F2" FromRole="Patients" ToRole="Tutors" />
+          <NavigationProperty Name="Progresses" Relationship="Self.FK__Progress__Patien__6A30C649" FromRole="Patients" ToRole="Progress" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__Patient__6E01572D" FromRole="Patients" ToRole="Reports" />
+        </EntityType>
+        <EntityType Name="Progress">
+          <Key>
+            <PropertyRef Name="Progress_ID" />
+          </Key>
+          <Property Name="Progress_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Game_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Score" Type="Int32" Nullable="false" />
+          <Property Name="Observations" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Game" Relationship="Self.FK__Progress__Game_I__6B24EA82" FromRole="Progress" ToRole="Games" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Progress__Patien__6A30C649" FromRole="Progress" ToRole="Patients" />
+        </EntityType>
+        <EntityType Name="Report">
+          <Key>
+            <PropertyRef Name="Report_ID" />
+          </Key>
+          <Property Name="Report_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Patient_ID" Type="Int32" Nullable="false" />
+          <Property Name="Therapist_ID" Type="Int32" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Progress_Summary" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Patient" Relationship="Self.FK__Reports__Patient__6E01572D" FromRole="Reports" ToRole="Patients" />
+          <NavigationProperty Name="Therapist" Relationship="Self.FK__Reports__Therapi__6EF57B66" FromRole="Reports" ToRole="Therapists" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="Role_ID" />
+          </Key>
+          <Property Name="Role_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Role_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__Role_ID__5070F446" FromRole="Roles" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Schedule">
+          <Key>
+            <PropertyRef Name="Schedule_ID" />
+          </Key>
+          <Property Name="Schedule_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Therapist_ID" Type="Int32" Nullable="false" />
+          <Property Name="Day_Of_Week" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Start_Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="End_Time" Type="Time" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Therapist" Relationship="Self.FK__Schedules__Thera__656C112C" FromRole="Schedules" ToRole="Therapists" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="State_ID" />
+          </Key>
+          <Property Name="State_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Users" Relationship="Self.FK__Users__State_ID__5165187F" FromRole="States" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Support_Tickets">
+          <Key>
+            <PropertyRef Name="Support_ID" />
+          </Key>
+          <Property Name="Support_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Support_T__User___7C4F7684" FromRole="Support_Tickets" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Therapist">
+          <Key>
+            <PropertyRef Name="Therapist_ID" />
+          </Key>
+          <Property Name="Therapist_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Document_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Document" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Professional_Certificate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Specialty" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Verification_Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Appointments" Relationship="Self.FK__Appointme__Thera__619B8048" FromRole="Therapists" ToRole="Appointments" />
+          <NavigationProperty Name="Reports" Relationship="Self.FK__Reports__Therapi__6EF57B66" FromRole="Therapists" ToRole="Reports" />
+          <NavigationProperty Name="Schedules" Relationship="Self.FK__Schedules__Thera__656C112C" FromRole="Therapists" ToRole="Schedules" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Therapist__User___59063A47" FromRole="Therapists" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="Tutor">
+          <Key>
+            <PropertyRef Name="Tutor_ID" />
+          </Key>
+          <Property Name="Tutor_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_ID" Type="Int32" Nullable="false" />
+          <Property Name="Document_Type" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Document" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Certificate" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Address" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Patients" Relationship="Self.FK__Patients__Tutor___5BE2A6F2" FromRole="Tutors" ToRole="Patients" />
+          <NavigationProperty Name="User" Relationship="Self.FK__Tutors__User_ID__5535A963" FromRole="Tutors" ToRole="Users" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Registration_Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Avatar" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Role_ID" Type="Int32" Nullable="false" />
+          <Property Name="State_ID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Configurations" Relationship="Self.FK__Configura__User___7F2BE32F" FromRole="Users" ToRole="Configurations" />
+          <NavigationProperty Name="Messages" Relationship="Self.FK__Messages__Recipi__72C60C4A" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Messages1" Relationship="Self.FK__Messages__Sender__71D1E811" FromRole="Users" ToRole="Messages" />
+          <NavigationProperty Name="Notifications" Relationship="Self.FK__Notificat__User___76969D2E" FromRole="Users" ToRole="Notifications" />
+          <NavigationProperty Name="Password_Resets" Relationship="Self.FK__Password___User___797309D9" FromRole="Users" ToRole="Password_Resets" />
+          <NavigationProperty Name="Role" Relationship="Self.FK__Users__Role_ID__5070F446" FromRole="Users" ToRole="Roles" />
+          <NavigationProperty Name="State" Relationship="Self.FK__Users__State_ID__5165187F" FromRole="Users" ToRole="States" />
+          <NavigationProperty Name="Support_Tickets" Relationship="Self.FK__Support_T__User___7C4F7684" FromRole="Users" ToRole="Support_Tickets" />
+          <NavigationProperty Name="Therapists" Relationship="Self.FK__Therapist__User___59063A47" FromRole="Users" ToRole="Therapists" />
+          <NavigationProperty Name="Tutors" Relationship="Self.FK__Tutors__User_ID__5535A963" FromRole="Users" ToRole="Tutors" />
+        </EntityType>
+        <Association Name="FK__Appointme__Appoi__628FA481">
+          <End Role="Appointment_States" Type="Self.Appointment_States" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appointment_States">
+              <PropertyRef Name="Appointment_State_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Appointment_State_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Patie__60A75C0F">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Appointme__Thera__619B8048">
+          <End Role="Therapists" Type="Self.Therapist" Multiplicity="1" />
+          <End Role="Appointments" Type="Self.Appointment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Appointments">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Appoin__73BA3083">
+          <End Role="Appointments" Type="Self.Appointment" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Appointments">
+              <PropertyRef Name="Appointment_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Appointment_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Configura__User___7F2BE32F">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Configurations" Type="Self.Configuration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Configurations">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Progress__Game_I__6B24EA82">
+          <End Role="Games" Type="Self.Game" Multiplicity="1" />
+          <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Games">
+              <PropertyRef Name="Game_ID" />
+            </Principal>
+            <Dependent Role="Progress">
+              <PropertyRef Name="Game_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Recipi__72C60C4A">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Recipient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Messages__Sender__71D1E811">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Messages" Type="Self.Message" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Messages">
+              <PropertyRef Name="Sender_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Notificat__User___76969D2E">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Notifications" Type="Self.Notification" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Notifications">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Password___User___797309D9">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Password_Resets" Type="Self.Password_Resets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Password_Resets">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Patients__Tutor___5BE2A6F2">
+          <End Role="Tutors" Type="Self.Tutor" Multiplicity="1" />
+          <End Role="Patients" Type="Self.Patient" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tutors">
+              <PropertyRef Name="Tutor_ID" />
+            </Principal>
+            <Dependent Role="Patients">
+              <PropertyRef Name="Tutor_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Progress__Patien__6A30C649">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Progress" Type="Self.Progress" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Progress">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Patient__6E01572D">
+          <End Role="Patients" Type="Self.Patient" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Patients">
+              <PropertyRef Name="Patient_ID" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="Patient_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Reports__Therapi__6EF57B66">
+          <End Role="Therapists" Type="Self.Therapist" Multiplicity="1" />
+          <End Role="Reports" Type="Self.Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Reports">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__Role_ID__5070F446">
+          <End Role="Roles" Type="Self.Role" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="Role_ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="Role_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Schedules__Thera__656C112C">
+          <End Role="Therapists" Type="Self.Therapist" Multiplicity="1" />
+          <End Role="Schedules" Type="Self.Schedule" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Therapists">
+              <PropertyRef Name="Therapist_ID" />
+            </Principal>
+            <Dependent Role="Schedules">
+              <PropertyRef Name="Therapist_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Users__State_ID__5165187F">
+          <End Role="States" Type="Self.State" Multiplicity="1" />
+          <End Role="Users" Type="Self.User" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="States">
+              <PropertyRef Name="State_ID" />
+            </Principal>
+            <Dependent Role="Users">
+              <PropertyRef Name="State_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Support_T__User___7C4F7684">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Support_Tickets" Type="Self.Support_Tickets" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Support_Tickets">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Therapist__User___59063A47">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Therapists" Type="Self.Therapist" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Therapists">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__Tutors__User_ID__5535A963">
+          <End Role="Users" Type="Self.User" Multiplicity="1" />
+          <End Role="Tutors" Type="Self.Tutor" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="User_ID" />
+            </Principal>
+            <Dependent Role="Tutors">
+              <PropertyRef Name="User_ID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="TherapyDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Appointment_States" EntityType="Self.Appointment_States" />
+          <EntitySet Name="Appointments" EntityType="Self.Appointment" />
+          <EntitySet Name="Configurations" EntityType="Self.Configuration" />
+          <EntitySet Name="Games" EntityType="Self.Game" />
+          <EntitySet Name="Messages" EntityType="Self.Message" />
+          <EntitySet Name="Notifications" EntityType="Self.Notification" />
+          <EntitySet Name="Password_Resets" EntityType="Self.Password_Resets" />
+          <EntitySet Name="Patients" EntityType="Self.Patient" />
+          <EntitySet Name="Progresses" EntityType="Self.Progress" />
+          <EntitySet Name="Reports" EntityType="Self.Report" />
+          <EntitySet Name="Roles" EntityType="Self.Role" />
+          <EntitySet Name="Schedules" EntityType="Self.Schedule" />
+          <EntitySet Name="States" EntityType="Self.State" />
+          <EntitySet Name="Support_Tickets" EntityType="Self.Support_Tickets" />
+          <EntitySet Name="Therapists" EntityType="Self.Therapist" />
+          <EntitySet Name="Tutors" EntityType="Self.Tutor" />
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <AssociationSet Name="FK__Appointme__Appoi__628FA481" Association="Self.FK__Appointme__Appoi__628FA481">
+            <End Role="Appointment_States" EntitySet="Appointment_States" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Patie__60A75C0F" Association="Self.FK__Appointme__Patie__60A75C0F">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Appointme__Thera__619B8048" Association="Self.FK__Appointme__Thera__619B8048">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Appointments" EntitySet="Appointments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Appoin__73BA3083" Association="Self.FK__Messages__Appoin__73BA3083">
+            <End Role="Appointments" EntitySet="Appointments" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Configura__User___7F2BE32F" Association="Self.FK__Configura__User___7F2BE32F">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Configurations" EntitySet="Configurations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Progress__Game_I__6B24EA82" Association="Self.FK__Progress__Game_I__6B24EA82">
+            <End Role="Games" EntitySet="Games" />
+            <End Role="Progress" EntitySet="Progresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Recipi__72C60C4A" Association="Self.FK__Messages__Recipi__72C60C4A">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Messages__Sender__71D1E811" Association="Self.FK__Messages__Sender__71D1E811">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Messages" EntitySet="Messages" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Notificat__User___76969D2E" Association="Self.FK__Notificat__User___76969D2E">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Notifications" EntitySet="Notifications" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Password___User___797309D9" Association="Self.FK__Password___User___797309D9">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Password_Resets" EntitySet="Password_Resets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Patients__Tutor___5BE2A6F2" Association="Self.FK__Patients__Tutor___5BE2A6F2">
+            <End Role="Tutors" EntitySet="Tutors" />
+            <End Role="Patients" EntitySet="Patients" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Progress__Patien__6A30C649" Association="Self.FK__Progress__Patien__6A30C649">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Progress" EntitySet="Progresses" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Patient__6E01572D" Association="Self.FK__Reports__Patient__6E01572D">
+            <End Role="Patients" EntitySet="Patients" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Reports__Therapi__6EF57B66" Association="Self.FK__Reports__Therapi__6EF57B66">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Reports" EntitySet="Reports" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__Role_ID__5070F446" Association="Self.FK__Users__Role_ID__5070F446">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Schedules__Thera__656C112C" Association="Self.FK__Schedules__Thera__656C112C">
+            <End Role="Therapists" EntitySet="Therapists" />
+            <End Role="Schedules" EntitySet="Schedules" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Users__State_ID__5165187F" Association="Self.FK__Users__State_ID__5165187F">
+            <End Role="States" EntitySet="States" />
+            <End Role="Users" EntitySet="Users" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Support_T__User___7C4F7684" Association="Self.FK__Support_T__User___7C4F7684">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Support_Tickets" EntitySet="Support_Tickets" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Therapist__User___59063A47" Association="Self.FK__Therapist__User___59063A47">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Therapists" EntitySet="Therapists" />
+          </AssociationSet>
+          <AssociationSet Name="FK__Tutors__User_ID__5535A963" Association="Self.FK__Tutors__User_ID__5535A963">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Tutors" EntitySet="Tutors" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TherapyDBModelStoreContainer" CdmEntityContainer="TherapyDBEntities">
+          <EntitySetMapping Name="Appointment_States">
+            <EntityTypeMapping TypeName="TherapyDBModel.Appointment_States">
+              <MappingFragment StoreEntitySet="Appointment_States">
+                <ScalarProperty Name="Appointment_State_ID" ColumnName="Appointment_State_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Appointments">
+            <EntityTypeMapping TypeName="TherapyDBModel.Appointment">
+              <MappingFragment StoreEntitySet="Appointments">
+                <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Therapist_ID" ColumnName="Therapist_ID" />
+                <ScalarProperty Name="Appointment_Date" ColumnName="Appointment_Date" />
+                <ScalarProperty Name="Appointment_Time" ColumnName="Appointment_Time" />
+                <ScalarProperty Name="Appointment_State_ID" ColumnName="Appointment_State_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Configurations">
+            <EntityTypeMapping TypeName="TherapyDBModel.Configuration">
+              <MappingFragment StoreEntitySet="Configurations">
+                <ScalarProperty Name="Configuration_ID" ColumnName="Configuration_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Dark_Mode" ColumnName="Dark_Mode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Games">
+            <EntityTypeMapping TypeName="TherapyDBModel.Game">
+              <MappingFragment StoreEntitySet="Games">
+                <ScalarProperty Name="Game_ID" ColumnName="Game_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Game_Type" ColumnName="Game_Type" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Messages">
+            <EntityTypeMapping TypeName="TherapyDBModel.Message">
+              <MappingFragment StoreEntitySet="Messages">
+                <ScalarProperty Name="Message_ID" ColumnName="Message_ID" />
+                <ScalarProperty Name="Sender_ID" ColumnName="Sender_ID" />
+                <ScalarProperty Name="Recipient_ID" ColumnName="Recipient_ID" />
+                <ScalarProperty Name="Appointment_ID" ColumnName="Appointment_ID" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Sent_DateTime" ColumnName="Sent_DateTime" />
+                <ScalarProperty Name="Is_Read" ColumnName="Is_Read" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Notifications">
+            <EntityTypeMapping TypeName="TherapyDBModel.Notification">
+              <MappingFragment StoreEntitySet="Notifications">
+                <ScalarProperty Name="Notification_ID" ColumnName="Notification_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Sent_DateTime" ColumnName="Sent_DateTime" />
+                <ScalarProperty Name="Is_Read" ColumnName="Is_Read" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Password_Resets">
+            <EntityTypeMapping TypeName="TherapyDBModel.Password_Resets">
+              <MappingFragment StoreEntitySet="Password_Resets">
+                <ScalarProperty Name="Reset_ID" ColumnName="Reset_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Token" ColumnName="Token" />
+                <ScalarProperty Name="Expiration_DateTime" ColumnName="Expiration_DateTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Patients">
+            <EntityTypeMapping TypeName="TherapyDBModel.Patient">
+              <MappingFragment StoreEntitySet="Patients">
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Tutor_ID" ColumnName="Tutor_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Birth_Date" ColumnName="Birth_Date" />
+                <ScalarProperty Name="Diagnosis" ColumnName="Diagnosis" />
+                <ScalarProperty Name="Autism_Level" ColumnName="Autism_Level" />
+                <ScalarProperty Name="Profile_Picture" ColumnName="Profile_Picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Progresses">
+            <EntityTypeMapping TypeName="TherapyDBModel.Progress">
+              <MappingFragment StoreEntitySet="Progress">
+                <ScalarProperty Name="Progress_ID" ColumnName="Progress_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Game_ID" ColumnName="Game_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Score" ColumnName="Score" />
+                <ScalarProperty Name="Observations" ColumnName="Observations" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reports">
+            <EntityTypeMapping TypeName="TherapyDBModel.Report">
+              <MappingFragment StoreEntitySet="Reports">
+                <ScalarProperty Name="Report_ID" ColumnName="Report_ID" />
+                <ScalarProperty Name="Patient_ID" ColumnName="Patient_ID" />
+                <ScalarProperty Name="Therapist_ID" ColumnName="Therapist_ID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Progress_Summary" ColumnName="Progress_Summary" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="TherapyDBModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="Role_Name" ColumnName="Role_Name" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Schedules">
+            <EntityTypeMapping TypeName="TherapyDBModel.Schedule">
+              <MappingFragment StoreEntitySet="Schedules">
+                <ScalarProperty Name="Schedule_ID" ColumnName="Schedule_ID" />
+                <ScalarProperty Name="Therapist_ID" ColumnName="Therapist_ID" />
+                <ScalarProperty Name="Day_Of_Week" ColumnName="Day_Of_Week" />
+                <ScalarProperty Name="Start_Time" ColumnName="Start_Time" />
+                <ScalarProperty Name="End_Time" ColumnName="End_Time" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="States">
+            <EntityTypeMapping TypeName="TherapyDBModel.State">
+              <MappingFragment StoreEntitySet="States">
+                <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Support_Tickets">
+            <EntityTypeMapping TypeName="TherapyDBModel.Support_Tickets">
+              <MappingFragment StoreEntitySet="Support_Tickets">
+                <ScalarProperty Name="Support_ID" ColumnName="Support_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Therapists">
+            <EntityTypeMapping TypeName="TherapyDBModel.Therapist">
+              <MappingFragment StoreEntitySet="Therapists">
+                <ScalarProperty Name="Therapist_ID" ColumnName="Therapist_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Document_Type" ColumnName="Document_Type" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="Professional_Certificate" ColumnName="Professional_Certificate" />
+                <ScalarProperty Name="Specialty" ColumnName="Specialty" />
+                <ScalarProperty Name="Verification_Status" ColumnName="Verification_Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tutors">
+            <EntityTypeMapping TypeName="TherapyDBModel.Tutor">
+              <MappingFragment StoreEntitySet="Tutors">
+                <ScalarProperty Name="Tutor_ID" ColumnName="Tutor_ID" />
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Document_Type" ColumnName="Document_Type" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="Certificate" ColumnName="Certificate" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TherapyDBModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="User_ID" ColumnName="User_ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Registration_Date" ColumnName="Registration_Date" />
+                <ScalarProperty Name="Avatar" ColumnName="Avatar" />
+                <ScalarProperty Name="Role_ID" ColumnName="Role_ID" />
+                <ScalarProperty Name="State_ID" ColumnName="State_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "VTerapeuta";
+}
+
+
+<link rel="stylesheet" href="~/css/CitasProgramadas.css" />
+
+<div class="header-icons">
+    <span>←</span>
+    <span>☰</span>
+</div>
+
+<div class="header">
+    <h1>Citas Programadas</h1>
+    <div class="order-section">
+        <span>⇅ Ordenar por fecha y hora</span>
+        <span class="sms-icon">💬 SMS</span>
+    </div>
+</div>
+
+<div class="citas-container">
+    <!-- Cita 1 -->
+    <div class="cita-card">
+        <div class="cita-left">
+            <img src="~/Content/Images/Usuario_Hombre.png" alt="Paciente" class="avatar" />
+            <div class="cita-info">
+                <p><b>Nombre:</b> Juan Perez</p>
+                <p><b>Edad:</b> 14</p>
+                <p class="acciones">
+                    <span class="reprogramar">🔁 Reprogramar cita</span>
+                    <span class="cancelar">❌ Cancelar cita</span>
+                </p>
+                <a href="@Url.Action("GenerarReporte", "VTerapeuta", new { paciente = "Juan Perez" })"
+                   class="reporte-link" target="_blank">
+                    📄 Ver Reporte
+                </a>
+
+            </div>
+        </div>
+
+        <div class="cita-right">
+            <p><b>Mes:</b> 09</p>
+            <p><b>Día:</b> 15</p>
+            <p><b>Hora:</b> 11:34 am</p>
+            <p><b>Duración:</b> 40 min</p>
+            <button class="btn-iniciar">✔ Iniciar Cita</button>
+        </div>
+    </div>
+
+    <!-- Cita 2 -->
+    <div class="cita-card">
+        <div class="cita-left">
+            <img src="~/Content/Images/Usuario_Mujer.png" alt="Paciente" class="avatar" />
+            <div class="cita-info">
+                <p><b>Nombre:</b> Ana Torres</p>
+                <p><b>Edad:</b> 8</p>
+                <p class="acciones">
+                    <span class="reprogramar">🔁 Reprogramar cita</span>
+                    <span class="cancelar">❌ Cancelar cita</span>
+                </p>
+                <a href="@Url.Action("GenerarReporte", "VTerapeuta", new { paciente = "Ana Torres" })"
+                   class="reporte-link" target="_blank">
+                    📄 Ver Reporte
+                </a>
+
+            </div>
+        </div>
+
+        <div class="cita-right">
+            <p><b>Mes:</b> 09</p>
+            <p><b>Día:</b> 20</p>
+            <p><b>Hora:</b> 15:45 pm</p>
+            <p><b>Duración:</b> 20 min</p>
+            <button class="btn-iniciar">✔ Iniciar Cita</button>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-menu">
+    <a href="#" class="active">Citas Programadas</a>
+    <a href="#">Mis Horarios</a>
+    <a href="#">Mi Perfil</a>
+</div>
+
