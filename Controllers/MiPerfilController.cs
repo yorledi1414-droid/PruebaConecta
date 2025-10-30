@@ -6,10 +6,10 @@ using System.Web.Mvc;
 
 namespace PruebaConecta.Controllers
 {
-    public class RPacienteController : Controller
+    public class MiPerfilController : Controller
     {
-        // GET: RPaciente
-        public ActionResult RPaciente()
+        // GET: MiPerfil
+        public ActionResult MiPerfil()
         {
             return View();
         }

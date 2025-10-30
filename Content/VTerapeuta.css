@@ -1,0 +1,159 @@
+﻿body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #81c7f5, #c2a6f9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ===== ENCABEZADO ===== */
+.header-icons {
+    position: absolute;
+    top: 25px;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.header {
+    margin-top: 50px;
+    text-align: center;
+    color: white;
+}
+
+    .header h1 {
+        font-size: 2rem;
+        margin-bottom: 5px;
+    }
+
+.order-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    font-size: 1rem;
+}
+
+.sms-icon {
+    background-color: white;
+    color: #00b3ff;
+    border-radius: 50%;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}
+
+/* ===== CONTENEDOR PRINCIPAL ===== */
+.citas-container {
+    width: 75%;
+    max-width: 950px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.cita-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    padding: 20px 30px;
+}
+
+/* ===== SECCIÓN IZQUIERDA ===== */
+.cita-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #81c7f5;
+}
+
+.cita-info p {
+    margin: 4px 0;
+}
+
+.acciones {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5px;
+}
+
+.reprogramar {
+    color: #e6b800;
+    cursor: pointer;
+}
+
+.cancelar {
+    color: #e63946;
+    cursor: pointer;
+}
+
+.reporte-link {
+    display: inline-block;
+    margin-top: 8px;
+    color: #0077cc;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .reporte-link:hover {
+        text-decoration: underline;
+    }
+
+/* ===== SECCIÓN DERECHA ===== */
+.cita-right {
+    text-align: right;
+}
+
+    .cita-right p {
+        margin: 4px 0;
+    }
+
+.btn-iniciar {
+    margin-top: 8px;
+    background-color: #c1f3c1;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .btn-iniciar:hover {
+        background-color: #a9e3a9;
+    }
+
+/* ===== MENÚ INFERIOR ===== */
+.bottom-menu {
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+}
+
+    .bottom-menu a {
+        background-color: rgba(255, 255, 255, 0.3);
+        padding: 10px 20px;
+        border-radius: 10px;
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+        .bottom-menu a.active {
+            background-color: rgba(255, 255, 255, 0.6);
+        }
