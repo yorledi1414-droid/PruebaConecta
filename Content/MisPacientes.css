@@ -1,0 +1,162 @@
+﻿body {
+    background: linear-gradient(135deg, #82b3ff, #c28bfa);
+    font-family: 'Poppins', sans-serif;
+}
+
+.pac-wrapper {
+    padding: 40px;
+}
+
+/* VOLVER */
+.btn-back {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* HEADER */
+.header-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .header-box h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .header-box p {
+        margin: 0;
+        color: #666;
+    }
+
+.search-box {
+    background: #f4f4f4;
+    border-radius: 12px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+}
+
+    .search-box i {
+        color: #777;
+        margin-right: 10px;
+    }
+
+    .search-box input {
+        border: none;
+        background: none;
+        outline: none;
+    }
+
+/* STATS ROW */
+.stats-row {
+    margin-top: 25px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+    .stat-card p {
+        color: #666;
+        margin: 0;
+    }
+
+    .stat-card h2 {
+        font-size: 32px;
+        margin-top: 10px;
+    }
+
+/* TABLE */
+.table-box {
+    margin-top: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+    .table-box h3 {
+        margin: 0;
+    }
+
+    .table-box .desc {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead th {
+    text-align: left;
+    padding-bottom: 12px;
+    color: #666;
+}
+
+tbody tr td {
+    padding: 12px 0;
+    border-top: 1px solid #eee;
+}
+
+/* BADGES */
+.badge {
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: bold;
+    color: white;
+}
+
+    .badge.verde {
+        background: #34d399;
+    }
+
+    .badge.amarillo {
+        background: #fbbf24;
+    }
+
+    .badge.rojo {
+        background: #ef4444;
+    }
+
+/* COLORS */
+.green {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.red {
+    color: #dc2626;
+    font-weight: bold;
+}
+
+.orange {
+    color: #f97316;
+    font-weight: bold;
+}
+
+/* BOTÓN VER PROGRESO */
+.btn-view {
+    padding: 8px 18px;
+    background: linear-gradient(90deg, #6aa4ff, #c28bfa);
+    color: white;
+    font-size: 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+}

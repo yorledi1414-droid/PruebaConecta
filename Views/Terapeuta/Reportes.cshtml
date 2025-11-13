@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Reportes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Reportes.css" />
+}
+
+<div class="reportes-wrapper">
+
+    <!-- VOLVER -->
+    <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-back">← Volver al Dashboard</a>
+
+    <!-- HEADER -->
+    <div class="header-card">
+        <div>
+            <h1>Reportes</h1>
+            <p>Análisis del progreso y estadísticas</p>
+        </div>
+
+        <div class="export-buttons">
+            <button class="btn-excel"><i class="fas fa-download"></i> Excel</button>
+            <button class="btn-pdf"><i class="fas fa-download"></i> PDF</button>
+        </div>
+    </div>
+
+    <!-- FILTROS -->
+    <div class="filtros-card">
+        <h2>Filtros de Reporte</h2>
+        <p class="desc">Selecciona los criterios para generar el reporte</p>
+
+        <div class="filtros-grid">
+            <div class="campo">
+                <label>Paciente</label>
+                <select class="input-select">
+                    <option>Todos los pacientes</option>
+                </select>
+            </div>
+
+            <div class="campo">
+                <label>Fecha Inicio</label>
+                <input type="date" class="input-select" value="2025-10-01" />
+            </div>
+
+            <div class="campo">
+                <label>Fecha Fin</label>
+                <input type="date" class="input-select" value="2025-11-12" />
+            </div>
+        </div>
+    </div>
+
+    <!-- TARJETAS KPI -->
+    <div class="kpi-grid">
+        <div class="kpi-card">
+            <h3>Total Sesiones</h3>
+            <p class="kpi-num">195</p>
+            <span class="kpi-desc">En período seleccionado</span>
+        </div>
+
+        <div class="kpi-card">
+            <h3>Promedio General</h3>
+            <p class="kpi-num">82%</p>
+            <span class="kpi-green">+10% vs período anterior</span>
+        </div>
+
+        <div class="kpi-card">
+            <h3>Tasa de Asistencia</h3>
+            <p class="kpi-num">94%</p>
+            <span class="kpi-desc">184 de 195 citas</span>
+        </div>
+
+        <div class="kpi-card">
+            <h3>Mejora Promedio</h3>
+            <p class="kpi-num">+10%</p>
+            <span class="kpi-desc">Comparado con inicio</span>
+        </div>
+    </div>
+
+    <!-- GRAFICAS (simuladas) -->
+    <div class="graficas-grid">
+
+        <div class="grafica-card">
+            <h3>📊 Progreso Mensual</h3>
+            <p>Evolución del promedio general</p>
+            <img src="~/Content/img/grafica-lineal.png" class="grafica-img" />
+        </div>
+
+        <div class="grafica-card">
+            <h3>📈 Rendimiento por Juego</h3>
+            <p>Promedio de puntuación por categoría</p>
+            <img src="~/Content/img/grafica-barras.png" class="grafica-img" />
+        </div>
+
+    </div>
+
+    <!-- TABLA -->
+    <div class="tabla-card">
+        <h3>📄 Estadísticas por Paciente</h3>
+        <p>Resumen del desempeño individual</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Paciente</th>
+                    <th>Sesiones</th>
+                    <th>Promedio</th>
+                    <th>Mejora</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr><td>María García</td><td>45</td><td class="green">88%</td><td>+12%</td></tr>
+                <tr><td>Juan Pérez</td><td>32</td><td class="green">92%</td><td>+8%</td></tr>
+                <tr><td>Ana Martínez</td><td>38</td><td class="orange">75%</td><td>+5%</td></tr>
+                <tr><td>Carlos López</td><td>52</td><td class="yellow">68%</td><td>+15%</td></tr>
+                <tr><td>Laura Sánchez</td><td>28</td><td class="green">85%</td><td>+10%</td></tr>
+            </tbody>
+
+        </table>
+    </div>
+
+</div>

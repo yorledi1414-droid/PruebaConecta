@@ -1,0 +1,163 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor */
+.reportes-wrapper {
+    padding: 25px;
+}
+
+/* Volver */
+.btn-back {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+/* Header */
+.header-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+    .header-card h1 {
+        margin: 0;
+        font-size: 30px;
+    }
+
+.export-buttons button {
+    padding: 10px 16px;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.btn-excel {
+    background: #ebebeb;
+}
+
+.btn-pdf {
+    background: linear-gradient(90deg, #5f92ff, #c28bfa);
+    color: white;
+}
+
+/* Filtros */
+.filtros-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.filtros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.input-select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* KPI */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.kpi-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.kpi-num {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 8px 0;
+}
+
+.kpi-green {
+    color: #16a34a;
+}
+
+.green {
+    color: #16a34a;
+}
+
+.orange {
+    color: #ea580c;
+}
+
+.yellow {
+    color: #ca8a04;
+}
+
+/* Graficas */
+.graficas-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.grafica-card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+.grafica-img {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Tabla */
+.tabla-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+}
+
+table {
+    width: 100%;
+    margin-top: 15px;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+}
+
+tbody tr:nth-child(odd) {
+    background: #f7f7f7;
+}
+
+tbody tr:nth-child(even) {
+    background: #ffffff;
+}

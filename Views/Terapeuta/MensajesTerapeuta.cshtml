@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Mensajes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/MensajesTerapeuta.css" />
+}
+
+<div class="mensajes-wrapper">
+
+    <!-- VOLVER -->
+    <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-back">← Volver al Dashboard</a>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="mensajes-container">
+
+        <!-- LISTA DE CONVERSACIONES -->
+        <div class="lista-mensajes">
+
+            <h2>Mensajes</h2>
+
+            <input type="text" class="buscador" placeholder="Buscar tutor..." />
+
+            <div class="conversacion-item active">
+                <strong>Ana López</strong>
+                <p>¿Listas las notas de Juan?</p>
+                <span>10:45 AM</span>
+            </div>
+
+            <div class="conversacion-item">
+                <strong>Carlos Rodríguez</strong>
+                <p>Perfecto, gracias.</p>
+                <span>Ayer</span>
+            </div>
+
+            <div class="conversacion-item">
+                <strong>María Fernández</strong>
+                <p>¿Podemos reagendar la cita?</p>
+                <span>12 Nov</span>
+            </div>
+
+        </div>
+
+        <!-- PANEL DE CHAT -->
+        <div class="chat-panel">
+
+            <!-- Header -->
+            <div class="chat-header">
+                <strong>Ana López</strong>
+                <span>Tutor</span>
+            </div>
+
+            <!-- Mensajes -->
+            <div class="chat-body">
+
+                <div class="msg-left">
+                    Hola, terapeuta. ¿Tienes las observaciones de Juan?
+                </div>
+
+                <div class="msg-right">
+                    Sí, te las envío en un momento.
+                </div>
+
+                <div class="msg-left">
+                    Gracias, las necesito para su evaluación semanal.
+                </div>
+
+            </div>
+
+            <!-- Enviar mensaje -->
+            <div class="chat-input">
+                <input type="text" placeholder="Escribe un mensaje..." />
+                <button class="btn-send"><i class="fas fa-paper-plane"></i></button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

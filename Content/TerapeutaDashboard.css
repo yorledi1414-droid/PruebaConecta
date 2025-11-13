@@ -1,0 +1,158 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+}
+
+.terap-wrapper {
+    padding: 40px;
+}
+
+/* HEADER */
+.header h1 {
+    margin: 0;
+    font-size: 32px;
+}
+
+.header p {
+    color: #555;
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
+
+.top-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-top {
+    background: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+    .btn-top.profile {
+        background: linear-gradient(90deg, #6aa4ff, #c28bfa);
+        color: white;
+    }
+
+/* STATS GRID */
+.stats-grid {
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.stat-card {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    position: relative;
+    overflow: hidden;
+}
+
+    .stat-card .label {
+        color: #666;
+        margin: 0;
+    }
+
+    .stat-card h2 {
+        font-size: 32px;
+        margin: 5px 0;
+    }
+
+    .stat-card .sub {
+        color: #777;
+    }
+
+        .stat-card .sub.green {
+            color: #14b814;
+            font-weight: bold;
+        }
+
+/* ICONOS EN ESTADÍSTICAS */
+.icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 28px;
+    opacity: 0.35;
+}
+
+    .icon.blue {
+        color: #3b82f6;
+    }
+
+    .icon.purple {
+        color: #9333ea;
+    }
+
+    .icon.green {
+        color: #10b981;
+    }
+
+    .icon.orange {
+        color: #f97316;
+    }
+
+/* QUICK CARDS */
+.quick-grid {
+    margin-top: 35px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.quick-card {
+    background: white;
+    padding: 35px 15px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: #222;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+    .quick-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .quick-card i {
+        font-size: 32px;
+        display: block;
+        margin-bottom: 10px;
+    }
+
+/* Colores */
+.blue-card i {
+    color: #2563eb;
+}
+
+.purple-card i {
+    color: #9333ea;
+}
+
+.pink-card i {
+    color: #ec4899;
+}
+
+.violet-card i {
+    color: #8b5cf6;
+}
+
+.cyan-card i {
+    color: #06b6d4;
+}
+
+.teal-card i {
+    color: #0d9488;
+}

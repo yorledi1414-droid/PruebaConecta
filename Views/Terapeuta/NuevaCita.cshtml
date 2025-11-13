@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Nueva Cita";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/NuevaCita.css" />
+}
+
+<div class="crear-wrapper">
+
+    <!-- Botón volver -->
+    <a href="@Url.Action("AgendaDeCitas", "Terapeuta")" class="btn-back">
+        ← Volver a la Agenda
+    </a>
+
+    <!-- Título -->
+    <h1 class="title">Crear Nueva Cita</h1>
+    <p class="subtitle">Programa una sesión con un paciente</p>
+
+    <!-- Contenedor principal -->
+    <div class="crear-container">
+
+        <!-- Formulario -->
+        <div class="crear-left">
+
+            <div class="form-group">
+                <label>Paciente *</label>
+                <select class="input">
+                    <option>Selecciona un paciente</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Fecha *</label>
+                <input type="date" class="input" />
+            </div>
+
+            <div class="form-group">
+                <label>Hora *</label>
+                <input type="time" class="input" />
+            </div>
+
+            <div class="form-group">
+                <label>Notas</label>
+                <textarea class="input textarea" placeholder="Información adicional..."></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="btn-row">
+                <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-cancelar">
+                    Cancelar
+                </a>
+
+                <button class="btn-crear">Crear Cita</button>
+            </div>
+
+        </div>
+
+
+        <!-- Panel derecho -->
+        <div class="crear-right">
+            <h3>Consejos</h3>
+            <ul>
+                <li>Selecciona el paciente y la fecha correcta</li>
+                <li>Incluye notas importantes para la sesión</li>
+                <li>Revisa tu agenda para evitar conflictos</li>
+            </ul>
+        </div>
+
+    </div>
+
+</div>

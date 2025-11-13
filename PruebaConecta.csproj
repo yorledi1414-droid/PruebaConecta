@@ -138,6 +138,7 @@
     <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\RPacienteController.cs" />
+    <Compile Include="Controllers\TerapeutaController.cs" />
     <Compile Include="Controllers\TutorController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
     <Compile Include="Dtos\UserDto.cs" />
@@ -262,6 +263,14 @@
     <Content Include="Content\Notificaciones.css" />
     <Content Include="Content\Configuracion.css" />
     <Content Include="Content\MiPerfilTutor.css" />
+    <Content Include="Content\MiPerfilTerapeuta.css" />
+    <Content Include="Content\MisPacientes.css" />
+    <Content Include="Content\ResgistrarProgreso.css" />
+    <Content Include="Content\AgendaDeCitas.css" />
+    <Content Include="Content\NuevaCita.css" />
+    <Content Include="Content\Reportes.css" />
+    <Content Include="Content\MensajesTerapeuta.css" />
+    <Content Include="Content\TerapeutaDashboard.css" />
     <Content Include="Content\TutorDashboard.css" />
     <Content Include="Content\TicketSoporte.css" />
     <Content Include="favicon.ico" />
@@ -342,6 +351,16 @@
     <Content Include="Views\Tutor\Notificaciones.cshtml" />
     <Content Include="Views\Tutor\Configuracion.cshtml" />
     <Content Include="Views\Tutor\MiPerfil.cshtml" />
+    <Content Include="Views\Terapeuta\TerapeutaVista.cshtml" />
+    <Content Include="Views\Terapeuta\ConfiguracionTerapeuta.cshtml" />
+    <Content Include="Views\Terapeuta\MiPerfilTerapeuta.cshtml" />
+    <Content Include="Views\Terapeuta\MisPacientes.cshtml" />
+    <Content Include="Views\Terapeuta\RegistrarProgreso.cshtml" />
+    <Content Include="Views\Terapeuta\AgendaDeCitas.cshtml" />
+    <Content Include="Views\Terapeuta\NuevaCita.cshtml" />
+    <Content Include="Views\Terapeuta\Reportes.cshtml" />
+    <Content Include="Views\Terapeuta\NotificacionesTerapeuta.cshtml" />
+    <Content Include="Views\Terapeuta\MensajesTerapeuta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

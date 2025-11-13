@@ -1,0 +1,200 @@
+﻿body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #82b3ff, #c28bfa);
+}
+
+/* CONTENEDOR */
+.reg-wrapper {
+    padding: 40px;
+}
+
+/* VOLVER */
+.btn-back {
+    font-size: 18px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 25px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* TITULO */
+.title-box {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+    .title-box h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .title-box p {
+        margin: 0;
+        color: #666;
+    }
+
+/* GRID PRINCIPAL */
+.layout-grid {
+    display: grid;
+    grid-template-columns: 2.3fr 1fr;
+    gap: 25px;
+}
+
+/* FORMULARIO */
+.form-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+    .form-card h2 {
+        margin: 0;
+    }
+
+.desc {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* GRID DEL FORMULARIO */
+.form-grid {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f7f7f7;
+    border: none;
+    resize: none;
+}
+
+.form-group.wide {
+    grid-column: span 2;
+}
+
+/* INPUT CON ICONO */
+.input-icon {
+    position: relative;
+}
+
+    .input-icon i {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #777;
+    }
+
+    .input-icon input {
+        padding-left: 40px !important;
+    }
+
+/* BOTONES */
+.btn-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+.btn-cancel {
+    padding: 12px;
+    width: 30%;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: #eee;
+    font-weight: bold;
+}
+
+.btn-save {
+    padding: 12px;
+    width: 68%;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #6aa4ff, #c28bfa);
+    color: white;
+    border: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* PANEL LATERAL */
+.side-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* REGISTROS RECIENTES */
+.recent-box {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+.recent-item {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+    .recent-item:last-child {
+        border: none;
+    }
+
+    .recent-item h4 {
+        margin: 0;
+        font-size: 16px;
+    }
+
+    .recent-item p {
+        margin: 0;
+        color: #666;
+    }
+
+.date {
+    font-size: 13px;
+    color: #777;
+}
+
+.percent {
+    position: absolute;
+    right: 0;
+    top: 20px;
+    font-weight: bold;
+}
+
+    .percent.green {
+        color: #22c55e;
+    }
+
+    .percent.orange {
+        color: #f97316;
+    }
+
+/* CONSEJOS */
+.tips-box {
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+}
+
+    .tips-box ul {
+        padding-left: 18px;
+    }
+
+    .tips-box li {
+        margin-bottom: 8px;
+        color: #555;
+    }
