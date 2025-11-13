@@ -98,7 +98,7 @@ namespace PruebaConecta.Controllers
         [HttpGet]
         public ActionResult ResponderTicket()
         {
-            return View(); // <-- Esto es lo que faltaba
+            return View(); 
         }
 
         [HttpPost]

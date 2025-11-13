@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Configuración";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Configuracion.css" />
+}
+
+<div class="config-wrapper">
+
+    <!-- BOTÓN VOLVER -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- HEADER PRINCIPAL -->
+    <div class="config-header">
+        <h1>Configuración</h1>
+        <p>Personaliza tu experiencia</p>
+    </div>
+
+    <!-- CONTENIDO -->
+    <div class="config-content">
+
+        <!-- NOTIFICACIONES -->
+        <div class="config-section">
+            <h2>Notificaciones</h2>
+            <p class="desc">Gestiona cómo recibes las notificaciones</p>
+
+            <!-- EMAIL -->
+            <div class="item">
+                <div>
+                    <strong>Notificaciones por Email</strong>
+                    <p>Recibe actualizaciones por correo</p>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- PUSH -->
+            <div class="item">
+                <div>
+                    <strong>Notificaciones Push</strong>
+                    <p>Recibe alertas en tu dispositivo</p>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- MENSAJES -->
+            <div class="item">
+                <div>
+                    <strong>Mensajes Nuevos</strong>
+                    <p>Notificar cuando recibas mensajes</p>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <!-- CITAS -->
+            <div class="item">
+                <div>
+                    <strong>Recordatorios de Citas</strong>
+                    <p>Recibe recordatorios de tus citas</p>
+                </div>
+
+                <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <!-- PRIVACIDAD -->
+        <div class="config-section">
+            <h2>Privacidad y Seguridad</h2>
+            <p class="desc">Controla tu información personal</p>
+
+            <button class="btn-light">Descargar mis datos</button>
+            <button class="btn-danger">Eliminar mi cuenta</button>
+        </div>
+
+        <!-- GUARDAR CAMBIOS -->
+        <button class="btn-save">Guardar Cambios</button>
+
+    </div>
+
+</div>

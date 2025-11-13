@@ -138,6 +138,7 @@
     <Compile Include="Controllers\RContrasenaController.cs" />
     <Compile Include="Controllers\RegistroController.cs" />
     <Compile Include="Controllers\RPacienteController.cs" />
+    <Compile Include="Controllers\TutorController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Global.asax.cs">
@@ -254,6 +255,14 @@
     <Content Include="Content\OjoLogo.css" />
     <Content Include="Content\EliminarUsuario.css" />
     <Content Include="Content\ResponderTicket.css" />
+    <Content Include="Content\RegistrarPaciente.css" />
+    <Content Include="Content\Mensajes.css" />
+    <Content Include="Content\Agenda.css" />
+    <Content Include="Content\Soporte.css" />
+    <Content Include="Content\Notificaciones.css" />
+    <Content Include="Content\Configuracion.css" />
+    <Content Include="Content\MiPerfilTutor.css" />
+    <Content Include="Content\TutorDashboard.css" />
     <Content Include="Content\TicketSoporte.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -325,6 +334,14 @@
     <Content Include="Views\Admin\EliminarUsuario.cshtml" />
     <Content Include="Views\Admin\Ticket.cshtml" />
     <Content Include="Views\Admin\ResponderTicket.cshtml" />
+    <Content Include="Views\Tutor\TutorVista.cshtml" />
+    <Content Include="Views\Tutor\RegistrarPaciente.cshtml" />
+    <Content Include="Views\Tutor\Mensajes.cshtml" />
+    <Content Include="Views\Tutor\Agenda.cshtml" />
+    <Content Include="Views\Tutor\Soporte.cshtml" />
+    <Content Include="Views\Tutor\Notificaciones.cshtml" />
+    <Content Include="Views\Tutor\Configuracion.cshtml" />
+    <Content Include="Views\Tutor\MiPerfil.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Agenda de Citas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Agenda.css" />
+}
+
+<div class="agenda-wrapper">
+
+    <!-- BOTÓN VOLVER -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- TÍTULO -->
+    <div class="agenda-header">
+        <h1>Agenda de Citas</h1>
+        <p>Gestiona tus citas y sesiones</p>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="agenda-content">
+
+        <!-- CALENDARIO -->
+        <div class="calendar-container">
+
+            <div class="calendar-header">
+                <span class="nav prev">‹</span>
+                <h2>Noviembre 2025</h2>
+                <span class="nav next">›</span>
+            </div>
+
+            <div class="weekdays">
+                <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span>
+            </div>
+
+            <div class="calendar-grid">
+
+                <!-- Fila 1 -->
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="empty"></div>
+                <div class="day event-green">10:00 AM</div>
+
+                <!-- Fila 2 -->
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day">4</div>
+                <div class="day">5</div>
+                <div class="day">6</div>
+                <div class="day">7</div>
+                <div class="day event-blue">10:00 AM</div>
+
+                <!-- Fila 3 -->
+                <div class="day">9</div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day selected">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+                <div class="day">15</div>
+
+                <!-- Fila 4 -->
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day event-yellow">11:30 AM</div>
+                <div class="day">19</div>
+                <div class="day event-yellow">09:00 AM</div>
+                <div class="day">21</div>
+                <div class="day">22</div>
+
+                <!-- Fila 5 -->
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+                <div class="day">29</div>
+
+            </div>
+
+        </div>
+
+        <!-- PANEL DE CITAS -->
+        <div class="appointments-container">
+
+            <h3>Próximas Citas</h3>
+            <p class="subtitle">Tus próximas sesiones programadas</p>
+
+            <!-- Cita 1 -->
+            <div class="appointment-card">
+                <div class="row">
+                    <p class="name">Dr. Roberto García</p>
+                    <span class="badge confirmada">confirmada</span>
+                </div>
+
+                <p class="info"><i class="far fa-clock"></i> 15/11/2025 – 10:00 AM</p>
+                <p class="info"><i class="fas fa-map-marker-alt"></i> Sala 3</p>
+                <p class="info"><i class="fas fa-user"></i> María García</p>
+            </div>
+
+            <!-- Cita 2 -->
+            <div class="appointment-card">
+                <div class="row">
+                    <p class="name">Dra. Ana Martínez</p>
+                    <span class="badge pendiente">pendiente</span>
+                </div>
+
+                <p class="info"><i class="far fa-clock"></i> 18/11/2025 – 11:30 AM</p>
+                <p class="info"><i class="fas fa-map-marker-alt"></i> Sala 1</p>
+                <p class="info"><i class="fas fa-user"></i> María García</p>
+            </div>
+
+            <!-- Cita 3 -->
+            <div class="appointment-card">
+                <div class="row">
+                    <p class="name">Dr. Carlos López</p>
+                    <span class="badge pendiente">pendiente</span>
+                </div>
+
+                <p class="info"><i class="far fa-clock"></i> 20/11/2025 – 09:00 AM</p>
+                <p class="info"><i class="fas fa-map-marker-alt"></i> Sala 2</p>
+                <p class="info"><i class="fas fa-user"></i> María García</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

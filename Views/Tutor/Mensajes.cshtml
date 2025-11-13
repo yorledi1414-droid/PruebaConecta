@@ -1,0 +1,111 @@
+﻿@{
+    ViewBag.Title = "Mensajes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Mensajes.css" />
+}
+
+<div class="messages-container">
+
+    <!-- Botón volver -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back-dashboard">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- Panel principal -->
+    <div class="messages-panel">
+
+        <!-- Panel izquierdo: conversaciones -->
+        <div class="conversations-list">
+
+            <h3>Mensajes</h3>
+
+            <input type="text" placeholder="Buscar conversaciones..." class="search-chat" />
+
+            <!-- Contacto 1 -->
+            <div class="contact active">
+                <div class="avatar">DRG</div>
+                <div class="contact-info">
+                    <p class="name">Dr. Roberto García</p>
+                    <p class="role">Terapeuta Principal</p>
+                    <p class="preview">María ha mostrado excelente progreso</p>
+                    <p class="time">10:30 AM</p>
+                </div>
+            </div>
+
+            <!-- Contacto 2 -->
+            <div class="contact">
+                <div class="avatar">DAM</div>
+                <div class="contact-info">
+                    <p class="name">Dra. Ana Martínez</p>
+                    <p class="role">Terapeuta de Lenguaje</p>
+                    <p class="preview">¿Podemos agendar una reunión?</p>
+                    <p class="time">Ayer</p>
+                </div>
+            </div>
+
+            <!-- Contacto 3 -->
+            <div class="contact">
+                <div class="avatar">DCL</div>
+                <div class="contact-info">
+                    <p class="name">Dr. Carlos López</p>
+                    <p class="role">Terapeuta Ocupacional</p>
+                    <p class="preview">Gracias por la información</p>
+                    <p class="time">2 días</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel derecho: chat -->
+        <div class="chat-panel">
+
+            <div class="chat-header">
+                <div class="avatar big">DRG</div>
+                <div>
+                    <p class="chat-name">Dr. Roberto García</p>
+                    <p class="chat-role">Terapeuta Principal</p>
+                </div>
+            </div>
+
+            <div class="chat-body">
+
+                <div class="msg received">
+                    <p class="text">Buenos días, quería informarle sobre el progreso de María</p>
+                    <span class="time">10:00 AM</span>
+                </div>
+
+                <div class="msg sent">
+                    <p class="text">¡Hola Doctor! Por favor, cuénteme</p>
+                    <span class="time">10:05 AM</span>
+                </div>
+
+                <div class="msg received">
+                    <p class="text">María ha mostrado excelente progreso esta semana en reconocimiento de emociones</p>
+                    <span class="time">10:10 AM</span>
+                </div>
+
+                <div class="msg received">
+                    <p class="text">Ha aumentado su capacidad de identificar expresiones faciales en un 40%</p>
+                    <span class="time">10:10 AM</span>
+                </div>
+
+                <div class="msg sent">
+                    <p class="text">¡Qué maravillosa noticia! Muchas gracias por su dedicación</p>
+                    <span class="time">10:12 AM</span>
+                </div>
+
+            </div>
+
+            <!-- Barra inferior -->
+            <div class="chat-input-box">
+                <input type="text" placeholder="Escribe un mensaje..." class="input-message" />
+                <button class="btn-send">Enviar</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

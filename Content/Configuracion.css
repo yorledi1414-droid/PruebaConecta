@@ -1,0 +1,151 @@
+﻿.config-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #82b3ff, #b889f4);
+}
+
+.btn-back {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+    .btn-back:hover {
+        opacity: .8;
+    }
+
+.config-header {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+    .config-header h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .config-header p {
+        color: #666;
+    }
+
+.config-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.config-section {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+    .config-section h2 {
+        margin-top: 0;
+    }
+
+    .config-section .desc {
+        color: #666;
+        margin-top: -5px;
+        margin-bottom: 20px;
+    }
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+    .item p {
+        margin: 0;
+        color: #666;
+    }
+
+/* Switch */
+.switch {
+    position: relative;
+    width: 48px;
+    height: 24px;
+    display: inline-block;
+}
+
+    .switch input {
+        display: none;
+    }
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background: #bbb;
+    border-radius: 24px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: 0.3s;
+}
+
+    .slider:before {
+        content: "";
+        height: 18px;
+        width: 18px;
+        position: absolute;
+        border-radius: 50%;
+        background: white;
+        left: 3px;
+        bottom: 3px;
+        transition: 0.3s;
+    }
+
+.switch input:checked + .slider {
+    background: #2d2d49;
+}
+
+    .switch input:checked + .slider:before {
+        transform: translateX(24px);
+    }
+
+/* Privacidad */
+.btn-light {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    background: #f7f7f7;
+    border: 1px solid #ddd;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.btn-danger {
+    width: 100%;
+    padding: 12px;
+    font-weight: bold;
+    border-radius: 10px;
+    background: #ffe6e6;
+    color: #c62828;
+    border: 1px solid #ffb3b3;
+}
+
+/* Guardar cambios */
+.btn-save {
+    width: 200px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    background: #6cb4ff;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+    .btn-save:hover {
+        filter: brightness(1.05);
+    }

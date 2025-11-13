@@ -1,0 +1,97 @@
+﻿@{
+    ViewBag.Title = "Soporte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Soporte.css" />
+}
+
+<div class="support-wrapper">
+
+    <!-- BOTÓN VOLVER -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- TÍTULO PRINCIPAL -->
+    <div class="support-header">
+        <h1>Soporte Técnico</h1>
+        <p>Estamos aquí para ayudarte</p>
+    </div>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="support-content">
+
+        <!-- Enviar Ticket -->
+        <div class="ticket-form">
+            <h3>Enviar Nuevo Ticket</h3>
+            <p class="desc">Describe tu problema o pregunta y te responderemos lo antes posible</p>
+
+            <label>Asunto</label>
+            <input type="text" placeholder="Describe brevemente tu consulta" />
+
+            <label>Mensaje</label>
+            <textarea placeholder="Describe detalladamente tu problema o pregunta"></textarea>
+
+            <button class="btn-send">
+                <i class="fas fa-paper-plane"></i> Enviar Ticket
+            </button>
+        </div>
+
+        <!-- Mis Tickets -->
+        <div class="ticket-list">
+            <h3>Mis Tickets</h3>
+            <p class="desc">Historial de solicitudes de soporte</p>
+
+            <!-- Ticket 1 -->
+            <div class="ticket-card">
+                <div class="row">
+                    <p class="ticket-title">Problema con la visualización de gráficas</p>
+                    <span class="badge closed">cerrado</span>
+                </div>
+
+                <p class="ticket-text">No puedo ver las gráficas de progreso en la sección de mi paciente</p>
+                <p class="ticket-date">Enviado: 5 Nov 2025</p>
+
+                <div class="ticket-response">
+                    <strong>Respuesta del equipo de soporte:</strong>
+                    <p>Hemos solucionado el problema. Por favor, actualice la página.</p>
+                </div>
+            </div>
+
+            <!-- Ticket 2 -->
+            <div class="ticket-card">
+                <div class="row">
+                    <p class="ticket-title">Duda sobre citas</p>
+                    <span class="badge in-process">en proceso</span>
+                </div>
+
+                <p class="ticket-text">¿Cómo puedo reagendar una cita cancelada?</p>
+                <p class="ticket-date">Enviado: 8 Nov 2025</p>
+            </div>
+
+            <!-- Ticket 3 -->
+            <div class="ticket-card">
+                <div class="row">
+                    <p class="ticket-title">Acceso a mensajes</p>
+                    <span class="badge open">abierto</span>
+                </div>
+
+                <p class="ticket-text">Necesito ayuda para enviar archivos adjuntos a los terapeutas</p>
+                <p class="ticket-date">Enviado: 10 Nov 2025</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- INFORMACIÓN DE CONTACTO (ABAJO, SIN RECUADRO) -->
+    <div class="contact-info">
+        <h3>Información de Contacto</h3>
+
+        <p><strong>Email:</strong> soporte@terapiatea.com</p>
+        <p><strong>Teléfono:</strong> +34 900 123 456</p>
+        <p><strong>Horario:</strong> Lun–Vie: 9:00 – 18:00</p>
+    </div>
+
+</div>

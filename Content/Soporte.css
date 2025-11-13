@@ -1,0 +1,204 @@
+﻿/* Fondo general */
+.support-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #82b3ff, #b889f4);
+}
+
+/* Botón volver */
+.btn-back {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 25px;
+}
+
+    .btn-back:hover {
+        opacity: .8;
+    }
+
+/* Header principal */
+.support-header {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+    .support-header h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .support-header p {
+        margin-top: 5px;
+        color: #666;
+    }
+
+/* Contenido principal */
+.support-content {
+    display: grid;
+    grid-template-columns: 55% 40%;
+    gap: 25px;
+}
+
+/* Formulario de nuevo ticket */
+.ticket-form {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+    .ticket-form h3 {
+        margin-top: 0;
+    }
+
+    .ticket-form .desc {
+        margin-top: -5px;
+        margin-bottom: 20px;
+        color: #666;
+    }
+
+    .ticket-form label {
+        font-weight: bold;
+        display: block;
+        margin-top: 15px;
+    }
+
+    .ticket-form input,
+    .ticket-form textarea {
+        width: 100%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        padding: 12px;
+        margin-top: 8px;
+        background: #f7f8fc;
+        font-size: 15px;
+    }
+
+    .ticket-form textarea {
+        height: 120px;
+        resize: none;
+    }
+
+/* Botón enviar */
+.btn-send {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    border-radius: 12px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #5f92ff, #c28bfa);
+}
+
+    .btn-send i {
+        margin-right: 8px;
+    }
+
+    .btn-send:hover {
+        filter: brightness(1.05);
+    }
+
+/* Panel de tickets */
+.ticket-list {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+    .ticket-list h3 {
+        margin-top: 0;
+    }
+
+    .ticket-list .desc {
+        margin-top: -5px;
+        margin-bottom: 20px;
+        color: #666;
+    }
+
+/* Tarjetas de ticket */
+.ticket-card {
+    background: white;
+    border: 1px solid #e5e5e5;
+    border-radius: 14px;
+    padding: 18px;
+    margin-bottom: 15px;
+}
+
+    .ticket-card .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.ticket-title {
+    font-weight: bold;
+}
+
+.ticket-text {
+    color: #555;
+    margin-top: 5px;
+}
+
+.ticket-date {
+    font-size: 13px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Estado badges */
+.badge {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.closed {
+    background: #e3f8e9;
+    color: #2f8f57;
+}
+
+.in-process {
+    background: #fff1c7;
+    color: #987300;
+}
+
+.open {
+    background: #ffe5e5;
+    color: #a53333;
+}
+
+/* Respuesta dentro del ticket */
+.ticket-response {
+    background: #e6f9ed;
+    border-left: 4px solid #3dbb6f;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* Información de contacto */
+.contact-info {
+    margin-top: 30px;
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+}
+
+    .contact-info h3 {
+        margin-top: 0;
+    }
+
+    .contact-info p {
+        margin: 4px 0;
+        font-size: 15px;
+    }

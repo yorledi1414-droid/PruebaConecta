@@ -1,0 +1,136 @@
+﻿/* Fondo */
+.notif-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #82b3ff, #b889f4);
+}
+
+/* Botón volver */
+.btn-back {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+    .btn-back:hover {
+        opacity: .8;
+    }
+
+/* Header */
+.notif-header {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .notif-header h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .notif-header p {
+        color: #666;
+        margin: 0;
+    }
+
+/* Botón marcar todas */
+.btn-mark-all {
+    padding: 10px 20px;
+    border-radius: 12px;
+    background: white;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+    .btn-mark-all:hover {
+        background: #f3f3f3;
+    }
+
+/* Lista de notificaciones */
+.notif-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Tarjetas */
+.notif-card {
+    display: flex;
+    gap: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 18px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+/* Icono */
+.notif-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 22px;
+}
+
+/* Colores */
+.blue .notif-icon {
+    background: #4ea2ff;
+}
+
+.purple .notif-icon {
+    background: #b17bff;
+}
+
+.yellow .notif-icon {
+    background: #f7c843;
+}
+
+.green .notif-icon {
+    background: #2ecc71;
+}
+
+/* Contenido */
+.notif-content h3 {
+    margin: 0 0 5px 0;
+}
+
+.text {
+    color: #555;
+    margin-bottom: 5px;
+}
+
+.time {
+    color: #888;
+    font-size: 13px;
+}
+
+/* Badge de nuevo */
+.badge.new {
+    background: #e6e1ff;
+    color: #7b61ff;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Filas */
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
