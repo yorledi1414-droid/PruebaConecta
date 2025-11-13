@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Mi Perfil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/MiPerfilTutor.css" />
+}
+
+<div class="perfil-wrapper">
+
+    <!-- Botón Volver -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- Header -->
+    <div class="perfil-header">
+        <h1>Mi Perfil</h1>
+        <p>Administra tu información personal</p>
+    </div>
+
+    <!-- Avatar -->
+    <div class="perfil-avatar">
+        <div class="circle">
+            <span>CR</span>
+            <div class="camera-icon">
+                <i class="fas fa-camera"></i>
+            </div>
+        </div>
+
+        <h2 class="name">Carlos Rodríguez</h2>
+        <p class="rol">Tutor</p>
+    </div>
+
+    <!-- Información Personal -->
+    <div class="perfil-section">
+        <div class="section-header">
+            <h3>Información Personal</h3>
+            <p>Datos básicos de tu cuenta</p>
+
+            <button class="btn-edit">Editar Perfil</button>
+        </div>
+
+        <div class="row">
+            <div class="field-column">
+                <label>Nombre</label>
+                <input type="text" value="Carlos" readonly />
+
+                <label>Correo Electrónico</label>
+                <input type="email" value="carlos.rodriguez@email.com" readonly />
+
+                <label>Documento de Identidad</label>
+                <input type="text" value="12345678A" readonly />
+
+                <label>Dirección</label>
+                <input type="text" value="Calle Principal 123, Madrid" readonly />
+            </div>
+
+            <div class="field-column">
+                <label>Apellido</label>
+                <input type="text" value="Rodríguez" readonly />
+
+                <label>Teléfono</label>
+                <input type="text" value="+34 612 345 678" readonly />
+            </div>
+        </div>
+    </div>
+
+    <!-- Seguridad -->
+    <div class="perfil-section">
+        <div class="section-header">
+            <h3>Seguridad</h3>
+            <p>Gestiona la seguridad de tu cuenta</p>
+        </div>
+
+        <button class="btn-password">Cambiar Contraseña</button>
+    </div>
+
+    <!-- Cerrar Sesión -->
+    <div class="logout-section">
+        <a href="@Url.Action("home", "Home")" class="btn-logout">
+            Cerrar Sesión
+        </a>
+    </div>
+
+</div>

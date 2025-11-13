@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = "Registrar Paciente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/RegistrarPaciente.css" />
+}
+
+<div class="modal-container">
+    <div class="modal-box">
+
+        <h2>Añadir paciente/pacientes</h2>
+
+        <form method="post" enctype="multipart/form-data">
+
+            <label>NOMBRE</label>
+            <input type="text" placeholder="" />
+
+            <label>APELLIDO</label>
+            <input type="text" placeholder="" />
+
+            <label>Documento</label>
+            <select>
+                <option>Seleccione...</option>
+                <option>Cédula</option>
+                <option>Tarjeta de Identidad</option>
+            </select>
+
+            <label>NÚMERO DOCUMENTO</label>
+            <input type="text" placeholder="" />
+
+            <label>SUBIR DIAGNÓSTICO</label>
+            <div class="file-row">
+                <input type="file" />
+            </div>
+
+            <button type="submit" class="btn-guardar">Guardar</button>
+
+        </form>
+    </div>
+</div>

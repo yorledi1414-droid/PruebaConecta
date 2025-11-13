@@ -1,0 +1,112 @@
+﻿/* Reset general */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Fondo degradado igual al registro */
+.login-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #6b9be8 0%, #cba0df 60%, #f0c7d8 100%);
+    color: #fff;
+}
+
+/* Caja principal translúcida */
+.login-box {
+    background: rgba(255, 255, 255, 0.92);
+    padding: 40px 50px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    text-align: center;
+    width: 450px;
+    max-width: 90%;
+}
+
+/* Logo circular como en registro */
+.logo-wrap {
+    margin-bottom: 16px;
+}
+
+.logo {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.9);
+    padding: 12px;
+    box-shadow: 0 6px rgba(0,0,0,0.25);
+    object-fit: contain;
+}
+
+/* Título */
+h2 {
+    color: #333;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    color: #555;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Inputs */
+.input-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 18px 0;
+}
+
+.icon {
+    font-size: 20px;
+    color: #6b9be8;
+    position: absolute;
+    left: 14%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input-row input {
+    width: 70%;
+    border: none;
+    border-bottom: 3px solid rgba(0,0,0,0.75);
+    padding: 10px 35px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #111;
+    background: transparent;
+    outline: none;
+    text-align: center;
+    transition: 0.3s;
+}
+
+    .input-row input:focus {
+        border-color: #7d4cb3;
+    }
+
+/* Botón principal con estilo 3D */
+.btn-primary {
+    margin-top: 16px;
+    width: 60%;
+    min-width: 200px;
+    padding: 12px 20px;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(180deg, #7d4cb3 0%, #8f6bd6 100%);
+    box-shadow: 0 6px rgba(0,0,0,0.35);
+    letter-spa

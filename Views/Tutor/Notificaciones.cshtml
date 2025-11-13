@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "Notificaciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Notificaciones.css" />
+}
+
+<div class="notif-wrapper">
+
+    <!-- Botón volver -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- Header -->
+    <div class="notif-header">
+        <div>
+            <h1>Notificaciones</h1>
+            <p>Tienes 2 notificaciones sin leer</p>
+        </div>
+
+        <button class="btn-mark-all">
+            <i class="fas fa-check"></i> Marcar todas como leídas
+        </button>
+    </div>
+
+    <!-- LISTA SUPERIOR -->
+    <div class="notif-list">
+
+        <!-- 1. Mensaje nuevo -->
+        <div class="notif-card blue">
+            <div class="notif-icon">
+                <i class="fas fa-comment"></i>
+            </div>
+
+            <div class="notif-content">
+                <div class="row">
+                    <h3>Nuevo mensaje de Dr. García</h3>
+                    <span class="badge new">Nuevo</span>
+                </div>
+
+                <p class="text">María ha mostrado excelente progreso esta semana</p>
+                <p class="time">Hace 10 minutos</p>
+            </div>
+        </div>
+
+        <!-- 2. Recordatorio -->
+        <div class="notif-card purple">
+            <div class="notif-icon">
+                <i class="fas fa-calendar-alt"></i>
+            </div>
+
+            <div class="notif-content">
+                <div class="row">
+                    <h3>Recordatorio de cita</h3>
+                    <span class="badge new">Nuevo</span>
+                </div>
+
+                <p class="text">Tienes una cita mañana a las 10:00 AM con Dr. García</p>
+                <p class="time">Hace 2 horas</p>
+            </div>
+        </div>
+
+        <!-- 3. Logro desbloqueado -->
+        <div class="notif-card yellow">
+            <div class="notif-icon">
+                <i class="fas fa-trophy"></i>
+            </div>
+
+            <div class="notif-content">
+                <h3>¡Nuevo logro desbloqueado!</h3>
+
+                <p class="text">María ha completado 10 sesiones de terapia</p>
+                <p class="time">Hace 1 día</p>
+            </div>
+        </div>
+
+        <!-- 4. Ticket respuesta -->
+        <div class="notif-card green">
+            <div class="notif-icon">
+                <i class="fas fa-question-circle"></i>
+            </div>
+
+            <div class="notif-content">
+                <h3>Respuesta a tu ticket de soporte</h3>
+
+                <p class="text">Tu consulta sobre visualización de gráficas ha sido resuelta</p>
+                <p class="time">Hace 2 días</p>
+            </div>
+        </div>
+
+        <!-- 5. Mensaje -->
+        <div class="notif-card blue">
+            <div class="notif-icon">
+                <i class="fas fa-comment"></i>
+            </div>
+
+            <div class="notif-content">
+                <h3>Nuevo mensaje de Dra. Martínez</h3>
+
+                <p class="text">¿Podemos agendar una reunión para discutir el progreso?</p>
+                <p class="time">Hace 3 días</p>
+            </div>
+        </div>
+
+        <!-- 6. Cita confirmada -->
+        <div class="notif-card purple">
+            <div class="notif-icon">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+
+            <div class="notif-content">
+                <h3>Cita confirmada</h3>
+
+                <p class="text">Tu cita del 20 de noviembre ha sido confirmada</p>
+                <p class="time">Hace 1 semana</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>

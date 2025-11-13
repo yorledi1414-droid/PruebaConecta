@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Panel de Control - Tutor";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/TutorDashboard.css" />
+}
+
+<div class="tutor-dashboard">
+    <h1>¡Bienvenido, Carlos Rodríguez!</h1>
+    <p class="rol-sub">Panel de Control - Tutor</p>
+
+    <!-- Botones superiores -->
+    <div class="top-buttons">
+        <a href="@Url.Action("RegistrarPaciente", "Tutor")" class="btn-register">🙍‍ Registrar paciente</a>
+        <a href="@Url.Action("MiPerfil", "Tutor")" class="btn-profile">👤 Mi Perfil</a>
+
+    </div>
+
+    <!-- Cuadro de Accesos Rápidos -->
+    <div class="grid-panel">
+        <div class="card blue">
+            <i class="fas fa-chart-bar"></i>
+            <p>Progreso del Paciente</p>
+        </div>
+        <a href="@Url.Action("Mensajes", "Tutor")" class="card purple" style="text-decoration:none; color:inherit;">
+            <i class="fas fa-comment-alt"></i>
+            <p>Mensajes</p>
+        </a>
+        <a href="@Url.Action("Agenda", "Tutor")" class="card pink" style="text-decoration:none; color:inherit;">
+            <i class="fas fa-calendar-alt"></i>
+            <p>Agenda</p>
+        </a>
+        <a href="@Url.Action("Soporte", "Tutor")" class="card violet" style="text-decoration:none; color:inherit;">
+            <i class="fas fa-question-circle"></i>
+            <p>Soporte</p>
+        </a>
+        <a href="@Url.Action("Notificaciones", "Tutor")" class="card cyan" style="text-decoration:none; color:inherit;">
+            <i class="fas fa-bell"></i>
+            <p>Notificaciones</p>
+        </a>
+
+        <a href="@Url.Action("Configuracion", "Tutor")" class="card teal" style="text-decoration:none; color:inherit;">
+            <i class="fas fa-cog"></i>
+            <p>Configuración</p>
+        </a>
+
+    </div>
+
+    <!-- Sección inferior -->
+    <div class="bottom-section">
+        <div class="box">
+            <p class="label">Mensajes Nuevos</p>
+            <p class="value">5</p>
+            <p class="subtext">De terapeutas</p>
+        </div>
+        <div class="box">
+            <p class="label">Próxima Cita</p>
+            <p class="value">15 Nov 2025</p>
+            <p class="subtext">10:00 AM – Dr. García</p>
+        </div>
+    </div>
+</div>

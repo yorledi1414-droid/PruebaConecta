@@ -1,0 +1,178 @@
+﻿/* Fondo general */
+.agenda-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #82b3ff, #b889f4);
+}
+
+/* Botón volver */
+.btn-back {
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+    .btn-back:hover {
+        opacity: .8;
+    }
+
+/* Header */
+.agenda-header {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+}
+
+    .agenda-header h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .agenda-header p {
+        color: #666;
+        margin-top: 5px;
+    }
+
+/* Contenedor principal */
+.agenda-content {
+    display: grid;
+    grid-template-columns: 65% 32%;
+    gap: 25px;
+}
+
+/* Calendario */
+.calendar-container {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+/* Header calendario */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .calendar-header h2 {
+        margin: 0;
+    }
+
+.nav {
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Días */
+.weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.day, .empty {
+    height: 70px;
+    border-radius: 10px;
+    background: #f7f8fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.selected {
+    border: 2px solid #4f8cff;
+    background: #e9f1ff;
+}
+
+.event-green {
+    background: #d1f7df;
+    color: #1e8b4d;
+}
+
+.event-blue {
+    background: #d7e7ff;
+    color: #3a61cc;
+}
+
+.event-yellow {
+    background: #fff3c4;
+    color: #8b6d00;
+}
+
+/* Próximas citas */
+.appointments-container {
+    background: white;
+    border-radius: 18px;
+    padding: 25px;
+}
+
+    .appointments-container h3 {
+        margin-top: 0;
+    }
+
+.subtitle {
+    margin-top: -5px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.appointment-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px;
+    border: 1px solid #ececec;
+    margin-bottom: 15px;
+}
+
+    .appointment-card .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+.name {
+    font-weight: bold;
+}
+
+.badge {
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: lowercase;
+}
+
+.confirmada {
+    background: #e2ebff;
+    color: #3252c2;
+}
+
+.pendiente {
+    background: #fff2c7;
+    color: #a87a00;
+}
+
+.info {
+    margin: 5px 0;
+    color: #555;
+}
+
+    .info i {
+        margin-right: 6px;
+    }

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "Iniciar Sesión";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/Login.css" />
+
+<main class="login-page">
+    <div class="login-box">
+        <div class="logo-wrap">
+            <img src="~/Content/Images/Logo.png" alt="Logo" class="logo" />
+        </div>
+
+        <h2>BIENVENIDO</h2>
+        <p class="subtitle">Inicia sesión para continuar</p>
+
+        <form>
+            <div class="input-row">
+                <i class="fa-solid fa-user icon"></i>
+                <input type="text" name="usuario" placeholder="USUARIO" required />
+            </div>
+
+            <div class="input-row">
+                <i class="fa-solid fa-lock icon"></i>
+                <input type="password" name="password" placeholder="CONTRASEÑA" required />
+            </div>
+
+            <button type="button" class="btn-primary">INICIAR SESIÓN</button>
+
+            <div class="links">
+                <a href="@Url.Action("ForgotPassword", "Account")" class="forgot">¿Olvidaste la contraseña?</a>
+                <a href="@Url.Action("Index", "Registro")" class="create">CREAR CUENTA</a>
+            </div>
+        </form>
+    </div>
+</main>
