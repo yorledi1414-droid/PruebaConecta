@@ -1,0 +1,39 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Editar Rol";
+}
+
+<link rel="stylesheet" href="~/Content/EditarRol.css" />
+
+<div class="modal-container">
+    <div class="modal-box">
+        <a href="@Url.Action("RolesPermisos", "Admin")" class="close-btn">✕</a>
+
+        <h2>Editar Rol</h2>
+
+        <form>
+            <label>Nombre del Rol</label>
+            <input type="text" placeholder="Ej: Supervisor" value="Administrador" />
+
+            <label>Descripción</label>
+            <input type="text" placeholder="Descripción del rol"
+                   value="Acceso total al sistema" />
+
+            <label>Permisos</label>
+
+            <div class="permisos-grid">
+                <label><input type="checkbox"> Crear</label>
+                <label><input type="checkbox"> Editar</label>
+                <label><input type="checkbox"> Eliminar</label>
+                <label><input type="checkbox"> Ver</label>
+                <label><input type="checkbox"> Mensajes</label>
+                <label><input type="checkbox"> Jugar</label>
+                <label><input type="checkbox"> Reportes</label>
+                <label><input type="checkbox"> Configurar</label>
+            </div>
+
+            <button class="btn-guardar">Guardar Cambios</button>
+        </form>
+    </div>
+</div>

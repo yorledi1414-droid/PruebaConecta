@@ -3,58 +3,68 @@
 }
 
 @section Head {
-    <!-- CSS específico para esta vista -->
-    <link rel="stylesheet" href="~/Content/Recover.css" />
+    <link rel="stylesheet" href="~/Content/RContrasena.css" />
 }
 
-<main class="recover-page">
+<div class="recover-page">
+    <!-- Encabezado superior -->
     <header class="recover-header">
-        <a class="back" href="javascript:history.back()"><i class="fa-solid fa-chevron-left"></i></a>
+        <!-- Botón de regreso -->
+        <button class="back" onclick="window.history.back()" title="Volver">
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+
         <h2>Recuperar Contraseña</h2>
-        <button class="settings" aria-label="Ajustes"><i class="fa-solid fa-gear"></i></button>
+
+        <!-- Botón de configuración -->
+        <button class="settings" title="Configuración">
+            <i class="fa-solid fa-gear"></i>
+        </button>
     </header>
 
-    <div class="recover-card" role="region" aria-labelledby="recover-title">
-        <h3 id="recover-title">Recuperar Contraseña</h3>
-        <p class="recover-sub">Ingresa tu correo registrado para recuperar tu contraseña</p>
+    <!-- Tarjeta blanca principal -->
+    <div class="recover-card">
+        <h3>Recuperar Contraseña</h3>
+        <p class="recover-sub">
+            Ingresa tu correo registrado para recuperar tu contraseña.
+        </p>
 
-        <!-- 🔹 FORMULARIO FUNCIONAL -->
-        @using (Html.BeginForm("RContrasena", "Account", FormMethod.Post, new { @class = "recover-form" }))
+        <!-- 🔥 FORMULARIO CORREGIDO -->
+        @using (Html.BeginForm("RContrasena", "Account", FormMethod.Post))
         {
-            @Html.AntiForgeryToken()
+            @Html.AntiForgeryToken() <!-- 🔥 NECESARIO -->
 
             <div class="input-row">
-                <i class="fa-regular fa-envelope icon"></i>
-                <input type="email" name="email" id="email" placeholder="Correo electrónico" autocomplete="email" required />
+                <span class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <!-- 🔥 CAMBIADO A name="email" -->
+                <input type="email" name="email" placeholder="Correo electrónico" required />
             </div>
 
             <div class="actions">
                 <button type="submit" class="btn-send">Enviar</button>
                 <button type="button" class="btn-cancel" onclick="window.history.back()">Cancelar</button>
             </div>
-        }
 
-        <p class="note">Recibirás un correo con instrucciones para restablecer tu contraseña.</p>
-
-        <!-- 🔹 MENSAJE DE CONFIRMACIÓN O ERROR -->
-        @if (ViewBag.Mensaje != null)
-        {
-            <div class="alert success">@ViewBag.Mensaje</div>
-        }
-        else if (ViewBag.Error != null)
-        {
-            <div class="alert error">@ViewBag.Error</div>
+            <p class="note">
+                Recibirás un correo con instrucciones para restablecer tu contraseña.
+            </p>
         }
     </div>
 
-    <!-- Modal de confirmación (solo markup; oculto por CSS) -->
-    <div class="modal-confirm" aria-hidden="true">
-        <div class="modal-box">
-            <p>¿Desea cancelar el proceso de recuperación?</p>
-            <div class="modal-actions">
-                <button class="btn-secondary">No</button>
-                <button class="btn-primary">Sí, cancelar</button>
-            </div>
-        </div>
-    </div>
-</main>
+</div>
+
+@section Scripts {
+    <script>
+        function cerrarModal() {
+            document.getElementById("modalConfirm").style.display = "none";
+        }
+
+        function confirmarEnvio() {
+            alert("Correo enviado correctamente.");
+            cerrarModal();
+        }
+    </script>
+}

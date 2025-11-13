@@ -3,28 +3,79 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<main class="login-page">
-    <div class="logo-wrap">
-        <img src="~/Content/Images/Logo.png" alt="Logo" class="logo" />
+@section Head {
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="~/Content/Home.css" />
+}
+
+<main class="responsive-container">
+    <div class="white-box">
+        <div class="logo-wrap">
+            <img src="~/Content/Images/Logo.png" alt="Logo de ConectaTEA" class="logo" />
+        </div>
+
+        <h2>Inicio de Sesión</h2>
+
+        <form class="login-form" method="post" action="@Url.Action("Login", "Account")">
+            <div class="input-row">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" name="username" placeholder="Ingresa tu usuario" autocomplete="username" required />
+            </div>
+
+            <div class="input-row">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required />
+                <button type="button" class="show-pass" onclick="togglePassword()">
+                    <i class="fa-regular fa-eye"></i>
+                </button>
+            </div>
+
+            <button class="btn-primary" type="submit">INICIAR SESIÓN</button>
+
+            <div class="links">
+                <<a href="@Url.Action("Index", "Registro")">CREAR CUENTA</a>
+
+                <a href="@Url.Action("RContrasena", "Account")">¿Olvidaste tu contraseña?</a>
+                
+
+            </div>
+        </form>
     </div>
 
-    <form class="login-form" method="post" action="#">
-        <div class="input-row">
-            <i class="fa-solid fa-user icon"></i>
-            <input type="text" name="username" placeholder="USUARIO" autocomplete="username" required />
-        </div>
-
-        <div class="input-row">
-            <i class="fa-solid fa-lock icon"></i>
-            <input id="password" type="password" name="password" placeholder="CONTRASEÑA" autocomplete="current-password" required />
-            <button type="button" class="show-pass" aria-label="Mostrar contraseña"><i class="fa-regular fa-eye"></i></button>
-        </div>
-
-        <button class="btn-primary" type="submit">INICIAR SESIÓN</button>
-
-        <div class="links">
-            <a class="create" href="@Url.Action("Index","Registrar")">CREAR CUENTA</a>
-            <a class="forgot" href="@Url.Action("ForgotPassword","Account")">¿Olvidaste la contraseña?</a>
-        </div>
-    </form>
+    <div class="corner-decor"></div>
 </main>
+
+@section Scripts {
+    <script>
+        function togglePassword() {
+            const password = document.getElementById("password");
+            const icon = event.currentTarget.querySelector("i");
+            if (password.type === "password") {
+                password.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                password.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+    </script>
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

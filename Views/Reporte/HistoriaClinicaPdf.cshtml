@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "Reporte Paciente - PDF";
+    Layout = null;  // sin layout para evitar encabezados no deseados en el PDF
+    string chartBase64 = ViewBag.ChartBase64 as string;
+}
+
+<link rel="stylesheet" href="~/Content/Reporte.css" />
+
+<div class="reporte-container pdf-version">
+    <div class="encabezado">
+        <img src="~/Content/Images/Logo.png" alt="Logo" class="logo" />
+        <h1>Reporte Paciente</h1>
+    </div>
+
+    <section class="datos-personales">
+        <h2>Datos Personales</h2>
+        <p><strong>Nombre:</strong> Juan Pérez Gómez</p>
+        <p><strong>Edad:</strong> 8 años</p>
+        <p><strong>Diagnóstico:</strong> Trastorno del Espectro Autista (Nivel 2)</p>
+        <p><strong>Fecha de Ingreso:</strong> 12/03/2024</p>
+        <p><strong>Tutor:</strong> María Gómez Rodríguez</p>
+    </section>
+
+    <section class="datos-terapia">
+        <h2>Datos de Terapia</h2>
+        <p><strong>Terapia:</strong> Terapia Cognitiva Infantil</p>
+        <p><strong>Duración:</strong> 45 minutos</p>
+        <p><strong>Frecuencia:</strong> 2 veces por semana</p>
+        <p><strong>Terapeuta Asignado:</strong> Lic. Andrés Moreno</p>
+    </section>
+
+    <section class="progreso">
+        <h2>Progreso del Paciente</h2>
+        <p><strong>Juego de Memoria:</strong> 80% completado</p>
+        <p><strong>Rompecabezas:</strong> 65% completado</p>
+        <p><strong>Citas mediante chat:</strong> 90% completadas</p>
+
+        <div class="grafico-container">
+            @if (!string.IsNullOrWhiteSpace(chartBase64))
+            {
+                <img src="@chartBase64" alt="Gráfico de progreso" style="max-width:600px; width:100%;" />
+            }
+            else
+            {
+                <p>No hay gráfico disponible.</p>
+            }
+        </div>
+
+        <p><strong>Observaciones:</strong> El paciente muestra avances notables en concentración y comunicación emocional.</p>
+    </section>
+</div>
+

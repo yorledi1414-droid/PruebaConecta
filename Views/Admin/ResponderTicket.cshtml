@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Responder a Ticket";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/ResponderTicket.css" />
+}
+
+<div class="modal-respuesta">
+    <div class="modal-contenido">
+        <h3>Responder a Ticket #1</h3>
+
+        <div class="info-ticket">
+            <p><strong>Asunto:</strong></p>
+            <p>No puedo acceder al progreso</p>
+            <p class="usuario"><strong>Usuario:</strong> María García</p>
+        </div>
+
+        <form method="post" action="@Url.Action("ResponderTicket", "Admin")">
+            <label for="respuesta"><strong>Tu Respuesta</strong></label>
+            <textarea id="respuesta" name="respuesta" placeholder="Escribe tu respuesta..." required></textarea>
+
+            <button type="submit" class="btn-enviar">Enviar Respuesta</button>
+        </form>
+    </div>
+</div>
+

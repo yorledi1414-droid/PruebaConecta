@@ -3,29 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>@ViewBag.Title - Conectar Terapeutas</title>
+    <title>@ViewBag.Title - ConectaTEA</title>
 
     <!-- Google Fonts y FontAwesome -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
-    <!-- Tu CSS -->
+    <!-- CSS global -->
     <link rel="stylesheet" href="~/Content/Site.css" />
-    <link rel="stylesheet" href="~/Content/RContrasena.css" />
-    <link rel="stylesheet" href="~/Content/CambiarContrasena.css" />
-    <link rel="stylesheet" href="~/Content/Registro.css" />
-    <link rel="stylesheet" href="~/Content/Configuraciones.css" />
-    <link rel="stylesheet" href="~/Content/Juegos.css" />
-    <link rel="stylesheet" href="~/Content/MiPerfilT.css" />
-
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
 
     @RenderSection("Head", required: false)
 </head>
-<body>
+<body class="@ViewBag.BodyClass">
     @RenderBody()
 
     <script src="~/Scripts/app.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+

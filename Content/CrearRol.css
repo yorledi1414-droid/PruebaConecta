@@ -1,0 +1,103 @@
+﻿.modal-overlay {
+    background: rgba(0,0,0,0.45);
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-container {
+    background: #fff;
+    width: 650px;
+    max-width: 100%;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.25);
+    position: relative;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    text-decoration: none;
+    color: #666;
+}
+
+    .close-btn:hover {
+        color: #000;
+    }
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-top: 5px;
+    font-size: 15px;
+    background: #f7f7f9;
+}
+
+.permisos-grid {
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+    .permisos-grid label {
+        font-weight: normal;
+    }
+
+.btn-guardar {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(to right, #6A67CE, #C471ED);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+    .btn-guardar:hover {
+        opacity: 0.9;
+    }
+
+.success-msg {
+    background: #d4f5d4;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    color: #2a7a2a;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

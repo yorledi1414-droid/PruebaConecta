@@ -1,0 +1,86 @@
+﻿.roles-container {
+    max-width: 90%;
+    margin: 40px auto;
+    background-color: #f9fafb;
+    padding: 40px;
+    border-radius: 12px;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .roles-container h2 {
+        font-size: 28px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #222;
+    }
+
+    .roles-container p {
+        font-size: 16px;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+.btn-crear {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.crear-rol {
+    background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.tabla-roles {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+    .tabla-roles th, .tabla-roles td {
+        padding: 16px;
+        text-align: left;
+    }
+
+    .tabla-roles th {
+        background-color: #f3f4f6;
+        font-weight: bold;
+    }
+
+    .tabla-roles tr {
+        border-bottom: 1px solid #eee;
+    }
+
+.permiso {
+    background-color: #dbeafe;
+    color: #1d4ed8;
+    padding: 6px 12px;
+    margin-right: 5px;
+    border-radius: 8px;
+    font-size: 13px;
+    display: inline-block;
+}
+
+.icon {
+    margin-right: 6px;
+    color: #60a5fa;
+}
+
+.editar {
+    color: #3b82f6;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.eliminar {
+    color: #ef4444;
+    cursor: pointer;
+}

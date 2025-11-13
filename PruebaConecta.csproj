@@ -129,6 +129,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CambiarContrasenaController.cs" />
     <Compile Include="Controllers\ConfiguracionesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -242,6 +243,18 @@
     <Content Include="Content\CambiarContrasena.css" />
     <Content Include="Content\Configuraciones.css" />
     <Content Include="Content\MiPerfilT.css" />
+    <Content Include="Content\Home.css" />
+    <Content Include="Content\AdminDashboard.css" />
+    <Content Include="Content\RolesPermisos.css" />
+    <Content Include="Content\CrearRol.css" />
+    <Content Include="Content\EditarRol.css" />
+    <Content Include="Content\EliminarRol.css" />
+    <Content Include="Content\GestionUsuarios.css" />
+    <Content Include="Content\DetallesUsuario.css" />
+    <Content Include="Content\OjoLogo.css" />
+    <Content Include="Content\EliminarUsuario.css" />
+    <Content Include="Content\ResponderTicket.css" />
+    <Content Include="Content\TicketSoporte.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
@@ -290,9 +303,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Detail.cshtml" />
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\Juegos\Index.cshtml" />
     <Content Include="Views\Juegos\Rompecabezas.cshtml" />
@@ -304,6 +314,17 @@
     <Content Include="Views\CambiarContrasena\CambiarContrasena.cshtml" />
     <Content Include="Views\Configuraciones\Configuraciones.cshtml" />
     <Content Include="Views\MiPerfilT\MiPerfilT.cshtml" />
+    <Content Include="Views\Admin\AdminVista.cshtml" />
+    <Content Include="Views\Admin\RolesPermisos.cshtml" />
+    <Content Include="Views\Admin\CrearRol.cshtml" />
+    <Content Include="Views\Admin\EditarRol.cshtml" />
+    <Content Include="Views\Admin\EliminarRol.cshtml" />
+    <Content Include="Views\Admin\GestionUsuarios.cshtml" />
+    <Content Include="Views\Admin\DetallesUsuario.cshtml" />
+    <Content Include="Views\Admin\OjoLogo.cshtml" />
+    <Content Include="Views\Admin\EliminarUsuario.cshtml" />
+    <Content Include="Views\Admin\Ticket.cshtml" />
+    <Content Include="Views\Admin\ResponderTicket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,63 @@
+﻿@{
+        ViewBag.Title = "Gestión de Usuarios";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/GestionUsuarios.css" />
+}
+
+<div class="usuarios-container">
+    <h2>Gestión de Usuarios</h2>
+    <p class="subtitulo">Administra todos los usuarios del sistema</p>
+
+    <div class="filtros">
+        <input type="text" placeholder="🔍 Buscar por nombre o email" />
+        <select>
+            <option>Todos los roles</option>
+            <option>Administrador</option>
+            <option>Terapeuta</option>
+            <option>Tutor</option>
+            <option>Paciente</option>
+        </select>
+        <select>
+            <option>Todos los estados</option>
+            <option>Activo</option>
+            <option>Inactivo</option>
+        </select>
+    </div>
+
+    <table class="tabla-usuarios">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="icono-user">👤</span> Juan Pérez</td>
+                <td>juan@ejemplo.com</td>
+                <td><span class="rol terapeuta">Terapeuta</span></td>
+                <td><span class="estado activo">activo</span></td>
+                <td class="acciones">
+
+                    <!-- 🔍 Ícono del ojo: Detalles -->
+                    <a href="@Url.Action("DetallesUsuario", "Admin")" title="Ver detalles">
+                        <i class="fa-solid fa-eye"></i>
+                    </a>
+
+                    <!-- 🗑️ Ícono de papelera conectado -->
+                    <a href="@Url.Action("EliminarUsuario", "Admin", new { id = 1 })" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

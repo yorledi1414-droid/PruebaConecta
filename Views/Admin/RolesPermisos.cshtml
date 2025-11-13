@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "Gestión de Roles y Permisos";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/RolesPermisos.css" />
+
+<div class="roles-container">
+    <h2>Gestión de Roles y Permisos</h2>
+    <p>Administra los roles y sus permisos en el sistema</p>
+
+    <div class="btn-crear">
+        <!-- ✅ BOTÓN CONECTADO A LA ACCIÓN CrearRol DEL CONTROLADOR -->
+        <a href="@Url.Action("CrearRol", "Admin")" class="crear-rol">
+            <span>＋</span> Crear Rol
+        </a>
+    </div>
+
+    <table class="tabla-roles">
+        <thead>
+            <tr>
+                <th>Rol</th>
+                <th>Descripción</th>
+                <th>Permisos</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><i class="fa-solid fa-shield-halved icon"></i> Administrador</td>
+                <td>Acceso total al sistema</td>
+                <td>
+                    <span class="permiso">crear</span>
+                    <span class="permiso">editar</span>
+                    <span class="permiso">eliminar</span>
+                    <span class="permiso">ver</span>
+                </td>
+                <td>
+                    <!-- ✅ Editar -->
+                    <a href="@Url.Action("EditarRol", "Admin")" class="icon-edit">
+                        <i class="fa-regular fa-pen-to-square editar"></i>
+                    </a>
+                    <!-- ✅ Eliminar -->
+                    <a href="@Url.Action("EliminarRol", "Admin")" class="icon-delete">
+                        <i class="fa-solid fa-trash eliminar"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-shield-halved icon"></i> Terapeuta</td>
+                <td>Gestión de pacientes y sesiones</td>
+                <td>
+                    <span class="permiso">crear</span>
+                    <span class="permiso">editar</span>
+                    <span class="permiso">ver</span>
+                </td>
+                <td>
+                    <a href="@Url.Action("EditarRol", "Admin")" class="icon-edit">
+                        <i class="fa-regular fa-pen-to-square editar"></i>
+                    </a>
+                    <a href="@Url.Action("EliminarRol", "Admin")" class="icon-delete">
+                        <i class="fa-solid fa-trash eliminar"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-shield-halved icon"></i> Tutor</td>
+                <td>Ver progreso y comunicarse</td>
+                <td>
+                    <span class="permiso">ver</span>
+                    <span class="permiso">mensajes</span>
+                </td>
+                <td>
+                    <a href="@Url.Action("EditarRol", "Admin")" class="icon-edit">
+                        <i class="fa-regular fa-pen-to-square editar"></i>
+                    </a>
+                    <a href="@Url.Action("EliminarRol", "Admin")" class="icon-delete">
+                        <i class="fa-solid fa-trash eliminar"></i>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td><i class="fa-solid fa-shield-halved icon"></i> Paciente</td>
+                <td>Acceso a juegos y actividades</td>
+                <td>
+                    <span class="permiso">ver</span>
+                    <span class="permiso">jugar</span>
+                </td>
+                <td>
+                    <a href="@Url.Action("EditarRol", "Admin")" class="icon-edit">
+                        <i class="fa-regular fa-pen-to-square editar"></i>
+                    </a>
+                    <a href="@Url.Action("EliminarRol", "Admin")" class="icon-delete">
+                        <i class="fa-solid fa-trash eliminar"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+

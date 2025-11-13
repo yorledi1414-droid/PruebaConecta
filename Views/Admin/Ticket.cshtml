@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Tickets de Soporte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/TicketSoporte.css" />
+}
+
+<div class="tickets-container">
+    <h2>Tickets de Soporte</h2>
+    <p class="subtitulo">Gestiona las consultas de los usuarios</p>
+
+    <!-- TARJETAS RESUMEN -->
+    <div class="resumen-grid">
+        <div class="resumen-card abiertos">
+            <i class="fas fa-comment"></i>
+            <div>
+                <h4>Abiertos</h4>
+                <p>2</p>
+            </div>
+        </div>
+
+        <div class="resumen-card proceso">
+            <i class="fas fa-clock"></i>
+            <div>
+                <h4>En Proceso</h4>
+                <p>1</p>
+            </div>
+        </div>
+
+        <div class="resumen-card cerrados">
+            <i class="fas fa-check-circle"></i>
+            <div>
+                <h4>Cerrados</h4>
+                <p>2</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- TICKET 1 -->
+    <div class="ticket-card">
+        <div class="ticket-header">
+            <i class="fas fa-comment ticket-icon"></i>
+            <h4>Ticket #1: No puedo acceder al progreso</h4>
+            <span class="badge alta">Alta</span>
+            <span class="estado abierto">Abierto</span>
+        </div>
+
+        <p class="usuario">Usuario: María García</p>
+        <p class="fecha">2025-11-12</p>
+
+        <hr />
+
+        <div class="acciones-ticket">
+            <!-- ✅ Botón de enlace a la vista ResponderTicket -->
+            <a href="@Url.Action("ResponderTicket", "Admin")" class="btn-responder">
+                <i class="fas fa-paper-plane"></i> Responder
+            </a>
+        </div>
+    </div>
+
+    <!-- TICKET 2 -->
+    <div class="ticket-card">
+        <div class="ticket-header">
+            <i class="fas fa-clock ticket-icon proceso"></i>
+            <h4>Ticket #2: Error al enviar mensaje</h4>
+            <span class="badge media">Media</span>
+            <span class="estado proceso">En Proceso</span>
+        </div>
+
+        <p class="usuario">Usuario: Pedro Rodríguez</p>
+        <p class="fecha">2025-11-10</p>
+    </div>
+</div>
+
+
