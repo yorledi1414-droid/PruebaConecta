@@ -1,0 +1,132 @@
+﻿@{
+    ViewBag.Title = "Mis Pacientes";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/MisPacientes.css" />
+}
+
+<div class="pac-wrapper">
+
+    <!-- VOLVER -->
+    <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- HEADER -->
+    <div class="header-box">
+        <div>
+            <h1>Mis Pacientes</h1>
+            <p>Gestiona y monitorea a tus pacientes asignados</p>
+        </div>
+
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Buscar paciente..." />
+        </div>
+    </div>
+
+    <!-- TARJETAS RESUMEN -->
+    <div class="stats-row">
+        <div class="stat-card">
+            <p>Total de Pacientes</p>
+            <h2>5</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Promedio General</p>
+            <h2>82%</h2>
+        </div>
+
+        <div class="stat-card">
+            <p>Sesiones Totales</p>
+            <h2>195</h2>
+        </div>
+    </div>
+
+    <!-- LISTA DE PACIENTES -->
+    <div class="table-box">
+        <h3>Lista de Pacientes</h3>
+        <p class="desc">5 pacientes encontrados</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Nivel TEA</th>
+                    <th>Tutor</th>
+                    <th>Última Sesión</th>
+                    <th>Sesiones</th>
+                    <th>Promedio</th>
+                    <th>Tendencia</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>María García López</td>
+                    <td>8 años</td>
+                    <td><span class="badge amarillo">Moderado</span></td>
+                    <td>Carlos Rodríguez</td>
+                    <td>10 Nov 2025</td>
+                    <td>45</td>
+                    <td class="green">88%</td>
+                    <td><i class="fas fa-arrow-up green"></i></td>
+                    <td><a class="btn-view">👁 Ver Progreso</a></td>
+                </tr>
+
+                <tr>
+                    <td>Juan Pérez Martínez</td>
+                    <td>6 años</td>
+                    <td><span class="badge verde">Leve</span></td>
+                    <td>Ana López</td>
+                    <td>11 Nov 2025</td>
+                    <td>32</td>
+                    <td class="green">92%</td>
+                    <td><i class="fas fa-arrow-up green"></i></td>
+                    <td><a class="btn-view">👁 Ver Progreso</a></td>
+                </tr>
+
+                <tr>
+                    <td>Ana Martínez Ruiz</td>
+                    <td>7 años</td>
+                    <td><span class="badge amarillo">Moderado</span></td>
+                    <td>Pedro Sánchez</td>
+                    <td>9 Nov 2025</td>
+                    <td>38</td>
+                    <td class="orange">75%</td>
+                    <td>—</td>
+                    <td><a class="btn-view">👁 Ver Progreso</a></td>
+                </tr>
+
+                <tr>
+                    <td>Carlos López García</td>
+                    <td>9 años</td>
+                    <td><span class="badge rojo">Severo</span></td>
+                    <td>María Fernández</td>
+                    <td>12 Nov 2025</td>
+                    <td>52</td>
+                    <td class="orange">68%</td>
+                    <td><i class="fas fa-arrow-up orange"></i></td>
+                    <td><a class="btn-view">👁 Ver Progreso</a></td>
+                </tr>
+
+                <tr>
+                    <td>Laura Sánchez Díaz</td>
+                    <td>5 años</td>
+                    <td><span class="badge verde">Leve</span></td>
+                    <td>José Ramírez</td>
+                    <td>8 Nov 2025</td>
+                    <td>28</td>
+                    <td class="green">85%</td>
+                    <td><i class="fas fa-arrow-down red"></i></td>
+                    <td><a class="btn-view">👁 Ver Progreso</a></td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>

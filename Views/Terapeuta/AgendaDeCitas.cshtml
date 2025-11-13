@@ -1,0 +1,131 @@
+﻿@{
+    ViewBag.Title = "Agenda de Citas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/AgendaDeCitas.css" />
+}
+
+<div class="agenda-wrapper">
+
+    <!-- VOLVER -->
+    <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-back">← Volver al Dashboard</a>
+
+    <!-- CABECERA -->
+    <div class="top-header">
+        <div>
+            <h1>Agenda de Citas</h1>
+            <p>Gestiona las sesiones con tus pacientes</p>
+        </div>
+
+        <a href="@Url.Action("NuevaCita", "Terapeuta")" class="btn-new">
+            <i class="fas fa-plus"></i> Nueva Cita
+        </a>
+
+    </div>
+
+    <div class="agenda-grid">
+
+        <!-- CALENDARIO -->
+        <div class="calendar-card">
+
+            <div class="calendar-header">
+                <i class="fas fa-chevron-left"></i>
+                <h2>Noviembre 2025</h2>
+                <i class="fas fa-chevron-right"></i>
+            </div>
+
+            <!-- DÍAS DE LA SEMANA -->
+            <div class="weekdays">
+                <span>Dom</span><span>Lun</span><span>Mar</span><span>Mié</span>
+                <span>Jue</span><span>Vie</span><span>Sáb</span>
+            </div>
+
+            <!-- GRID DEL CALENDARIO -->
+            <div class="calendar-grid">
+
+                <!-- Ejemplo de días vacíos -->
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+                <div class="day empty"></div>
+
+                <!-- Día con solo número -->
+                <div class="day"><span>1</span></div>
+
+                <!-- Día con cita completada -->
+                <div class="day">
+                    <span>8</span>
+                    <div class="tag completed">10:00 AM</div>
+                </div>
+
+                <!-- Día seleccionado -->
+                <div class="day selected">
+                    <span>12</span>
+                </div>
+
+                <!-- Día con cita pendiente -->
+                <div class="day">
+                    <span>18</span>
+                    <div class="tag pending">09:00 AM</div>
+                </div>
+
+                <div class="day">
+                    <span>20</span>
+                    <div class="tag pending">10:00 AM</div>
+                </div>
+
+                <!-- Día con dos confirmadas -->
+                <div class="day">
+                    <span>15</span>
+                    <div class="tag confirmed">10:00 AM</div>
+                    <div class="tag confirmed">11:30 AM</div>
+                </div>
+
+                <!-- Resto del mes -->
+                @for (int i = 2; i <= 30; i++)
+                {
+                    <div class="day"><span>@i</span></div>
+                }
+
+            </div>
+        </div>
+
+        <!-- PANEL DERECHO -->
+        <div class="sidebar">
+
+            <div class="panel">
+                <h3>Citas de Hoy</h3>
+                <p class="today-date">12 de Noviembre, 2025</p>
+                <p class="no-citas">No hay citas programadas para hoy</p>
+            </div>
+
+            <div class="panel">
+                <h3>Leyenda</h3>
+
+                <div class="legend">
+                    <span class="color pending"></span>
+                    Pendiente
+                </div>
+
+                <div class="legend">
+                    <span class="color confirmed"></span>
+                    Confirmada
+                </div>
+
+                <div class="legend">
+                    <span class="color completed"></span>
+                    Completada
+                </div>
+
+                <div class="legend">
+                    <span class="color canceled"></span>
+                    Cancelada
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

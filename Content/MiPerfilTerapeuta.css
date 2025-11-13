@@ -1,0 +1,158 @@
+﻿body {
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    font-family: 'Poppins', sans-serif;
+}
+
+.perfil-wrapper {
+    padding: 40px;
+}
+
+/* VOLVER */
+.btn-back {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-bottom: 25px;
+    display: inline-block;
+}
+
+/* HEADER */
+.perfil-header {
+    background: white;
+    padding: 25px 35px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+    .perfil-header h1 {
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .perfil-header p {
+        color: #666;
+    }
+
+/* FOTO Y NOMBRE */
+.perfil-main {
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.perfil-photo {
+    position: relative;
+    display: inline-block;
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #6aa4ff, #c28bfa);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 38px;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+}
+
+.icon-camera {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    padding: 6px;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    color: #666;
+}
+
+.perfil-main h2 {
+    margin-top: 15px;
+    font-size: 26px;
+}
+
+.role {
+    color: #777;
+    margin-top: -5px;
+}
+
+/* INFORMACIÓN PERSONAL */
+.info-section {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+    margin-bottom: 30px;
+}
+
+    .info-section h3 {
+        margin: 0;
+        font-size: 22px;
+    }
+
+    .info-section .desc {
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+.btn-edit {
+    float: right;
+    padding: 8px 18px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #6aa4ff, #c28bfa);
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* GRID FORM */
+.form-grid {
+    margin-top: 50px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    clear: both;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    background: #f7f7f7;
+    border: none;
+}
+
+/* Cambiar contraseña */
+.btn-password {
+    padding: 12px 20px;
+    background: #ebebeb;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    font-weight: bold;
+}
+
+/* Cerrar sesión */
+.logout-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-logout {
+    background: #ffdddd;
+    color: #c41e1e;
+    padding: 14px 30px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 1px solid #ffb0b0;
+}

@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Mi Perfil - Terapeuta";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/MiPerfilTerapeuta.css" />
+}
+
+<div class="perfil-wrapper">
+
+    <!-- VOLVER -->
+    <a href="@Url.Action("TerapeutaVista", "Terapeuta")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- HEADER -->
+    <div class="perfil-header">
+        <h1>Mi Perfil</h1>
+        <p>Administra tu información personal</p>
+    </div>
+
+    <!-- FOTO + NOMBRE -->
+    <div class="perfil-main">
+        <div class="perfil-photo">
+            <div class="circle">CR</div>
+            <span class="icon-camera"><i class="fas fa-camera"></i></span>
+        </div>
+
+        <h2>Carlos Rodríguez</h2>
+        <p class="role">Terapeuta</p>
+    </div>
+
+    <!-- INFORMACIÓN PERSONAL -->
+    <div class="info-section">
+        <h3>Información Personal</h3>
+        <p class="desc">Datos básicos de tu cuenta</p>
+
+        <a class="btn-edit">Editar Perfil</a>
+
+        <div class="form-grid">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input type="text" value="Carlos" disabled />
+            </div>
+
+            <div class="form-group">
+                <label>Apellido</label>
+                <input type="text" value="Rodríguez" disabled />
+            </div>
+
+            <div class="form-group">
+                <label>Correo Electrónico</label>
+                <input type="text" value="carlos.rodriguez@email.com" disabled />
+            </div>
+
+            <div class="form-group">
+                <label>Teléfono</label>
+                <input type="text" value="+34 612 345 678" disabled />
+            </div>
+
+            <div class="form-group">
+                <label>Documento de Identidad</label>
+                <input type="text" value="12345678A" disabled />
+            </div>
+
+            <div class="form-group">
+                <label>Dirección</label>
+                <input type="text" value="Calle Principal 123, Madrid" disabled />
+            </div>
+        </div>
+    </div>
+
+    <!-- SEGURIDAD -->
+    <div class="info-section">
+        <h3>Seguridad</h3>
+        <p class="desc">Gestiona la seguridad de tu cuenta</p>
+
+        <button class="btn-password">Cambiar Contraseña</button>
+    </div>
+
+    <!-- CERRAR SESIÓN -->
+    <div class="logout-section">
+        <a href="@Url.Action("home", "Home")" class="btn-logout">Cerrar Sesión</a>
+    </div>
+
+</div>
