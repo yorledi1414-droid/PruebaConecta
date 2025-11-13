@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Eliminar Rol";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/Content/EliminarRol.css" />
+
+<div class="overlay">
+    <div class="modal">
+        <span class="close">&times;</span>
+        <h2>¿Está seguro que desea eliminar este rol?</h2>
+        <div class="buttons">
+            <a href="@Url.Action("RolesPermisos", "Admin")" class="btn eliminar">Sí, eliminar</a>
+            <a href="@Url.Action("RolesPermisos", "Admin")" class="btn cancelar">Cancelar</a>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,94 @@
+﻿.usuarios-container {
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+    .filtros input, .filtros select {
+        padding: 10px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 14px;
+        flex: 1;
+    }
+
+.tabla-usuarios {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.06);
+}
+
+    .tabla-usuarios th, .tabla-usuarios td {
+        padding: 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+    }
+
+.icono-user {
+    background: linear-gradient(45deg, #a78bfa, #7dd3fc);
+    color: #fff;
+    border-radius: 50%;
+    padding: 6px 10px;
+    margin-right: 10px;
+}
+
+.rol {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+    .rol.terapeuta {
+        background-color: #dbeafe;
+        color: #2563eb;
+    }
+
+    .rol.tutor {
+        background-color: #d1fae5;
+        color: #059669;
+    }
+
+    .rol.paciente {
+        background-color: #fde68a;
+        color: #b45309;
+    }
+
+    .rol.administrador {
+        background-color: #e9d5ff;
+        color: #7c3aed;
+    }
+
+.estado.activo {
+    color: #16a34a;
+    font-weight: bold;
+}
+
+.estado.inactivo {
+    color: #6b7280;
+    font-weight: bold;
+}
+
+.acciones i {
+    margin-right: 10px;
+    cursor: pointer;
+    color: #6b7280;
+}
+
+    .acciones i:hover {
+        color: #111827;
+    }

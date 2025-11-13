@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Eliminar Usuario";
+    Layout = null; // Modal sin layout
+}
+
+<link rel="stylesheet" href="~/Content/EliminarUsuario.css" />
+
+<div class="modal-eliminar">
+    <div class="modal-contenido">
+        <button class="cerrar-modal" onclick="window.history.back();">&times;</button>
+        <h2>¿Está seguro que desea eliminar este usuario?</h2>
+        <div class="botones">
+            <form method="post" action="@Url.Action("EliminarUsuarioConfirmado", "Admin")">
+                <input type="hidden" name="id" value="@ViewBag.UsuarioId" />
+                <button type="submit" class="btn-eliminar">Sí, eliminar</button>
+            </form>
+            <a href="@Url.Action("GestionUsuarios", "Admin")" class="btn-cancelar">Cancelar</a>
+        </div>
+    </div>
+</div>
+

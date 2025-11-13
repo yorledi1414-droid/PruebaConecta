@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/AdminDashboard.css" rel="stylesheet" />
+
+<div class="admin-dashboard">
+    <div class="header-card">
+        <h2>Buenas noches, Usuario Demo</h2>
+        <p>Rol: Administrador</p>
+    </div>
+
+    <div class="quick-actions">
+        <h3>Acciones Rápidas</h3>
+        <div class="card-container">
+
+            <!-- 🔐 Roles y Permisos -->
+            <a href="@Url.Action("RolesPermisos", "Admin")" class="card">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h4>Roles y Permisos</h4>
+                    <p>Gestiona accesos y privilegios.</p>
+                </div>
+            </a>
+
+            <!-- 👥 Gestión de Usuarios -->
+            <a href="@Url.Action("GestionUsuarios", "Admin")" class="card">
+                <i class="fas fa-users"></i>
+                <div>
+                    <h4>Gestión de Usuarios</h4>
+                    <p>Visualiza y edita los usuarios registrados.</p>
+                </div>
+            </a>
+
+            <!-- 🧾 Ticket de Soporte (AHORA CONECTADO) -->
+            <a href="@Url.Action("Ticket", "Admin")" class="card">
+                <i class="fas fa-ticket-alt"></i>
+                <div>
+                    <h4>Tickets de Soporte</h4>
+                    <p>Revisa las solicitudes y reclamos.</p>
+                </div>
+            </a>
+
+        </div>
+    </div>
+
+    <div class="summary">
+        <h3>Resumen</h3>
+        <div class="summary-container">
+            <div class="summary-card">
+                <h4>Total de Usuarios</h4>
+                <p>245</p>
+            </div>
+            <div class="summary-card">
+                <h4>Citas Hoy</h4>
+                <p>12</p>
+            </div>
+            <div class="summary-card">
+                <h4>Mensajes Nuevos</h4>
+                <p>8</p>
+            </div>
+            <div class="summary-card">
+                <h4>Notificaciones</h4>
+                <p>15</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+

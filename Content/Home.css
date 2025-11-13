@@ -1,0 +1,149 @@
+﻿/* Fondo con degradado */
+.responsive-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background: linear-gradient(to bottom, #6aafe6, #c68ae6);
+    position: relative;
+}
+
+/* Caja blanca del login */
+.white-box {
+    background-color: #fff;
+    padding: 40px 30px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Logo */
+.logo-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    background: linear-gradient(to bottom, #6aafe6, #c68ae6);
+    padding: 10px;
+}
+
+/* Título */
+.white-box h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+/* Formulario */
+.login-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    padding: 10px;
+    gap: 10px;
+}
+
+    .input-row input {
+        flex: 1;
+        border: none;
+        background: transparent;
+        font-size: 14px;
+    }
+
+        .input-row input:focus {
+            outline: none;
+        }
+
+    .input-row i {
+        color: #888;
+        font-size: 16px;
+    }
+
+/* Botón mostrar contraseña */
+.show-pass {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+}
+
+/* Botón de inicio */
+.btn-primary {
+    background: linear-gradient(to right, #6aafe6, #c68ae6);
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    padding: 12px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+    .btn-primary:hover {
+        opacity: 0.9;
+    }
+
+/* Enlaces */
+.links {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+    .links a {
+        color: #6aafe6;
+        text-decoration: none;
+    }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+/* Esquina decorativa */
+.corner-decor {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle at top right, #e0b3ff, #d58dff, transparent 70%);
+    clip-path: ellipse(70% 50% at 0% 100%);
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .white-box {
+        padding: 30px 20px;
+        border-radius: 18px;
+    }
+
+    .logo {
+        width: 70px;
+        height: 70px;
+    }
+}

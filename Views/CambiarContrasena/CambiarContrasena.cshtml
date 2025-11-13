@@ -1,35 +1,43 @@
-﻿
-@{
-    ViewBag.Title = "CambiarContrasena";
+﻿@{
+    ViewBag.Title = "Cambiar Contraseña";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/css/CambiarContrasena.css" />
+@section Head {
+    <link rel="stylesheet" href="~/Content/CambiarContrasena.css" />
+    <script>
+        function togglePassword(id) {
+            const input = document.getElementById(id);
+            input.type = input.type === "password" ? "text" : "password";
+        }
+    </script>
+}
 
 <div class="cambiar-container">
+    <a href="@Url.Action("OjoLogo", "Admin")" class="btn-volver"><i class="fas fa-arrow-left"></i> Volver</a>
+
     <div class="formulario">
-        <!-- Campo Usuario -->
-        <div class="input-group">
-            <img src="~/Content/Images/usuarioLogo.jpg" alt="Usuario" class="icono">
-            <input type="text" placeholder="Ingresar Usuario" />
+        <div class="icono-lock">
+            <i class="fas fa-lock"></i>
         </div>
+        <h2>Cambiar Contraseña</h2>
 
-        <!-- Campo Contraseña Enviada -->
-        <div class="input-group">
-            <img src="~/Content/Images/logoUsuario.jpg" alt="Contraseña" class="icono">
-            <input type="text" placeholder="Ingresar Contraseña Enviada" />
-        </div>
-
-        <!-- Título central -->
-        <h3>Por favor Cambiar Contraseña</h3>
-
-        <!-- Recuadro de nueva contraseña -->
-        <div class="recuadro">
+        <form method="post">
             <label for="nueva">Nueva Contraseña</label>
-            <input type="password" id="nueva" placeholder="xxxxxxxxx" />
-        </div>
+            <div class="campo-password">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="nueva" placeholder="Nueva contraseña" />
+                <i class="fas fa-eye" onclick="togglePassword('nueva')"></i>
+            </div>
 
-        <!-- Botón inferior -->
-        <button class="btn-iniciar">INICIAR SESIÓN</button>
+            <label for="confirmar">Confirmar Contraseña</label>
+            <div class="campo-password">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="confirmar" placeholder="Confirma tu contraseña" />
+                <i class="fas fa-eye" onclick="togglePassword('confirmar')"></i>
+            </div>
+
+            <button type="submit" class="btn-actualizar">ACTUALIZAR CONTRASEÑA</button>
+        </form>
     </div>
 </div>

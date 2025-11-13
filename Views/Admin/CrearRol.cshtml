@@ -1,0 +1,45 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/CrearRol.css" rel="stylesheet" />
+
+<div class="modal-overlay">
+    <div class="modal-container">
+
+        <a href="@Url.Action("RolesPermisos", "Admin")" class="close-btn">×</a>
+
+        <h2>Crear Nuevo Rol</h2>
+
+        @if (ViewBag.Mensaje != null)
+        {
+            <div class="success-msg">@ViewBag.Mensaje</div>
+        }
+
+        @using (Html.BeginForm("CrearRol", "Admin", FormMethod.Post))
+        {
+            <label>Nombre del Rol</label>
+            <input type="text" name="nombreRol" placeholder="Ej: Supervisor" required />
+
+            <label>Descripción</label>
+            <input type="text" name="descripcion" placeholder="Descripción del rol" required />
+
+            <h3>Permisos</h3>
+
+            <div class="permisos-grid">
+                <label><input type="checkbox" name="permisos" value="Crear" /> Crear</label>
+                <label><input type="checkbox" name="permisos" value="Editar" /> Editar</label>
+                <label><input type="checkbox" name="permisos" value="Eliminar" /> Eliminar</label>
+                <label><input type="checkbox" name="permisos" value="Ver" /> Ver</label>
+                <label><input type="checkbox" name="permisos" value="Mensajes" /> Mensajes</label>
+                <label><input type="checkbox" name="permisos" value="Jugar" /> Jugar</label>
+                <label><input type="checkbox" name="permisos" value="Reportes" /> Reportes</label>
+                <label><input type="checkbox" name="permisos" value="Configurar" /> Configurar</label>
+            </div>
+
+            <button type="submit" class="btn-guardar">Crear Rol</button>
+        }
+    </div>
+</div>
+

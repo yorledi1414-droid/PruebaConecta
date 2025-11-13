@@ -1,42 +1,163 @@
 ﻿@{
     ViewBag.Title = "Registro de Usuario";
+    ViewBag.BodyClass = "registro-page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<link rel="stylesheet" href="~/Content/Registro.css" />
+@section Head {
+    <link rel="stylesheet" href="~/Content/Registro.css" />
+}
+
+<a href="javascript:history.back()" class="volver-link">← Volver</a>
 
 <div class="registro-container">
     <div class="registro-box">
-        <h2>BIENVENIDO</h2>
-        <p class="chk-title">¿Eres?</p>
 
-        <div class="checkbox-group">
-            <label><input type="checkbox" name="terapeuta" /> TERAPEUTA</label>
-            <label><input type="checkbox" name="tutor" /> TUTOR</label>
+        <h2 class="titulo">BIENVENIDO</h2>
+        <p class="subtitulo">¿Eres?</p>
+
+        <div class="roles">
+            <label>
+                <input type="radio" name="rol" value="Administrador" id="rolAdmin" />
+                ADMINISTRADOR
+            </label>
+            <label>
+                <input type="radio" name="rol" value="Terapeuta" id="rolTerapeuta" />
+                TERAPEUTA
+            </label>
+            <label>
+                <input type="radio" name="rol" value="Tutor" id="rolTutor" />
+                TUTOR
+            </label>
         </div>
 
-        @using (Html.BeginForm("Index", "Registro", FormMethod.Post))
+        @using (Html.BeginForm("Index", "Registro", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
-            <div class="form-group">
-                <label>NOMBRE</label>
-                <input type="text" name="nombre" class="input-field" />
+            <!-- CAMPOS GENERALES -->
+            <div id="camposGenerales">
+
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" name="Nombre" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Apellido</label>
+                    <input type="text" name="Apellido" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" name="Email" required />
+                </div>
+
+                <div class="form-group">
+                    <label>Contraseña</label>
+                    <input type="password" name="Password" required />
+                </div>
+
             </div>
-            <div class="form-group">
-                <label>APELLIDO</label>
-                <input type="text" name="apellido" class="input-field" />
+
+            <!-- -------------------- CAMPOS TERAPEUTA -------------------- -->
+            <div id="camposTerapeuta" class="oculto">
+
+                <div class="form-group">
+                    <label>Tipo de documento</label>
+                    <div class="radio-row">
+                        <label><input type="radio" name="tipoDoc" value="Ciudadanía" checked /> Ciudadanía</label>
+                        <label><input type="radio" name="tipoDoc" value="Extranjera" /> Extranjera</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Número de documento</label>
+                    <input type="text" name="NumeroDocumento" />
+                </div>
+
+                <div class="form-group">
+                    <label>Profesión</label>
+                    <input type="text" name="Profesion" placeholder="Ej: Psicólogo, Terapeuta Ocupacional" />
+                </div>
+
+                <div class="form-group">
+                    <label>Especialidad</label>
+                    <input type="text" name="Especialidad" placeholder="Ej: Terapia Cognitiva, Neuropsicología" />
+                </div>
+
+                <div class="form-group">
+                    <label>Subir certificado de profesión</label>
+                    <input type="file" name="CertificadoProfesion" accept=".pdf,image/*" />
+                    <span class="ayuda">Click para subir certificado (PDF)</span>
+                </div>
             </div>
-            <div class="form-group">
-                <label>CÉDULA</label>
-                <input type="text" name="cedula" class="input-field" />
-            </div>
-            <div class="form-group">
-                <label>EMAIL</label>
-                <input type="email" name="email" class="input-field" />
+
+            <!-- -------------------- CAMPOS TUTOR -------------------- -->
+            <div id="camposTutor" class="oculto">
+
+                <div class="form-group">
+                    <label>Tipo de documento</label>
+                    <div class="radio-row">
+                        <label><input type="radio" name="tipoDocTutor" value="Ciudadanía" checked /> Ciudadanía</label>
+                        <label><input type="radio" name="tipoDocTutor" value="Extranjera" /> Extranjera</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Número de documento</label>
+                    <input type="text" name="NumeroDocumentoTutor" />
+                </div>
+
+                <div class="form-group">
+                    <label>Subir documento de cédula</label>
+                    <input type="file" name="CedulaTutor" accept=".pdf,image/*" />
+                    <span class="ayuda">Click para subir cédula (PDF o imagen)</span>
+                </div>
+
             </div>
 
             <button type="submit" class="btn-guardar">Guardar</button>
         }
     </div>
 </div>
+
+
+<script>
+    const rolAdmin = document.getElementById("rolAdmin");
+    const rolTerapeuta = document.getElementById("rolTerapeuta");
+    const rolTutor = document.getElementById("rolTutor");
+
+    const camposGenerales = document.getElementById("camposGenerales");
+    const camposTerapeuta = document.getElementById("camposTerapeuta");
+    const camposTutor = document.getElementById("camposTutor");
+
+    function ocultarTodo() {
+        camposTerapeuta.style.display = "none";
+        camposTutor.style.display = "none";
+    }
+
+    rolAdmin.addEventListener("change", () => {
+        ocultarTodo();
+        camposGenerales.style.display = "block";
+    });
+
+    rolTerapeuta.addEventListener("change", () => {
+        ocultarTodo();
+        camposGenerales.style.display = "block";
+        camposTerapeuta.style.display = "block";
+    });
+
+    rolTutor.addEventListener("change", () => {
+        ocultarTodo();
+        camposGenerales.style.display = "block";
+        camposTutor.style.display = "block";
+    });
+</script>
+
+
+
+
+
+
+

@@ -1,0 +1,121 @@
+﻿.perfil-container {
+    padding: 40px;
+    font-family: 'Poppins', sans-serif;
+}
+
+    .perfil-container h2 {
+        font-size: 28px;
+        color: #111827;
+    }
+
+.subtitulo {
+    font-size: 16px;
+    color: #6b7280;
+    margin-bottom: 30px;
+}
+
+.perfil-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 30px;
+}
+
+.perfil-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.imagen-perfil {
+    position: relative;
+}
+
+    .imagen-perfil img {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        object-fit: cover;
+        background: linear-gradient(to right, #a18cd1, #fbc2eb);
+    }
+
+.btn-foto {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    padding: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.datos h3 {
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.rol {
+    font-size: 15px;
+    color: #6b7280;
+    margin-bottom: 15px;
+}
+
+.datos p {
+    margin: 3px 0;
+    color: #374151;
+}
+
+.datos i {
+    margin-right: 8px;
+    color: #6b7280;
+}
+
+.botones {
+    margin-top: 15px;
+}
+
+.btn-editar,
+.btn-cambiar {
+    display: inline-block;
+    background: linear-gradient(to right, #a78bfa, #8b5cf6);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    text-decoration: none;
+    margin-right: 12px;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+    .btn-editar:hover,
+    .btn-cambiar:hover {
+        opacity: 0.9;
+    }
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+}
+
+.stat-box {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+    text-align: center;
+}
+
+    .stat-box h4 {
+        font-size: 22px;
+        color: #111827;
+        margin-bottom: 6px;
+    }
+
+    .stat-box p {
+        color: #6b7280;
+        font-size: 14px;
+    }

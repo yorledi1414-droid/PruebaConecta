@@ -1,0 +1,143 @@
+﻿.tickets-container {
+    padding: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.subtitulo {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* TARJETAS DE RESUMEN */
+.resumen-grid {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.resumen-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    width: 230px;
+}
+
+    .resumen-card i {
+        font-size: 28px;
+    }
+
+    .resumen-card.abiertos i {
+        color: #ff6b00;
+    }
+
+    .resumen-card.proceso i {
+        color: #2563eb;
+    }
+
+    .resumen-card.cerrados i {
+        color: #16a34a;
+    }
+
+    .resumen-card h4 {
+        font-size: 16px;
+        margin: 0;
+    }
+
+/* TICKETS */
+.ticket-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.07);
+    margin-bottom: 25px;
+}
+
+.ticket-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.ticket-icon {
+    font-size: 24px;
+    color: #ff6b00;
+}
+
+    .ticket-icon.proceso {
+        color: #2563eb;
+    }
+
+.badge {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    color: #fff;
+}
+
+    .badge.alta {
+        background: #ef4444;
+    }
+
+    .badge.media {
+        background: #eab308;
+    }
+
+.estado {
+    margin-left: auto;
+    padding: 4px 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+    .estado.abierto {
+        background: #ffe7cc;
+        color: #d97706;
+    }
+
+    .estado.proceso {
+        background: #dbeafe;
+        color: #2563eb;
+    }
+
+    .estado.cerrado {
+        background: #dcfce7;
+        color: #16a34a;
+    }
+
+.usuario, .fecha {
+    margin: 4px 0;
+    color: #666;
+}
+
+.acciones-ticket {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-responder,
+.btn-cerrar {
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-responder {
+    background: #e0e7ff;
+    color: #4338ca;
+}
+
+.btn-cerrar {
+    background: #fee2e2;
+    color: #b91c1c;
+    text-decoration: none;
+}

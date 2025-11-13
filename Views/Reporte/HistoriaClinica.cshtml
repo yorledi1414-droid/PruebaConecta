@@ -1,0 +1,103 @@
+﻿@{
+    ViewBag.Title = "Reporte Paciente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    // Detecta si el contenido se está exportando a PDF
+    bool esPDF = false;
+    var param = Request.QueryString["esPDF"];
+    if (!string.IsNullOrEmpty(param) && param.ToLower() == "true")
+    {
+        esPDF = true;
+    }
+
+    string nombreGenerador = "Lic. Andrés Moreno"; 
+    string fechaGeneracion = DateTime.Now.ToString("dd/MM/yyyy HH:mm");
+}
+
+<link rel="stylesheet" href="~/Content/Reporte.css" />
+
+<div class="reporte-container">
+    <div class="encabezado">
+        <img src="@Url.Content("~/Content/Images/Logo.png")" alt="Logo" class="logo" />
+        <h1>Reporte Paciente</h1>
+    </div>
+
+    <section class="datos-personales">
+        <h2>Datos Personales</h2>
+        <p><strong>Nombre:</strong> Juan Pérez Gómez</p>
+        <p><strong>Edad:</strong> 8 años</p>
+        <p><strong>Diagnóstico:</strong> Trastorno del Espectro Autista (Nivel 2)</p>
+        <p><strong>Fecha de Ingreso:</strong> 12/03/2024</p>
+        <p><strong>Tutor:</strong> María Gómez Rodríguez</p>
+    </section>
+
+    <section class="datos-terapia">
+        <h2>Datos de Terapia</h2>
+        <p><strong>Terapia:</strong> Terapia Cognitiva Infantil</p>
+        <p><strong>Duración:</strong> 45 minutos</p>
+        <p><strong>Frecuencia:</strong> 2 veces por semana</p>
+        <p><strong>Terapeuta Asignado:</strong> Lic. Andrés Moreno</p>
+    </section>
+
+    <section class="progreso">
+        <h2>Progreso del Paciente</h2>
+        <p><strong>Juego de Memoria:</strong> 80% completado</p>
+        <p><strong>Rompecabezas:</strong> 65% completado</p>
+        <p><strong>Citas mediante chat:</strong> 90% completadas</p>
+
+        <div class="grafico-container">
+            <canvas id="graficoProgreso"></canvas>
+        </div>
+
+        <p><strong>Observaciones:</strong> El paciente muestra avances notables en concentración y comunicación emocional.</p>
+    </section>
+
+    <div class="footer-reporte">
+        <p><strong>Fecha de generación:</strong> @fechaGeneracion</p>
+        <p><strong>Generado por:</strong> @nombreGenerador</p>
+    </div>
+
+    
+    @if (!esPDF)
+    {
+        <div id="botonContainer">
+            <form action="@Url.Action("GenerarReporte", "Reporte")" method="post">
+                <button type="submit" class="btn-reporte">Generar Reporte PDF</button>
+            </form>
+        </div>
+    }
+</div>
+
+@if (!esPDF)
+{
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('graficoProgreso').getContext('2d');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Memoria', 'Rompecabezas', 'Chat'],
+                datasets: [{
+                    label: 'Porcentaje de Avance (%)',
+                    data: [80, 65, 90],
+                    backgroundColor: ['#9ec5fe', '#b6d0f5', '#cddbf8'],
+                    borderColor: ['#6b9af3', '#8bb0f0', '#a5bdf4'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+    </script>
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,60 @@
+﻿@{
+    ViewBag.Title = "Detalle de Usuario";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/DetallesUsuario.css" />
+
+<div class="perfil-container">
+    <h2>Mi Perfil</h2>
+    <p class="subtitulo">Gestiona tu información personal</p>
+
+    <div class="perfil-card">
+        <div class="perfil-info">
+            <div class="imagen-perfil">
+                <img src="~/Content/Images/perfil-placeholder.png" alt="Foto de perfil" />
+                <button class="btn-foto"><i class="fas fa-camera"></i></button>
+            </div>
+
+            <div class="datos">
+                <h3>Usuario Demo</h3>
+                <p class="rol">Administrador</p>
+                <p><i class="fas fa-envelope"></i> usuario@ejemplo.com</p>
+                <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                <p><i class="fas fa-map-marker-alt"></i> Ciudad, País</p>
+
+                <div class="botones">
+                    <!-- Editar perfil -->
+                    <a href="@Url.Action("OjoLogo", "Admin")" class="btn-editar">
+                        <i class="fas fa-edit"></i> Editar Perfil
+                    </a>
+
+                    <!-- Cambiar contraseña -->
+                    <a href="@Url.Action("CambiarContrasena", "CambiarContrasena")" class="btn-cambiar">
+                        <i class="fas fa-link"></i> Cambiar Contraseña
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="estadisticas">
+        <div class="stat-box">
+            <h4>48</h4>
+            <p>Sesiones</p>
+        </div>
+        <div class="stat-box">
+            <h4>12</h4>
+            <p>Logros</p>
+        </div>
+        <div class="stat-box">
+            <h4>85%</h4>
+            <p>Progreso</p>
+        </div>
+        <div class="stat-box">
+            <h4>3</h4>
+            <p>Meses Activo</p>
+        </div>
+    </div>
+</div>
+

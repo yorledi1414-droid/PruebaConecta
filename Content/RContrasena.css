@@ -1,35 +1,51 @@
-﻿/* Recueperar Contraseña */
+﻿/* ===============================
+   Recuperar Contraseña (Responsive)
+   Archivo: /Content/RContrasena.css
+   =============================== */
 
 :root {
     --gradient-1: #6b9be8;
     --gradient-2: #cba0df;
     --gradient-3: #f0c7d8;
-    --accent-blue: #4a90e2;
     --muted: #6b6b6b;
+    --brand-1: #7c3aed;
+    --brand-2: #8f6bd6;
+    --text: #222;
+    --card-bg: #fff;
+    --border: #ddd;
 }
 
-/* Página fondo */
+/* Anti-conflictos */
+.recover-page {
+    width: 100% !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+
+/* Fondo general */
 .recover-page {
     min-height: 100vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    padding: 28px 20px 60px;
+    padding: 40px 20px 60px;
     background: linear-gradient(180deg, var(--gradient-1) 0%, #9fb0e6 35%, var(--gradient-2) 70%, var(--gradient-3) 100%);
-    font-family: 'Poppins', sans-serif;
-    color: #222;
+    font-family: "Poppins", sans-serif;
+    color: var(--text);
 }
 
-/* Header con flecha y engranaje */
+/* Encabezado */
 .recover-header {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 10px 18px;
     box-sizing: border-box;
+    margin-bottom: 20px;
 }
 
     .recover-header .back,
@@ -37,7 +53,7 @@
         background: none;
         border: none;
         color: #fff;
-        font-size: 20px;
+        font-size: 22px;
         cursor: pointer;
     }
 
@@ -46,26 +62,25 @@
         text-align: center;
         color: #fff;
         font-weight: 700;
-        font-size: 20px;
+        font-size: clamp(20px, 2.2vw, 26px);
         margin: 0;
     }
 
-/* Tarjeta blanca centrada */
+/* Tarjeta principal */
 .recover-card {
-    width: 420px;
-    max-width: 94%;
-    background: #ffffff;
-    margin-top: 18px;
-    padding: 26px 22px;
-    border-radius: 10px;
-    box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+    width: clamp(380px, 60vw, 800px); /* ahora más ancho en desktop */
+    max-width: 100%;
+    background: var(--card-bg);
+    margin-top: 15px;
+    padding: clamp(24px, 3vw, 40px);
+    border-radius: 14px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
     text-align: left;
 }
 
-    /* Título dentro de la tarjeta */
     .recover-card h3 {
-        margin: 0 0 6px;
-        font-size: 18px;
+        margin: 0 0 10px;
+        font-size: clamp(20px, 2vw, 24px);
         text-align: center;
         color: #333;
     }
@@ -73,16 +88,16 @@
 .recover-sub {
     text-align: center;
     color: var(--muted);
-    font-size: 14px;
-    margin-bottom: 18px;
+    font-size: 15px;
+    margin-bottom: 20px;
 }
 
-/* Input row con icono a la izquierda */
+/* Campo con ícono */
 .input-row {
     display: flex;
     align-items: center;
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
 
     .input-row .icon {
@@ -95,66 +110,95 @@
     .input-row input {
         flex: 1;
         border: none;
-        border-bottom: 2px solid #ccc; /* una sola línea */
+        border-bottom: 2px solid #ccc;
         padding: 10px 8px;
-        font-size: 15px;
+        font-size: 16px;
         outline: none;
         background: transparent;
+        color: var(--text);
     }
+
+        .input-row input:focus {
+            border-bottom-color: var(--brand-1);
+            box-shadow: 0 6px 14px -10px rgba(124, 58, 237, 0.5);
+        }
 
 /* Botones */
 .actions {
     display: flex;
     justify-content: center;
-    gap: 18px;
-    margin-top: 6px;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+}
+
+.btn-send,
+.btn-cancel {
+    min-width: 150px;
+    border-radius: 12px;
+    padding: 12px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 0;
+    transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
 .btn-send {
-    background: linear-gradient(180deg, #7d4cb3 0%, #8f6bd6 100%);
+    background: linear-gradient(135deg, var(--brand-1), var(--brand-2));
     color: #fff;
-    border: none;
-    padding: 10px 22px;
-    border-radius: 12px;
-    cursor: pointer;
-    font-weight: 700;
-    box-shadow: 0 6px rgba(0,0,0,0.18);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
 }
+
+    .btn-send:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn-send:active {
+        transform: translateY(0);
+        opacity: .95;
+    }
 
 .btn-cancel {
     background: #fff;
     color: #333;
-    border: 1px solid #ccc;
-    padding: 10px 22px;
-    border-radius: 10px;
-    cursor: pointer;
+    border: 1px solid var(--border);
 }
 
-/* Nota pequeña */
+    .btn-cancel:hover {
+        transform: translateY(-1px);
+    }
+
+    .btn-cancel:active {
+        transform: translateY(0);
+        opacity: .95;
+    }
+
 .recover-card .note {
-    margin-top: 12px;
-    font-size: 13px;
+    margin-top: 14px;
+    font-size: 14px;
     color: var(--muted);
     text-align: center;
 }
 
-/* Modal (oculto por defecto) */
+/* Modal (opcional) */
 .modal-confirm {
     position: fixed;
     inset: 0;
-    display: none; /* visible solo con js si quieres */
+    display: none;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 16px;
+    z-index: 50;
 }
 
 .modal-box {
     background: #fff;
     padding: 18px;
-    border-radius: 8px;
-    width: 320px;
+    border-radius: 10px;
+    width: clamp(280px, 40vw, 420px);
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .modal-actions {
@@ -181,18 +225,23 @@
     cursor: pointer;
 }
 
-/* Responsive */
-@media (max-width:480px) {
+/* Responsividad */
+@media (max-width: 768px) {
     .recover-card {
-        width: 92%;
-        padding: 18px;
+        width: 95%;
+        padding: 20px;
     }
+}
 
-    .recover-header h2 {
-        font-size: 18px;
+@media (min-width: 1024px) {
+    .recover-page {
+        justify-content: center; /* centra verticalmente si hay espacio */
     }
+}
 
+/* Accesibilidad */
+@media (prefers-reduced-motion: reduce) {
     .btn-send, .btn-cancel {
-        padding: 10px 14px;
+        transition: none;
     }
 }
