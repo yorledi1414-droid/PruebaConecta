@@ -1,0 +1,45 @@
+﻿@{
+    ViewBag.Title = "ExpresArte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/ExpresArte.css" />
+}
+
+<div class="exp-container">
+
+    <!-- ENCABEZADO -->
+    <div class="header-box">
+        <a href="@Url.Action("TutorVista", "Tutor")" class="back-btn">←</a>
+
+        <div class="header-text">
+            <h1>ExpresArte</h1>
+            <p>Elige cómo quieres comunicarte</p>
+        </div>
+    </div>
+
+    <!-- OPCIONES PRINCIPALES -->
+    <div class="options-grid">
+
+        <!-- OPCIÓN 1: PICTOGRAMAS -->
+        <a href="@Url.Action("ComoTeSientes", "Tutor")" class="option-card orange-card">
+            <div class="icon-circle orange-bg">
+                😊
+            </div>
+            <h3>Pictogramas de Emociones</h3>
+            <p class="desc">Expresa cómo te sientes con emojis y caritas</p>
+        </a>
+
+        <!-- OPCIÓN 2: TEXTO A VOZ -->
+        <a href="@Url.Action("ComunicacionPorTexto", "Tutor")" class="option-card purple-card">
+            <div class="icon-circle purple-bg">
+                💬
+            </div>
+            <h3>Comunicación por Texto</h3>
+            <p class="desc">Escribe tu mensaje y escúchalo en voz alta</p>
+        </a>
+
+    </div>
+
+</div>

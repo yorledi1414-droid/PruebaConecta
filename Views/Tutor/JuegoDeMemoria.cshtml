@@ -1,0 +1,134 @@
+﻿@{
+    ViewBag.Title = "Juego de Memoria";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/JuegoDeMemoria.css" />
+}
+
+<div class="memory-container">
+
+    <!-- HEADER DEL JUEGO -->
+    <div class="memory-header">
+        <a href="@Url.Action("Juegos", "Tutor")" class="back-btn">←</a>
+
+        <div>
+            <h1>Juego de Memoria</h1>
+            <p>Movimientos: <span id="moves">0</span></p>
+        </div>
+
+        <div class="header-buttons">
+            <div class="points-box">
+                🏆 <span id="points">0</span> puntos
+            </div>
+
+            <button class="restart-btn" onclick="restartGame()">🔄 Reiniciar</button>
+        </div>
+    </div>
+
+    <!-- TABLERO -->
+    <div id="gameBoard" class="memory-grid"></div>
+
+    <!-- INSTRUCCIONES -->
+    <div class="instructions-box">
+        <h3>Instrucciones:</h3>
+        <ul>
+            <li>Haz clic en las tarjetas para voltearlas</li>
+            <li>Encuentra las parejas iguales</li>
+            <li>Cada pareja encontrada suma 10 puntos</li>
+            <li>¡Trata de completar el juego con pocos movimientos!</li>
+        </ul>
+    </div>
+</div>
+
+<!-- SCRIPT DEL JUEGO -->
+<script>
+    const images = [
+        "animal1.png", "animal1.png",
+        "animal2.png", "animal2.png",
+        "animal3.png", "animal3.png",
+        "animal4.png", "animal4.png",
+        "animal5.png", "animal5.png",
+        "animal6.png", "animal6.png",
+        "animal7.png", "animal7.png",
+        "animal8.png", "animal8.png"
+    ];
+
+    let firstCard = null;
+    let secondCard = null;
+    let lockBoard = false;
+    let moves = 0;
+    let points = 0;
+
+    function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    function generateBoard() {
+        const board = document.getElementById("gameBoard");
+        board.innerHTML = "";
+        shuffle(images);
+
+        images.forEach(img => {
+            const card = document.createElement("div");
+            card.classList.add("memory-card");
+            card.innerHTML = `
+                <div class="card-inner">
+                    <div class="card-front">?</div>
+                    <div class="card-back">
+                        <img src="/Content/animals/${img}">
+                    </div>
+                </div>
+            `;
+            card.addEventListener("click", () => flipCard(card, img));
+            board.appendChild(card);
+        });
+    }
+
+    function flipCard(card, img) {
+        if (lockBoard || card === firstCard) return;
+
+        card.classList.add("flipped");
+
+        if (!firstCard) {
+            firstCard = card;
+            return;
+        }
+
+        secondCard = card;
+        lockBoard = true;
+        moves++;
+        document.getElementById("moves").innerText = moves;
+
+        const firstImg = firstCard.querySelector("img").src;
+        const secondImg = secondCard.querySelector("img").src;
+
+        if (firstImg === secondImg) {
+            points += 10;
+            document.getElementById("points").innerText = points;
+            resetSelection();
+        } else {
+            setTimeout(() => {
+                firstCard.classList.remove("flipped");
+                secondCard.classList.remove("flipped");
+                resetSelection();
+            }, 800);
+        }
+    }
+
+    function resetSelection() {
+        [firstCard, secondCard] = [null, null];
+        lockBoard = false;
+    }
+
+    function restartGame() {
+        moves = 0;
+        points = 0;
+        document.getElementById("moves").innerText = "0";
+        document.getElementById("points").innerText = "0";
+        generateBoard();
+    }
+
+    generateBoard();
+</script>

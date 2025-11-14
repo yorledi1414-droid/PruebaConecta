@@ -1,0 +1,115 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+}
+
+/* CONTENEDOR */
+.exp-container {
+    padding: 25px;
+}
+
+/* ENCABEZADO */
+.header-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.back-btn {
+    font-size: 26px;
+    color: black;
+    text-decoration: none;
+}
+
+.header-text h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.header-text p {
+    margin: 3px 0 0;
+    color: #666;
+}
+
+/* GRID */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* TARJETAS */
+.option-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+    .option-card:hover {
+        transform: translateY(-5px);
+    }
+
+/* BARRA SUPERIOR DE COLOR */
+.orange-card::before,
+.purple-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+}
+
+.orange-card::before {
+    background: linear-gradient(90deg, #ffb037, #ff7a00);
+}
+
+.purple-card::before {
+    background: linear-gradient(90deg, #6a9bff, #c38bff);
+}
+
+/* ICONOS */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.orange-bg {
+    background: linear-gradient(135deg, #ffcd4b, #ff7a00);
+    color: white;
+}
+
+.purple-bg {
+    background: linear-gradient(135deg, #80a5ff, #c38bff);
+    color: white;
+}
+
+/* TEXTO */
+.option-card h3 {
+    margin: 10px 0 5px;
+    font-size: 20px;
+}
+
+.desc {
+    color: #666;
+    font-size: 15px;
+    margin-top: 5px;
+}
