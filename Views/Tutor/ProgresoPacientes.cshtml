@@ -1,0 +1,110 @@
+﻿@{
+    ViewBag.Title = "Progreso del Paciente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/ProgresoPacientes.css" />
+}
+
+<div class="progress-wrapper">
+
+    <!-- BOTÓN VOLVER -->
+    <a href="@Url.Action("TutorVista", "Tutor")" class="btn-back">
+        ← Volver al Dashboard
+    </a>
+
+    <!-- HEADER -->
+    <div class="header-box">
+        <div>
+            <h1>Progreso del Paciente</h1>
+            <p class="patient-name">Nombre: María García López</p>
+        </div>
+
+        <div class="tags">
+            <span class="tag">Nivel TEA: <b>Moderado</b></span>
+            <span class="tag">Edad: <b>8 años</b></span>
+        </div>
+    </div>
+
+    <!-- RESUMEN -->
+    <div class="summary-grid">
+
+        <div class="summary-card">
+            <h3>Total Sesiones</h3>
+            <p class="big-number">45</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>Progreso General</h3>
+            <p class="big-number">88%</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>Tiempo Promedio</h3>
+            <p class="big-number">25 min</p>
+        </div>
+
+        <div class="summary-card">
+            <h3>Logros</h3>
+            <p class="big-number">12</p>
+        </div>
+
+    </div>
+
+    <!-- GRAFICAS -->
+    <div class="charts-grid">
+
+        <!-- PROGRESO SEMANAL -->
+        <div class="chart-box">
+            <h3>Progreso Semanal</h3>
+            <p class="chart-desc">Evolución del puntaje y tiempo de sesión</p>
+
+            <img src="~/Content/demo/chrt1.png" class="chart-img" />
+        </div>
+
+        <!-- ACTIVIDAD POR JUEGO -->
+        <div class="chart-box">
+            <h3>Actividad por Juego</h3>
+            <p class="chart-desc">Número de sesiones por categoría</p>
+
+            <img src="~/Content/demo/chrt2.png" class="chart-img" />
+        </div>
+
+    </div>
+
+    <!-- OBSERVACIONES -->
+    <div class="observations-box">
+        <h3>Observaciones del Terapeuta</h3>
+        <p class="subtext">Últimas notas y comentarios</p>
+
+        <!-- OBS 1 -->
+        <div class="obs-item blue-line">
+            <p class="obs-date">10 Nov 2025 – Dr. García</p>
+            <p class="obs-text">
+                María muestra excelente progreso en reconocimiento de emociones. Ha aumentado su capacidad
+                de identificar expresiones faciales en un 40%.
+            </p>
+        </div>
+
+        <!-- OBS 2 -->
+        <div class="obs-item purple-line">
+            <p class="obs-date">5 Nov 2025 – Dr. García</p>
+            <p class="obs-text">
+                Continúa con buen desempeño en juegos de colores y formas. Se recomienda incrementar la
+                dificultad gradualmente.
+            </p>
+        </div>
+
+        <!-- OBS 3 -->
+        <div class="obs-item green-line">
+            <p class="obs-date">1 Nov 2025 – Dr. García</p>
+            <p class="obs-text">
+                Sesión muy productiva. María completó los ejercicios con mínima asistencia.
+                Excelente concentración durante 25 minutos.
+            </p>
+        </div>
+
+    </div>
+
+</div>

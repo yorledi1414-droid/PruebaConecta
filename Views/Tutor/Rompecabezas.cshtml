@@ -1,0 +1,164 @@
+﻿@{
+    ViewBag.Title = "Rompecabezas";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/Rompecabezas.css" />
+}
+
+<div class="rompecabezas-container">
+
+    <!-- ENCABEZADO -->
+    <div class="header-box">
+        <a href="@Url.Action("Juegos", "Tutor")" class="back-btn">←</a>
+
+        <div class="header-top">
+            <div>
+                <h1>Rompecabezas</h1>
+                <p>Movimientos: <span id="moves">0</span></p>
+            </div>
+
+            <div class="header-buttons">
+                <div class="points-box">
+                    🏆 <span>50 puntos</span>
+                </div>
+                <button id="resetBtn" class="reset-btn">⟳ Reiniciar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- TABLERO -->
+    <div class="board-box">
+        <div id="board" class="board"></div>
+    </div>
+
+    <!-- INSTRUCCIONES -->
+    <div class="instructions">
+        <h3>Instrucciones:</h3>
+        <ul>
+            <li>Ordena las piezas del 1 al 8 en orden</li>
+            <li>Haz clic en una pieza para seleccionarla</li>
+            <li>Haz clic en otra pieza para intercambiar sus posiciones</li>
+            <li>¡Completa el rompecabezas para ganar 50 puntos!</li>
+        </ul>
+    </div>
+
+    <!-- MODAL DE VICTORIA -->
+    <div id="winModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>🎉 ¡Felicidades!</h2>
+            <p>Has completado el rompecabezas.</p>
+            <button id="closeModal" class="modal-btn">Aceptar</button>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // ---- Estado del juego ----
+        let tiles = [1, 2, 3, 4, 5, 6, 7, 8];
+        let selected = null;
+        let moves = 0;
+
+        const board = document.getElementById("board");
+        const movesLabel = document.getElementById("moves");
+        const resetBtn = document.getElementById("resetBtn");
+
+        const winModal = document.getElementById("winModal");
+        const closeModal = document.getElementById("closeModal");
+
+        // ---- Utilidades ----
+        function shuffle(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        // ---- Cargar tablero ----
+        function loadBoard() {
+            board.innerHTML = "";
+            tiles.forEach((num, index) => {
+                const t = document.createElement("div");
+                t.classList.add("tile", "color" + num); // asigna color pastel según número
+                t.textContent = num;
+                t.dataset.index = index;
+
+                t.onclick = () => selectTile(t);
+
+                board.appendChild(t);
+            });
+        }
+
+        // ---- Seleccionar e intercambiar ----
+        function selectTile(tile) {
+            // primera selección
+            if (!selected) {
+                selected = tile;
+                tile.classList.add("selected");
+                return;
+            }
+
+            // si se hace clic en la misma, deseleccionar
+            if (tile === selected) {
+                tile.classList.remove("selected");
+                selected = null;
+                return;
+            }
+
+            // segunda selección -> intercambiar
+            swapTiles(selected, tile);
+            selected.classList.remove("selected");
+            selected = null;
+        }
+
+        function swapTiles(tile1, tile2) {
+            const idx1 = tile1.dataset.index;
+            const idx2 = tile2.dataset.index;
+
+            [tiles[idx1], tiles[idx2]] = [tiles[idx2], tiles[idx1]];
+
+            moves++;
+            movesLabel.textContent = moves;
+
+            loadBoard();
+            checkWin();
+        }
+
+        // ---- Comprobar victoria ----
+        function checkWin() {
+            if (tiles.join("") === "12345678") {
+                setTimeout(() => {
+                    winModal.classList.remove("hidden");
+                }, 200);
+            }
+        }
+
+        // ---- Reiniciar ----
+        resetBtn.onclick = () => {
+            tiles = shuffle([1, 2, 3, 4, 5, 6, 7, 8]);
+            moves = 0;
+            movesLabel.textContent = "0";
+            selected = null;
+            loadBoard();
+        };
+
+        // ---- Cerrar modal ----
+        closeModal.onclick = () => {
+            winModal.classList.add("hidden");
+        };
+
+        // Opcional: cerrar clicando fuera
+        winModal.addEventListener("click", (e) => {
+            if (e.target === winModal) {
+                winModal.classList.add("hidden");
+            }
+        });
+
+        // ---- Inicializar juego ----
+        tiles = shuffle(tiles);
+        loadBoard();
+    </script>
+}

@@ -1,0 +1,169 @@
+﻿body {
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Contenedor general */
+.emociones-container {
+    padding: 25px;
+}
+
+/* Encabezado */
+.header-box {
+    background: white;
+    padding: 20px 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    text-decoration: none;
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.header-box h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.header-box p {
+    color: #666;
+    margin-top: 4px;
+}
+
+/* GRID */
+.emociones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.em-card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform .2s;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .em-card:hover {
+        transform: translateY(-4px);
+    }
+
+    .em-card img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 15px;
+    }
+
+.label {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* COLORES DE BORDES */
+.top-border {
+    height: 8px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    margin-bottom: 15px;
+}
+
+.yellow {
+    background: #FFD43B;
+}
+
+.blue {
+    background: #5DA7F2;
+}
+
+.red {
+    background: #FF4B4B;
+}
+
+.purple {
+    background: #9D72FF;
+}
+
+.pink {
+    background: #F7B4E9;
+}
+
+.fuchsia {
+    background: #FF8CDC;
+}
+
+.orange {
+    background: #FFA726;
+}
+
+.green {
+    background: #41D77E;
+}
+
+.gray {
+    background: #888;
+}
+
+/* Resultado */
+.resultado {
+    margin-top: 40px;
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.res-title {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.res-card {
+    background: #e8fff1;
+    padding: 30px;
+    border-radius: 18px;
+    display: inline-block;
+}
+
+    .res-card img {
+        width: 110px;
+    }
+
+    .res-card p {
+        font-size: 24px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+
+/* Toast */
+.toast {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: white;
+    padding: 15px 25px;
+    border-radius: 12px;
+    font-weight: 600;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: opacity 0.3s ease;
+}
+
+    .toast.hidden {
+        opacity: 0;
+        pointer-events: none;
+    }

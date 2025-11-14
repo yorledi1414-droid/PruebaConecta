@@ -1,0 +1,124 @@
+﻿@{
+    ViewBag.Title = "¿Cómo te sientes hoy?";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/ComoTeSientes.css" />
+}
+
+<div class="emociones-container">
+
+    <!-- ENCABEZADO -->
+    <div class="header-box">
+        <a href="@Url.Action("ExpresArte", "Tutor")" class="back-btn">← Volver</a>
+
+        <h1>¿Cómo te sientes hoy?</h1>
+        <p>Selecciona una emoción</p>
+    </div>
+
+    <!-- GRID -->
+    <div class="emociones-grid">
+
+        <!-- =================== TARJETAS ====================== -->
+        <div class="em-card" data-name="Feliz" data-color="#FFD43B">
+            <div class="top-border yellow"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/smiling-face-with-smiling-eyes_1f60a.png" />
+            <p class="label">Feliz</p>
+        </div>
+
+        <div class="em-card" data-name="Triste" data-color="#5DA7F2">
+            <div class="top-border blue"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/crying-face_1f622.png" />
+            <p class="label">Triste</p>
+        </div>
+
+        <div class="em-card" data-name="Enojado" data-color="#FF4B4B">
+            <div class="top-border red"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/pouting-face_1f621.png" />
+            <p class="label">Enojado</p>
+        </div>
+
+        <div class="em-card" data-name="Asustado" data-color="#8A63FF">
+            <div class="top-border purple"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/fearful-face_1f628.png" />
+            <p class="label">Asustado</p>
+        </div>
+
+        <div class="em-card" data-name="Cansado" data-color="#F7B4E9">
+            <div class="top-border pink"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/sleepy-face_1f62a.png" />
+            <p class="label">Cansado</p>
+        </div>
+
+        <div class="em-card" data-name="Amoroso" data-color="#FF9DD9">
+            <div class="top-border fuchsia"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/smiling-face-with-hearts_1f970.png" />
+            <p class="label">Amoroso</p>
+        </div>
+
+        <div class="em-card" data-name="Nervioso" data-color="#FFA726">
+            <div class="top-border orange"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/anxious-face-with-sweat_1f630.png" />
+            <p class="label">Nervioso</p>
+        </div>
+
+        <div class="em-card" data-name="Enfermo" data-color="#41D77E">
+            <div class="top-border green"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/nauseated-face_1f922.png" />
+            <p class="label">Enfermo</p>
+        </div>
+
+        <div class="em-card" data-name="Normal" data-color="#CCC">
+            <div class="top-border gray"></div>
+            <img src="https://em-content.zobj.net/source/apple/391/neutral-face_1f610.png" />
+            <p class="label">Normal</p>
+        </div>
+
+    </div>
+
+    <!-- RESULTADO SELECCIONADO -->
+    <div id="resultado-box" class="resultado hidden">
+        <p class="res-title">Me siento:</p>
+        <div class="res-card">
+            <img id="res-img" />
+            <p id="res-text"></p>
+        </div>
+    </div>
+
+    <!-- NOTIFICACIÓN -->
+    <div id="toast" class="toast hidden"></div>
+
+</div>
+
+<script>
+    const cards = document.querySelectorAll(".em-card");
+    const toast = document.getElementById("toast");
+    const resultadoBox = document.getElementById("resultado-box");
+    const resImg = document.getElementById("res-img");
+    const resText = document.getElementById("res-text");
+
+    cards.forEach(card => {
+        card.addEventListener("click", () => {
+
+            const name = card.dataset.name;
+            const color = card.dataset.color;
+            const img = card.querySelector("img").src;
+
+            // Mostrar tarjeta grande abajo
+            resultadoBox.classList.remove("hidden");
+            resImg.src = img;
+            resText.textContent = name;
+            resText.style.color = color;
+            resImg.style.filter = "drop-shadow(0 4px 10px rgba(0,0,0,0.2))";
+
+            // Toast
+            toast.textContent = "Has seleccionado: " + name;
+            toast.classList.remove("hidden");
+
+            setTimeout(() => {
+                toast.classList.add("hidden");
+            }, 2000);
+        });
+    });
+</script>

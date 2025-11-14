@@ -1,0 +1,219 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    margin: 0;
+    padding: 0;
+}
+
+/* CONTENEDOR GENERAL */
+.rompecabezas-container {
+    padding: 25px;
+}
+
+/* ENCABEZADO */
+.header-box {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+}
+
+.back-btn {
+    font-size: 22px;
+    text-decoration: none;
+    color: black;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+    .header-top h1 {
+        font-size: 26px;
+        margin: 0;
+    }
+
+    .header-top p {
+        margin: 4px 0 0;
+        color: #555;
+    }
+
+.header-buttons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.points-box {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #6aa9ff, #c38bff);
+    border-radius: 25px;
+    color: white;
+    font-weight: bold;
+}
+
+.reset-btn {
+    border: none;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #6aa9ff, #c38bff);
+    color: white;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    .reset-btn:hover {
+        opacity: 0.9;
+    }
+
+/* TABLERO */
+.board-box {
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 140px);
+    gap: 20px;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+/* PIEZAS */
+.tile {
+    width: 140px;
+    height: 140px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+    .tile:hover {
+        transform: scale(1.05);
+    }
+
+    .tile.selected {
+        outline: 4px solid #ffffff;
+    }
+
+/* COLORES PASTEL DIFERENTES */
+.color1 {
+    background: #a5c9ff;
+}
+/* Azul pastel */
+.color2 {
+    background: #ffe28a;
+}
+/* Amarillo pastel */
+.color3 {
+    background: #ff9ecd;
+}
+/* Rosa pastel */
+.color4 {
+    background: #b58dff;
+}
+/* Morado pastel */
+.color5 {
+    background: #6ee7b7;
+}
+/* Verde pastel */
+.color6 {
+    background: #ffb085;
+}
+/* Naranja pastel */
+.color7 {
+    background: #9db2ff;
+}
+/* Azul lavanda */
+.color8 {
+    background: #f7a8ff;
+}
+/* Rosa lila */
+
+/* INSTRUCCIONES */
+.instructions {
+    margin-top: 25px;
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+    .instructions h3 {
+        margin-top: 0;
+    }
+
+/* MODAL DE VICTORIA */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+    .modal.hidden {
+        display: none;
+    }
+
+.modal-content {
+    background: white;
+    padding: 35px 45px;
+    border-radius: 20px;
+    text-align: center;
+    width: 350px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    animation: pop 0.25s ease-out;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.modal-content p {
+    margin: 0 0 15px;
+    color: #555;
+}
+
+.modal-btn {
+    padding: 10px 25px;
+    background: linear-gradient(90deg, #6aa9ff, #c38bff);
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+    .modal-btn:hover {
+        opacity: 0.9;
+    }

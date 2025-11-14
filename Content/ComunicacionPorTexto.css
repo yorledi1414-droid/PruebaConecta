@@ -1,0 +1,110 @@
+﻿body {
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    font-family: 'Poppins', sans-serif;
+}
+
+/* CONTENEDOR GENERAL */
+.texto-container {
+    padding: 30px;
+}
+
+/* HEADER */
+.header-box {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.back-btn {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+
+.header-top h1 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.header-top p {
+    margin: 5px 0 0 0;
+    color: #666;
+}
+
+/* CUADRO PRINCIPAL */
+.box-main {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 25px;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    border: none;
+    background: #f4f4f4;
+    padding: 15px;
+    font-size: 16px;
+    outline: none;
+    resize: none;
+}
+
+/* BOTONES */
+.btn-row {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.btn-delete {
+    background: #eee;
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+    .btn-delete:hover {
+        background: #e2e2e2;
+    }
+
+.btn-voice {
+    border: none;
+    padding: 10px 22px;
+    border-radius: 12px;
+    font-size: 15px;
+    cursor: pointer;
+    color: white;
+    background: linear-gradient(90deg, #5f92ff, #c28bfa);
+    transition: 0.3s;
+}
+
+    .btn-voice:hover {
+        background: linear-gradient(90deg, #4a7df0, #b07ae9);
+    }
+
+/* INSTRUCCIONES */
+.instructions-box {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+    .instructions-box ul {
+        margin-top: 10px;
+    }
+
+    .instructions-box li {
+        margin-bottom: 8px;
+        color: #444;
+    }

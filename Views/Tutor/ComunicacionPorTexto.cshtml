@@ -1,0 +1,73 @@
+﻿@{
+    ViewBag.Title = "Escribe tu mensaje";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/ComunicacionPorTexto.css" />
+}
+
+<div class="texto-container">
+
+    <!-- ENCABEZADO -->
+    <div class="header-box">
+        <a href="@Url.Action("ExpresArte", "Tutor")" class="back-btn">← Volver</a>
+
+        <div class="header-top">
+            <div>
+                <h1>Escribe tu mensaje</h1>
+                <p>Expresa lo que piensas o sientes</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- CUADRO PRINCIPAL -->
+    <div class="box-main">
+
+        <textarea id="mensajeTexto" placeholder="Escribe aquí tu mensaje..."></textarea>
+
+        <div class="btn-row">
+            <button id="btnBorrar" class="btn-delete">Borrar</button>
+
+            <button id="btnLeer" class="btn-voice">
+                🔊 Leer en voz alta
+            </button>
+        </div>
+    </div>
+
+    <!-- INSTRUCCIONES -->
+    <div class="instructions-box">
+        <p><strong>Instrucciones:</strong></p>
+        <ul>
+            <li>Escribe lo que quieras expresar en el cuadro de texto</li>
+            <li>Haz clic en "Leer en voz alta" para escuchar tu mensaje</li>
+            <li>Puedes borrar y escribir un nuevo mensaje cuando quieras</li>
+        </ul>
+    </div>
+
+</div>
+
+<!-- SCRIPT PARA LEER EN VOZ ALTA -->
+<script>
+    const btnLeer = document.getElementById("btnLeer");
+    const btnBorrar = document.getElementById("btnBorrar");
+    const texto = document.getElementById("mensajeTexto");
+
+    btnLeer.addEventListener("click", () => {
+        if (!texto.value.trim()) {
+            alert("Escribe un mensaje primero.");
+            return;
+        }
+
+        const speech = new SpeechSynthesisUtterance(texto.value);
+        speech.lang = "es-ES"; // Español
+        speech.rate = 1;       // Velocidad
+        speech.pitch = 1;      // Tono
+
+        window.speechSynthesis.speak(speech);
+    });
+
+    btnBorrar.addEventListener("click", () => {
+        texto.value = "";
+    });
+</script>
