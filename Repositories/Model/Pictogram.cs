@@ -12,16 +12,14 @@ namespace PruebaConecta.Repositories.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Progress
+    public partial class Pictogram
     {
-        public int Progress_ID { get; set; }
-        public int Patient_ID { get; set; }
-        public int Game_ID { get; set; }
-        public Nullable<System.DateTime> Date { get; set; }
-        public Nullable<int> Score { get; set; }
-        public string Observations { get; set; }
+        public int Pictogram_ID { get; set; }
+        public int Category_ID { get; set; }
+        public string Name { get; set; }
+        public string ImagePath { get; set; }
+        public string TextDescription { get; set; }
     
-        public virtual Game Game { get; set; }
-        public virtual Patient Patient { get; set; }
+        public virtual Pictogram_Categories Pictogram_Categories { get; set; }
     }
 }

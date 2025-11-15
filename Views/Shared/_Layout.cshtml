@@ -13,14 +13,17 @@
     <link rel="stylesheet" href="~/Content/Site.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-
     @RenderSection("Head", required: false)
 </head>
-<body class="@ViewBag.BodyClass">
+
+<!-- ✔ ESTA ES LA ÚNICA LÍNEA MODIFICADA -->
+<body class="body-base @ViewBag.BodyClass">
+
     @RenderBody()
 
     <script src="~/Scripts/app.js"></script>
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
 

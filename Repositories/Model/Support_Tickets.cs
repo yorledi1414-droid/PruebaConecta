@@ -17,7 +17,7 @@ namespace PruebaConecta.Repositories.Model
         public int Support_ID { get; set; }
         public int User_ID { get; set; }
         public string Description { get; set; }
-        public System.DateTime Date { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
         public string Status { get; set; }
     
         public virtual User User { get; set; }

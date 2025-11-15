@@ -26,7 +26,7 @@ namespace PruebaConecta.Repositories.Model
         public int Tutor_ID { get; set; }
         public string Name { get; set; }
         public string LastName { get; set; }
-        public System.DateTime Birth_Date { get; set; }
+        public Nullable<System.DateTime> Birth_Date { get; set; }
         public string Diagnosis { get; set; }
         public string Autism_Level { get; set; }
         public string Profile_Picture { get; set; }

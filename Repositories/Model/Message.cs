@@ -19,8 +19,8 @@ namespace PruebaConecta.Repositories.Model
         public int Recipient_ID { get; set; }
         public int Appointment_ID { get; set; }
         public string Content { get; set; }
-        public System.DateTime Sent_DateTime { get; set; }
-        public bool Is_Read { get; set; }
+        public Nullable<System.DateTime> Sent_DateTime { get; set; }
+        public Nullable<bool> Is_Read { get; set; }
     
         public virtual Appointment Appointment { get; set; }
         public virtual User User { get; set; }

@@ -9,6 +9,22 @@
     <link rel="stylesheet" href="~/Content/Home.css" />
 }
 
+<!-- ✅ MENSAJE DE REGISTRO EXITOSO -->
+@if (TempData["RegistroOk"] != null)
+{
+    <div class="alert-success" id="registroExitoso">
+        <p>@TempData["RegistroOk"]</p>
+    </div>
+}
+
+<!-- ✅ MENSAJE DE ERROR EN LOGIN -->
+@if (TempData["Error"] != null)
+{
+    <div class="alerta-error">
+        <p>@TempData["Error"]</p>
+    </div>
+}
+
 <main class="responsive-container">
     <div class="white-box">
         <div class="logo-wrap">
@@ -17,15 +33,17 @@
 
         <h2>Inicio de Sesión</h2>
 
-        <form class="login-form" method="post" action="@Url.Action("Login", "Account")">
+        <form class="login-form" method="post" action="@Url.Action("Home", "Home")">
+            @Html.AntiForgeryToken()
+
             <div class="input-row">
                 <i class="fa-solid fa-user"></i>
-                <input type="text" name="username" placeholder="Ingresa tu usuario" autocomplete="username" required />
+                <input type="email" name="Email" placeholder="Ingresa tu correo" required />
             </div>
 
             <div class="input-row">
                 <i class="fa-solid fa-lock"></i>
-                <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" autocomplete="current-password" required />
+                <input type="password" id="password" name="Password" placeholder="Ingresa tu contraseña" required />
                 <button type="button" class="show-pass" onclick="togglePassword()">
                     <i class="fa-regular fa-eye"></i>
                 </button>
@@ -34,11 +52,8 @@
             <button class="btn-primary" type="submit">INICIAR SESIÓN</button>
 
             <div class="links">
-                <<a href="@Url.Action("Index", "Registro")">CREAR CUENTA</a>
-
+                <a href="@Url.Action("Index", "Registro")">CREAR CUENTA</a>
                 <a href="@Url.Action("RContrasena", "Account")">¿Olvidaste tu contraseña?</a>
-                
-
             </div>
         </form>
     </div>
@@ -61,9 +76,18 @@
                 icon.classList.add("fa-eye");
             }
         }
-    </script>
-}
 
+        // ✅ Desaparece el mensaje de éxito automáticamente después de 3 segundos
+        window.addEventListener('DOMContentLoaded', () => {
+            const msg = document.getElementById("registroExitoso");
+            if (msg) {
+                setTimeout(() => {
+                    msg.style.opacity = '0';
+                    setTimeout(() => msg.remove(), 600);
+                }, 3000);
+            }
+        });
+    </script>
 }
 
 

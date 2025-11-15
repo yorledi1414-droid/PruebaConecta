@@ -1,23 +1,50 @@
-﻿using System.Web.Mvc;
+﻿using PruebaConecta.Dtos;
+using PruebaConecta.Services;
+using System.Web.Mvc;
 
 namespace PruebaConecta.Controllers
 {
     public class RegistroController : Controller
     {
-        // GET: /Registro
-        public ActionResult Index()
+        private readonly RegistroService _service;
+
+        public RegistroController()
         {
-            return View();
+            _service = new RegistroService();
         }
 
-        // POST: /Registro
+        // ==============================
+        //   VISTA DE REGISTRO (GET)
+        // ==============================
+        [HttpGet]
+        public ActionResult Index()
+        {
+            return View(); // Carga la vista /Views/Registro/Index.cshtml
+        }
+
+        // ==============================
+        //   PROCESAR REGISTRO (POST)
+        // ==============================
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Index(string nombre, string apellido, string cedula, string email, bool? terapeuta, bool? tutor)
+        public ActionResult Index(RegisterDto dto)
         {
-            // Aquí se podrían guardar datos en BD
-            TempData["RegistroOk"] = "Registro guardado (simulado)";
-            return RedirectToAction("Index");
+            var resultado = _service.RegistrarUsuario(dto);
+
+            // ❌ Registro inválido → se queda en la vista de registro
+            if (resultado != "OK")
+            {
+                TempData["Error"] = "Registro no válido. Verifica los datos ingresados.";
+                return View(dto);
+            }
+
+            // ✔ Registro exitoso → redirige al inicio de sesión
+            TempData["RegistroOk"] = "Usuario registrado correctamente.";
+            return RedirectToAction("home", "Home");
         }
     }
 }
+
+
+
+

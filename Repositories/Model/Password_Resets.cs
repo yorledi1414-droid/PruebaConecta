@@ -17,7 +17,7 @@ namespace PruebaConecta.Repositories.Model
         public int Reset_ID { get; set; }
         public int User_ID { get; set; }
         public string Token { get; set; }
-        public System.DateTime Expiration_DateTime { get; set; }
+        public Nullable<System.DateTime> Expiration_DateTime { get; set; }
         public string Status { get; set; }
     
         public virtual User User { get; set; }

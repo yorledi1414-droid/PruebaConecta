@@ -4,29 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="76dd4ec11ccf4d47b1978f1f6bcf336b" Name="Diagram1">
-        <EntityTypeShape EntityType="TherapyDBModel.Appointment_States" Width="1.5" PointX="7.5" PointY="27.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Appointment" Width="1.5" PointX="9.75" PointY="28" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Configuration" Width="1.5" PointX="5.25" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Game" Width="1.5" PointX="7.5" PointY="38" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Message" Width="1.5" PointX="8.25" PointY="15.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Notification" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Password_Resets" Width="1.5" PointX="5.25" PointY="16.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Patient" Width="1.5" PointX="7.5" PointY="33.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Progress" Width="1.5" PointX="9.75" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Report" Width="1.5" PointX="12.75" PointY="28.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Role" Width="1.5" PointX="0.75" PointY="15.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Schedule" Width="1.5" PointX="7.5" PointY="30.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.State" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Support_Tickets" Width="1.5" PointX="5.25" PointY="19.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Therapist" Width="1.5" PointX="5.25" PointY="22.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.Tutor" Width="1.5" PointX="5.25" PointY="33.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TherapyDBModel.User" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+      <Diagram DiagramId="76dd4ec11ccf4d47b1978f1f6bcf336b" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="TherapyDBModel.Appointment_States" Width="1.5" PointX="7.5" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Appointment" Width="1.5" PointX="9.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Game" Width="1.5" PointX="7.5" PointY="35.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Message" Width="1.5" PointX="8.25" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Notification" Width="1.5" PointX="5.25" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Password_Resets" Width="1.5" PointX="5.25" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Patient" Width="1.5" PointX="7.5" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Progress" Width="1.5" PointX="9.75" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Report" Width="1.5" PointX="12.75" PointY="25.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Role" Width="1.5" PointX="0.75" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Schedule" Width="1.5" PointX="7.5" PointY="27.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.State" Width="1.5" PointX="0.75" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Support_Tickets" Width="1.5" PointX="5.25" PointY="17.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Therapist" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.Tutor" Width="1.5" PointX="5.25" PointY="31.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TherapyDBModel.User" Width="1.5" PointX="3" PointY="14.5" IsExpanded="true" />
         <AssociationConnector Association="TherapyDBModel.FK__Appointme__Appoi__628FA481" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Appointme__Patie__60A75C0F" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Appointme__Thera__619B8048" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Messages__Appoin__73BA3083" ManuallyRouted="false" />
-        <AssociationConnector Association="TherapyDBModel.FK__Configura__User___7F2BE32F" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Progress__Game_I__6B24EA82" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Messages__Recipi__72C60C4A" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Messages__Sender__71D1E811" ManuallyRouted="false" />
@@ -42,6 +40,11 @@
         <AssociationConnector Association="TherapyDBModel.FK__Support_T__User___7C4F7684" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Therapist__User___59063A47" ManuallyRouted="false" />
         <AssociationConnector Association="TherapyDBModel.FK__Tutors__User_ID__5535A963" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="TherapyDBModel.Pictogram_Categories" Width="1.5" PointX="0.75" PointY="1.25" />
+        <EntityTypeShape EntityType="TherapyDBModel.Pictogram" Width="1.5" PointX="3" PointY="0.875" />
+        <EntityTypeShape EntityType="TherapyDBModel.User_Notification_Settings" Width="1.5" PointX="5.25" PointY="23.875" />
+        <AssociationConnector Association="TherapyDBModel.FK__Pictogram__Categ__6AEFE058" />
+        <AssociationConnector Association="TherapyDBModel.FK__User_Noti__User___662B2B3B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
