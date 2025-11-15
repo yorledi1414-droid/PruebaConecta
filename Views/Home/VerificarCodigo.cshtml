@@ -1,0 +1,64 @@
+﻿@{
+    ViewBag.Title = "Verificar Código";
+    Layout = null; /* Si usas layout, cámbialo por tu layout */
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="~/Content/VerificarCodigo.css" />
+</head>
+
+<body>
+
+    <div class="verify-container">
+
+        <!-- Botón volver -->
+        <a href="@Url.Action("VerificarCodigo", "Home")" class="back-btn">← Volver</a>
+
+        <!-- Tarjeta -->
+        <div class="verify-card">
+
+            <!-- Ícono -->
+            <div class="icon-circle">
+                <i class="fas fa-envelope"></i>
+            </div>
+
+            <h2>Verificar Código</h2>
+
+            <p class="msg">
+                Hemos enviado un código de verificación a:
+            </p>
+
+            <p class="email">
+                @ViewBag.Email
+            </p>
+
+            <!-- Campo Código -->
+            <label class="label">Código de verificación</label>
+            <input type="text"
+                   maxlength="6"
+                   class="code-input"
+                   placeholder="— — — — — —"
+                   autocomplete="off" />
+
+            <!-- Botón -->
+            <a href="@Url.Action("NuevaContraseña", "Home")" class="btn-verificar">
+                Verificar Código
+            </a>
+
+
+            <!-- Reenviar -->
+            <a href="@Url.Action("Reenviar", "Home")" class="resend">
+                Reenviar código
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+</body>
+</html>
