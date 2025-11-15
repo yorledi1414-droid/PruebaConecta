@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Nueva Contraseña";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Head {
+    <link rel="stylesheet" href="~/Content/NuevaContraseña.css" />
+}
+
+<a href="@Url.Action("VerificarCodigo", "Home")" class="back-btn">← Volver</a>
+
+<div class="verify-box">
+
+    <div class="icon-circle">
+        <i class="fas fa-lock"></i>
+    </div>
+
+    <h1>Nueva Contraseña</h1>
+    <p>Crea una contraseña segura para tu cuenta</p>
+
+    <div class="input-group">
+        <label>Nueva contraseña</label>
+        <input type="password" class="input-field" placeholder="Mínimo 6 caracteres" />
+    </div>
+
+    <div class="input-group">
+        <label>Confirmar contraseña</label>
+        <input type="password" class="input-field" placeholder="Repite la contraseña" />
+    </div>
+
+    <button class="btn-primary">GUARDAR CONTRASEÑA</button>
+
+</div>

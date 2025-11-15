@@ -1,0 +1,136 @@
+﻿/* ====== FONDO GENERAL ====== */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ====== CONTENEDOR PRINCIPAL ====== */
+.reset-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ====== TARJETA ====== */
+.reset-card {
+    background: white;
+    width: 400px;
+    padding: 40px 35px;
+    border-radius: 22px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+/* ====== BOTÓN VOLVER ====== */
+.back-btn {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+/* ====== ÍCONO SUPERIOR ====== */
+.icon-circle {
+    width: 95px;
+    height: 95px;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+    .icon-circle i {
+        color: white;
+        font-size: 36px;
+    }
+
+/* ====== TÍTULO Y SUBTÍTULO ====== */
+.reset-card h2 {
+    margin: 10px 0;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+/* ====== INPUTS ====== */
+label {
+    text-align: left;
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+/* Grupo de input con íconos */
+.input-group {
+    width: 100%;
+    position: relative;
+    margin-bottom: 18px;
+}
+
+    .input-group input {
+        width: 100%;
+        padding: 14px 45px 14px 40px;
+        border-radius: 12px;
+        border: 1px solid #ddd;
+        background: #fafafa;
+        outline: none;
+        font-size: 15px;
+    }
+
+/* Ícono izquierda */
+.left-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 18px;
+}
+
+/* Ícono ojo derecha */
+.right-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+/* ====== BOTÓN GUARDAR ====== */
+.btn-save {
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(90deg, #5f92ff, #c28bfa);
+    transition: 0.2s ease;
+}
+
+    .btn-save:hover {
+        background: linear-gradient(90deg, #517ee9, #b178eb);
+    }
