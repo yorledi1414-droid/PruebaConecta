@@ -12,26 +12,18 @@ namespace PruebaConecta.Repositories.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Appointment
+    public partial class Pictogram_Categories
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Appointment()
+        public Pictogram_Categories()
         {
-            this.Messages = new HashSet<Message>();
+            this.Pictograms = new HashSet<Pictogram>();
         }
     
-        public int Appointment_ID { get; set; }
-        public int Patient_ID { get; set; }
-        public int Therapist_ID { get; set; }
-        public Nullable<System.DateTime> Appointment_Date { get; set; }
-        public Nullable<System.TimeSpan> Appointment_Time { get; set; }
-        public int Appointment_State_ID { get; set; }
-        public string Description { get; set; }
+        public int Category_ID { get; set; }
+        public string Name { get; set; }
     
-        public virtual Appointment_States Appointment_States { get; set; }
-        public virtual Patient Patient { get; set; }
-        public virtual Therapist Therapist { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Message> Messages { get; set; }
+        public virtual ICollection<Pictogram> Pictograms { get; set; }
     }
 }

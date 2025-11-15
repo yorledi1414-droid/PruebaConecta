@@ -1,0 +1,133 @@
+﻿/* Fondo */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #84b6f4, #c28bfa);
+    height: 100vh;
+}
+
+/* Contenedor */
+.verify-container {
+    padding: 30px;
+}
+
+/* Botón regresar */
+.back-btn {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* TARJETA */
+.verify-card {
+    background: #fff;
+    width: 520px;
+    margin: 40px auto;
+    padding: 50px 50px;
+    border-radius: 28px;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+/* ICONO REDONDO */
+.icon-circle {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #8aa8f4, #c28bf8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    /* ÍCONO FONT AWESOME */
+    .icon-circle i {
+        font-size: 50px;
+        color: white;
+    }
+
+/* TÍTULO */
+.verify-card h2 {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* TEXTOS */
+.msg {
+    font-size: 16px;
+    color: #666;
+}
+
+.email {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+/* LABEL */
+.label {
+    display: block;
+    text-align: center;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #444;
+    font-size: 15px;
+}
+
+/* INPUT */
+.code-input {
+    width: 100%;
+    padding: 20px;
+    border-radius: 14px;
+    border: 1px solid #ddd;
+    text-align: center;
+    font-size: 26px;
+    letter-spacing: 18px;
+    outline: none;
+    background: #fafafa;
+}
+
+/* TEXTO PRUEBA */
+.codigo-prueba {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #999;
+}
+
+/* BOTÓN */
+.btn-verificar {
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+    padding: 18px;
+    background: linear-gradient(90deg, #6a9fff, #c28bfa);
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.2s ease;
+}
+
+    .btn-verificar:hover {
+        opacity: 0.9;
+    }
+
+/* REENVIAR */
+.resend {
+    display: block;
+    margin-top: 22px;
+    font-weight: 500;
+    color: #4d73e6;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+    .resend:hover {
+        text-decoration: underline;
+    }

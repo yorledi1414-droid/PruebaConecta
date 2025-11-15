@@ -147,3 +147,51 @@
         height: 70px;
     }
 }
+
+/* ====================================================== */
+/* ✅ MENSAJE DE REGISTRO EXITOSO (al volver del registro) */
+/* ====================================================== */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 2px solid #28a745;
+    padding: 12px 18px;
+    border-radius: 10px;
+    max-width: 420px;
+    margin: 25px auto -15px auto;
+    font-weight: 600;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    animation: fadeIn 0.4s ease-in;
+    z-index: 9999;
+}
+
+/* =============================== */
+/* ⚠️ MENSAJE DE ERROR DE LOGIN   */
+/* =============================== */
+.alerta-error {
+    background: #ffebee;
+    border-left: 5px solid #e53935;
+    color: #b71c1c;
+    padding: 12px;
+    margin: 15px auto;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    max-width: 420px;
+    font-weight: 600;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

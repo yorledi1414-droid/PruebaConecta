@@ -1,32 +1,45 @@
-﻿/* -------- Fondo general -------- */
+﻿/* =============================== */
+/*     CARTEL DE ERROR SIMPLE      */
+/* =============================== */
+
+.alerta-error {
+    background: #ffebee;
+    border-left: 5px solid #e53935;
+    color: #b71c1c;
+    padding: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 480px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* =============================== */
+/*        FONDO GENERAL            */
+/* =============================== */
+
 body.registro-page {
     font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background: linear-gradient(to bottom, #377EC2, #C18BD2);
+    height: 100vh;
+    overflow-x: hidden;
 }
 
-/* -------- Botón volver -------- */
-.volver-link {
-    color: white;
-    font-size: 18px;
-    margin: 20px 40px;
-    display: inline-block;
-    text-decoration: none;
-}
+/* =============================== */
+/*      CONTENEDOR PRINCIPAL       */
+/* =============================== */
 
-    .volver-link:hover {
-        text-decoration: underline;
-    }
-
-/* -------- Contenedor -------- */
 .registro-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 40px;
 }
 
-/* -------- Caja blanca -------- */
+/* Caja blanca */
 .registro-box {
     background: white;
     border-radius: 18px;
@@ -36,20 +49,26 @@ body.registro-page {
     box-shadow: 0px 25px 60px rgba(0,0,0,0.25);
 }
 
-/* -------- Títulos -------- */
+/* Títulos */
 .titulo {
     text-align: center;
     font-size: 24px;
     margin-bottom: 5px;
+    font-weight: 700;
+    color: #222;
 }
 
 .subtitulo {
     text-align: center;
     font-size: 16px;
     margin-bottom: 20px;
+    color: #555;
 }
 
-/* -------- Roles -------- */
+/* =============================== */
+/*             ROLES               */
+/* =============================== */
+
 .roles {
     display: flex;
     justify-content: center;
@@ -61,7 +80,10 @@ body.registro-page {
         font-weight: 600;
     }
 
-/* -------- Campos -------- */
+/* =============================== */
+/*             CAMPOS              */
+/* =============================== */
+
 .form-group {
     margin-bottom: 22px;
     display: flex;
@@ -82,23 +104,15 @@ body.registro-page {
         font-size: 15px;
     }
 
-.radio-row {
-    display: flex;
-    gap: 25px;
-}
+        .form-group input[type="file"] {
+            background: transparent;
+        }
 
-/* -------- Ayuda de archivo -------- */
-.ayuda {
-    font-size: 12px;
-    color: #777;
-    margin-top: 5px;
-}
-
-/* -------- Botón -------- */
+/* Botón */
 .btn-guardar {
     width: 100%;
     padding: 14px;
-    background: #4372C1;
+    background: #6c63ff;
     border-radius: 12px;
     color: white;
     font-weight: 600;
@@ -111,12 +125,15 @@ body.registro-page {
         opacity: .9;
     }
 
-/* -------- Ocultos -------- */
+/* Ocultar */
 .oculto {
     display: none;
 }
 
-/* -------- Responsive -------- */
+/* =============================== */
+/*           RESPONSIVE            */
+/* =============================== */
+
 @media (max-width: 540px) {
     .registro-box {
         padding: 25px;

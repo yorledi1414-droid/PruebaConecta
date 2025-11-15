@@ -12,11 +12,14 @@ namespace PruebaConecta.Repositories.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class Configuration
+    public partial class User_Notification_Settings
     {
-        public int Configuration_ID { get; set; }
+        public int Setting_ID { get; set; }
         public int User_ID { get; set; }
-        public bool Dark_Mode { get; set; }
+        public bool Email_Notifications { get; set; }
+        public bool Push_Notifications { get; set; }
+        public bool Message_Notifications { get; set; }
+        public bool Appointment_Reminders { get; set; }
     
         public virtual User User { get; set; }
     }

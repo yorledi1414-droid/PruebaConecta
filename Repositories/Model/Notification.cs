@@ -18,8 +18,8 @@ namespace PruebaConecta.Repositories.Model
         public int User_ID { get; set; }
         public string Type { get; set; }
         public string Message { get; set; }
-        public System.DateTime Sent_DateTime { get; set; }
-        public bool Is_Read { get; set; }
+        public Nullable<System.DateTime> Sent_DateTime { get; set; }
+        public Nullable<bool> Is_Read { get; set; }
     
         public virtual User User { get; set; }
     }

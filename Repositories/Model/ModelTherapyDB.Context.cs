@@ -27,7 +27,6 @@ namespace PruebaConecta.Repositories.Model
     
         public virtual DbSet<Appointment_States> Appointment_States { get; set; }
         public virtual DbSet<Appointment> Appointments { get; set; }
-        public virtual DbSet<Configuration> Configurations { get; set; }
         public virtual DbSet<Game> Games { get; set; }
         public virtual DbSet<Message> Messages { get; set; }
         public virtual DbSet<Notification> Notifications { get; set; }
@@ -42,5 +41,8 @@ namespace PruebaConecta.Repositories.Model
         public virtual DbSet<Therapist> Therapists { get; set; }
         public virtual DbSet<Tutor> Tutors { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Pictogram_Categories> Pictogram_Categories { get; set; }
+        public virtual DbSet<Pictogram> Pictograms { get; set; }
+        public virtual DbSet<User_Notification_Settings> User_Notification_Settings { get; set; }
     }
 }

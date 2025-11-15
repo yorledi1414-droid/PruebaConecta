@@ -17,9 +17,10 @@ namespace PruebaConecta.Repositories.Model
         public int Report_ID { get; set; }
         public int Patient_ID { get; set; }
         public int Therapist_ID { get; set; }
-        public System.DateTime Date { get; set; }
+        public Nullable<System.DateTime> Date { get; set; }
         public string Description { get; set; }
         public string Progress_Summary { get; set; }
+        public string FilePath { get; set; }
     
         public virtual Patient Patient { get; set; }
         public virtual Therapist Therapist { get; set; }

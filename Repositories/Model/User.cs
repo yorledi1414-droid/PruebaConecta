@@ -17,7 +17,6 @@ namespace PruebaConecta.Repositories.Model
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public User()
         {
-            this.Configurations = new HashSet<Configuration>();
             this.Messages = new HashSet<Message>();
             this.Messages1 = new HashSet<Message>();
             this.Notifications = new HashSet<Notification>();
@@ -25,6 +24,7 @@ namespace PruebaConecta.Repositories.Model
             this.Support_Tickets = new HashSet<Support_Tickets>();
             this.Therapists = new HashSet<Therapist>();
             this.Tutors = new HashSet<Tutor>();
+            this.User_Notification_Settings = new HashSet<User_Notification_Settings>();
         }
     
         public int User_ID { get; set; }
@@ -33,13 +33,11 @@ namespace PruebaConecta.Repositories.Model
         public string Email { get; set; }
         public string Password { get; set; }
         public string Phone { get; set; }
-        public System.DateTime Registration_Date { get; set; }
+        public Nullable<System.DateTime> Registration_Date { get; set; }
         public string Avatar { get; set; }
         public int Role_ID { get; set; }
         public int State_ID { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Configuration> Configurations { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Message> Messages { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -56,5 +54,7 @@ namespace PruebaConecta.Repositories.Model
         public virtual ICollection<Therapist> Therapists { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Tutor> Tutors { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User_Notification_Settings> User_Notification_Settings { get; set; }
     }
 }

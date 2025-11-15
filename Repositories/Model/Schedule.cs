@@ -17,8 +17,8 @@ namespace PruebaConecta.Repositories.Model
         public int Schedule_ID { get; set; }
         public int Therapist_ID { get; set; }
         public string Day_Of_Week { get; set; }
-        public System.TimeSpan Start_Time { get; set; }
-        public System.TimeSpan End_Time { get; set; }
+        public Nullable<System.TimeSpan> Start_Time { get; set; }
+        public Nullable<System.TimeSpan> End_Time { get; set; }
     
         public virtual Therapist Therapist { get; set; }
     }

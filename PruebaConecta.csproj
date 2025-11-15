@@ -147,7 +147,8 @@
     <Compile Include="Controllers\TerapeutaController.cs" />
     <Compile Include="Controllers\TutorController.cs" />
     <Compile Include="Controllers\UserContoller.cs" />
-    <Compile Include="Dtos\UserDto.cs" />
+    <Compile Include="Dtos\HomeDto.cs" />
+    <Compile Include="Dtos\RegisterDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -156,9 +157,6 @@
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Model\Appointment_States.cs">
-      <DependentUpon>ModelTherapyDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Repositories\Model\Configuration.cs">
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\Model\Game.cs">
@@ -191,6 +189,12 @@
     <Compile Include="Repositories\Model\Patient.cs">
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\Model\Pictogram.cs">
+      <DependentUpon>ModelTherapyDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\Model\Pictogram_Categories.cs">
+      <DependentUpon>ModelTherapyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\Model\Progress.cs">
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
@@ -218,8 +222,12 @@
     <Compile Include="Repositories\Model\User.cs">
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repositories\Model\User_Notification_Settings.cs">
+      <DependentUpon>ModelTherapyDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\HomeService.cs" />
+    <Compile Include="Services\RegistroService.cs" />
     <Compile Include="Utilities\GestorCorreo.cs" />
     <Compile Include="Utilities\PasswordUtility.cs" />
   </ItemGroup>
@@ -290,6 +298,7 @@
     <Content Include="Content\ExpresArte.css" />
     <Content Include="Content\ComoTeSientes.css" />
     <Content Include="Content\ComunicacionPorTexto.css" />
+    <Content Include="Content\VerificarContrasena.css" />
     <Content Include="Content\TerapeutaDashboard.css" />
     <Content Include="Content\TutorDashboard.css" />
     <Content Include="Content\TicketSoporte.css" />
@@ -388,6 +397,7 @@
     <Content Include="Views\Tutor\ExpresArte.cshtml" />
     <Content Include="Views\Tutor\ComoTeSientes.cshtml" />
     <Content Include="Views\Tutor\ComunicacionPorTexto.cshtml" />
+    <Content Include="Views\Home\VerificarContrasena.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,14 +1,24 @@
 ﻿@{
     ViewBag.Title = "Registro de Usuario";
-    ViewBag.BodyClass = "registro-page";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.BodyClass = "registro-page";
 }
 
 @section Head {
     <link rel="stylesheet" href="~/Content/Registro.css" />
 }
 
-<a href="javascript:history.back()" class="volver-link">← Volver</a>
+@if (TempData["Error"] != null)
+{
+    <div class="alerta-error">
+        <p>@TempData["Error"]</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.classList.add("registro-page");
+        });
+    </script>
+}
 
 <div class="registro-container">
     <div class="registro-box">
@@ -16,105 +26,50 @@
         <h2 class="titulo">BIENVENIDO</h2>
         <p class="subtitulo">¿Eres?</p>
 
-        <div class="roles">
-            <label>
-                <input type="radio" name="rol" value="Administrador" id="rolAdmin" />
-                ADMINISTRADOR
-            </label>
-            <label>
-                <input type="radio" name="rol" value="Terapeuta" id="rolTerapeuta" />
-                TERAPEUTA
-            </label>
-            <label>
-                <input type="radio" name="rol" value="Tutor" id="rolTutor" />
-                TUTOR
-            </label>
-        </div>
-
         @using (Html.BeginForm("Index", "Registro", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
+            <!-- ROLES -->
+            <div class="roles">
+                <label><input type="radio" name="Rol" value="Administrador" required /> ADMINISTRADOR</label>
+                <label><input type="radio" name="Rol" value="Terapeuta" /> TERAPEUTA</label>
+                <label><input type="radio" name="Rol" value="Tutor" /> TUTOR</label>
+            </div>
+
             <!-- CAMPOS GENERALES -->
             <div id="camposGenerales">
-
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" name="Nombre" required />
-                </div>
-
-                <div class="form-group">
-                    <label>Apellido</label>
-                    <input type="text" name="Apellido" required />
-                </div>
-
-                <div class="form-group">
-                    <label>Correo electrónico</label>
-                    <input type="email" name="Email" required />
-                </div>
-
-                <div class="form-group">
-                    <label>Contraseña</label>
-                    <input type="password" name="Password" required />
-                </div>
-
+                <div class="form-group"><label>Nombre</label><input type="text" name="Nombre" required /></div>
+                <div class="form-group"><label>Apellido</label><input type="text" name="Apellido" required /></div>
+                <div class="form-group"><label>Correo electrónico</label><input type="email" name="Email" required /></div>
+                <div class="form-group"><label>Contraseña</label><input type="password" name="Password" required /></div>
             </div>
 
-            <!-- -------------------- CAMPOS TERAPEUTA -------------------- -->
+            <!-- CAMPOS TERAPEUTA -->
             <div id="camposTerapeuta" class="oculto">
-
                 <div class="form-group">
                     <label>Tipo de documento</label>
-                    <div class="radio-row">
-                        <label><input type="radio" name="tipoDoc" value="Ciudadanía" checked /> Ciudadanía</label>
-                        <label><input type="radio" name="tipoDoc" value="Extranjera" /> Extranjera</label>
-                    </div>
+                    <label><input type="radio" name="TipoDocumento_Terapeuta" value="Ciudadanía" checked /> Ciudadanía</label>
+                    <label><input type="radio" name="TipoDocumento_Terapeuta" value="Extranjera" /> Extranjera</label>
                 </div>
 
-                <div class="form-group">
-                    <label>Número de documento</label>
-                    <input type="text" name="NumeroDocumento" />
-                </div>
-
-                <div class="form-group">
-                    <label>Profesión</label>
-                    <input type="text" name="Profesion" placeholder="Ej: Psicólogo, Terapeuta Ocupacional" />
-                </div>
-
-                <div class="form-group">
-                    <label>Especialidad</label>
-                    <input type="text" name="Especialidad" placeholder="Ej: Terapia Cognitiva, Neuropsicología" />
-                </div>
-
-                <div class="form-group">
-                    <label>Subir certificado de profesión</label>
-                    <input type="file" name="CertificadoProfesion" accept=".pdf,image/*" />
-                    <span class="ayuda">Click para subir certificado (PDF)</span>
-                </div>
+                <div class="form-group"><label>Número de documento</label><input type="text" name="NumeroDocumento_Terapeuta" /></div>
+                <div class="form-group"><label>Profesión</label><input type="text" name="Profesion" /></div>
+                <div class="form-group"><label>Especialidad</label><input type="text" name="Especialidad" /></div>
+                <div class="form-group"><label>Certificado profesional</label><input type="file" name="CertificadoProfesion" /></div>
             </div>
 
-            <!-- -------------------- CAMPOS TUTOR -------------------- -->
+            <!-- CAMPOS TUTOR -->
             <div id="camposTutor" class="oculto">
-
                 <div class="form-group">
                     <label>Tipo de documento</label>
-                    <div class="radio-row">
-                        <label><input type="radio" name="tipoDocTutor" value="Ciudadanía" checked /> Ciudadanía</label>
-                        <label><input type="radio" name="tipoDocTutor" value="Extranjera" /> Extranjera</label>
-                    </div>
+                    <label><input type="radio" name="TipoDocumento_Tutor" value="Ciudadanía" checked /> Ciudadanía</label>
+                    <label><input type="radio" name="TipoDocumento_Tutor" value="Extranjera" /> Extranjera</label>
                 </div>
 
-                <div class="form-group">
-                    <label>Número de documento</label>
-                    <input type="text" name="NumeroDocumentoTutor" />
-                </div>
-
-                <div class="form-group">
-                    <label>Subir documento de cédula</label>
-                    <input type="file" name="CedulaTutor" accept=".pdf,image/*" />
-                    <span class="ayuda">Click para subir cédula (PDF o imagen)</span>
-                </div>
-
+                <div class="form-group"><label>Número de documento</label><input type="text" name="NumeroDocumento_Tutor" /></div>
+                <div class="form-group"><label>Dirección</label><input type="text" name="Direccion_Tutor" /></div>
+                <div class="form-group"><label>Documento de cédula</label><input type="file" name="CedulaTutor" /></div>
             </div>
 
             <button type="submit" class="btn-guardar">Guardar</button>
@@ -122,38 +77,53 @@
     </div>
 </div>
 
+<!-- ============================= -->
+<!--   SCRIPT DE CAMBIO DE ROLES   -->
+<!-- ============================= -->
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const radios = document.querySelectorAll("input[name='Rol']");
+            const camposTerapeuta = document.getElementById("camposTerapeuta");
+            const camposTutor = document.getElementById("camposTutor");
 
-<script>
-    const rolAdmin = document.getElementById("rolAdmin");
-    const rolTerapeuta = document.getElementById("rolTerapeuta");
-    const rolTutor = document.getElementById("rolTutor");
+            function actualizarCampos() {
+                const rolSeleccionado = document.querySelector("input[name='Rol']:checked");
+                if (!rolSeleccionado) return;
 
-    const camposGenerales = document.getElementById("camposGenerales");
-    const camposTerapeuta = document.getElementById("camposTerapeuta");
-    const camposTutor = document.getElementById("camposTutor");
+                if (rolSeleccionado.value === "Terapeuta") {
+                    camposTerapeuta.style.display = "block";
+                    camposTutor.style.display = "none";
+                } else if (rolSeleccionado.value === "Tutor") {
+                    camposTerapeuta.style.display = "none";
+                    camposTutor.style.display = "block";
+                } else {
+                    camposTerapeuta.style.display = "none";
+                    camposTutor.style.display = "none";
+                }
+            }
 
-    function ocultarTodo() {
-        camposTerapeuta.style.display = "none";
-        camposTutor.style.display = "none";
-    }
+            // Aplica cuando el usuario cambia de rol
+            radios.forEach(r => r.addEventListener("change", actualizarCampos));
 
-    rolAdmin.addEventListener("change", () => {
-        ocultarTodo();
-        camposGenerales.style.display = "block";
-    });
+            // Aplica también al cargar por si hay validaciones o errores
+            actualizarCampos();
+        });
+    </script>
+}
 
-    rolTerapeuta.addEventListener("change", () => {
-        ocultarTodo();
-        camposGenerales.style.display = "block";
-        camposTerapeuta.style.display = "block";
-    });
 
-    rolTutor.addEventListener("change", () => {
-        ocultarTodo();
-        camposGenerales.style.display = "block";
-        camposTutor.style.display = "block";
-    });
-</script>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
