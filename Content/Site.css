@@ -5,3 +5,37 @@
     font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
 }
+
+/* ============================================================
+   🔊 BOTÓN FLOTANTE PARA ACTIVAR/DESACTIVAR MÚSICA
+   ============================================================ */
+
+.btn-musica {
+    position: fixed;
+    /* ANTES: bottom: 25px; */
+    /* AHORA: LO MANDAMOS ARRIBA */
+    top: 25px;
+    /* ANTES right: 25px — lo dejamos igual */
+    right: 25px;
+    /* BOTÓN MÁS GRANDE */
+    width: 65px;
+    height: 65px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 99999;
+    transition: 0.25s ease;
+}
+
+    .btn-musica:hover {
+        transform: scale(1.15);
+    }
+
+    .btn-musica i {
+        font-size: 28px; /* ANTES 22px */
+        color: #6c5ce7;
+    }

@@ -26,8 +26,10 @@
         {
             <p style="color:#e74c3c; text-align:center;">@ViewBag.Error</p>
         }
-
         <form method="post" action="@Url.Action("CambiarContrasena", "Account")">
+
+            @Html.AntiForgeryToken()  <!-- 🔐 IMPORTANTE -->
+
             <label for="nueva">Nueva Contraseña</label>
             <div class="campo-password">
                 <i class="fas fa-lock"></i>
@@ -46,4 +48,5 @@
         </form>
     </div>
 </div>
+
 

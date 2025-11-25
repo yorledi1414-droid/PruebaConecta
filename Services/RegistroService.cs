@@ -16,6 +16,9 @@ namespace PruebaConecta.Services
 
         public string RegistrarUsuario(RegisterDto dto)
         {
+            // ===============================
+            // VALIDACIONES BÁSICAS
+            // ===============================
             if (string.IsNullOrWhiteSpace(dto.Nombre) ||
                 string.IsNullOrWhiteSpace(dto.Apellido) ||
                 string.IsNullOrWhiteSpace(dto.Email) ||
@@ -27,14 +30,30 @@ namespace PruebaConecta.Services
             if (string.IsNullOrEmpty(dto.Rol))
                 return "ERROR";
 
+            // 🔥 No permitir registro de Administrador desde vista
+            if (dto.Rol == "Administrador")
+                return "ERROR";
+
             if (_repo.EmailExiste(dto.Email))
                 return "ERROR";
 
             try
             {
-                string passwordHash = Crypto.HashPassword(dto.Password);
-                int userId = _repo.CrearUsuario(dto.Nombre, dto.Apellido, dto.Email, passwordHash, dto.Rol);
+                // ======================================================
+                // ✔ NO HASH AQUÍ — el repositorio lo hace automáticamente
+                // ======================================================
 
+                int userId = _repo.CrearUsuario(
+                    dto.Nombre,
+                    dto.Apellido,
+                    dto.Email,
+                    dto.Password,   // ← contraseña en texto plano (el repo la hashea)
+                    dto.Rol
+                );
+
+                // ===============================
+                // CREAR PERFIL SEGÚN EL ROL
+                // ===============================
                 if (dto.Rol == "Terapeuta")
                     _repo.CrearTerapeuta(userId, dto);
 
@@ -50,6 +69,8 @@ namespace PruebaConecta.Services
         }
     }
 }
+
+
 
 
 

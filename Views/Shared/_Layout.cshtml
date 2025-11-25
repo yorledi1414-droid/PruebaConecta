@@ -16,14 +16,61 @@
     @RenderSection("Head", required: false)
 </head>
 
-<!-- ✔ ESTA ES LA ÚNICA LÍNEA MODIFICADA -->
-<body class="body-base @ViewBag.BodyClass">
 
+<body class="body-base @ViewBag.BodyClass">
+    
     @RenderBody()
 
     <script src="~/Scripts/app.js"></script>
     @RenderSection("Scripts", required: false)
+
+    <!-- 🎵 Audio global -->
+    <audio id="musicaFondo" loop>
+        <source src="~/Content/Audio/musica.mp3.mp3" type="audio/mp3" />
+    </audio>
+
+    <!-- 🔊 Botón flotante -->
+    <div id="btnMusica" class="btn-musica">
+        <i id="iconMusica" class="fas fa-volume-mute"></i>
+    </div>
+
+    <script>
+        const audio = document.getElementById("musicaFondo");
+        const icon = document.getElementById("iconMusica");
+
+        let musicaActiva = localStorage.getItem("musicaActiva") === "true";
+        let tiempoGuardado = localStorage.getItem("musicTime");
+
+        // Reanudar música
+        if (musicaActiva) {
+            audio.volume = 0.4;
+            if (tiempoGuardado) audio.currentTime = parseFloat(tiempoGuardado);
+            audio.play();
+            icon.classList.replace("fa-volume-mute", "fa-volume-up");
+        }
+
+        // Guardar progreso
+        setInterval(() => {
+            if (!audio.paused) {
+                localStorage.setItem("musicTime", audio.currentTime);
+            }
+        }, 500);
+
+        document.getElementById("btnMusica").addEventListener("click", () => {
+            if (audio.paused) {
+                audio.volume = 0.4;
+                let t = localStorage.getItem("musicTime");
+                if (t) audio.currentTime = parseFloat(t);
+                audio.play();
+                icon.classList.replace("fa-volume-mute", "fa-volume-up");
+                localStorage.setItem("musicaActiva", "true");
+            } else {
+                audio.pause();
+                icon.classList.replace("fa-volume-up", "fa-volume-mute");
+                localStorage.setItem("musicaActiva", "false");
+            }
+        });
+    </script>
+
 </body>
 </html>
-
-
