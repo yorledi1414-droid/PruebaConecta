@@ -1,8 +1,9 @@
 ﻿using PruebaConecta.Dtos;
 using PruebaConecta.Repositories.Model;
+using PruebaConecta.Services;
 using System;
 using System.Linq;
-using System.Web.Helpers; // ✅ Para VerifyHashedPassword
+using System.Web.Helpers;
 
 namespace PruebaConecta.Repositories
 {
@@ -15,31 +16,27 @@ namespace PruebaConecta.Repositories
             _db = new TherapyDBEntities();
         }
 
-        // ====================== CORREO EXISTE ======================
         public bool EmailExiste(string email)
         {
             return _db.Users.Any(u => u.Email == email);
         }
 
-        // ====================== OBTENER ROLE_ID POR NOMBRE ======================
         private int ObtenerRolId(string rolNombre)
         {
             var rol = _db.Roles.FirstOrDefault(r => r.Role_Name == rolNombre);
 
             if (rol == null)
-                throw new Exception("El rol '" + rolNombre + "' no existe en la tabla Roles.");
+                throw new Exception("El rol '" + rolNombre + "' no existe.");
 
             return rol.Role_ID;
         }
 
-        // ====================== OBTENER STATE_ID POR NOMBRE ======================
         private int ObtenerStateId(string stateDescription)
         {
             var estado = _db.States.FirstOrDefault(s => s.Description == stateDescription);
 
             if (estado == null)
             {
-                // Si no existe, lo creo automáticamente
                 estado = new State { Description = stateDescription };
                 _db.States.Add(estado);
                 _db.SaveChanges();
@@ -52,18 +49,17 @@ namespace PruebaConecta.Repositories
         public int CrearUsuario(string nombre, string apellido, string email, string password, string rolNombre)
         {
             int rolId = ObtenerRolId(rolNombre);
-            int stateId = ObtenerStateId("Activo");   // estado inicial
+            int stateId = ObtenerStateId("Activo");
 
             var nuevo = new User
             {
                 Name = nombre,
                 LastName = apellido,
                 Email = email,
-                Password = password,
+                Password = Crypto.HashPassword(password),
                 Registration_Date = DateTime.Now,
                 Role_ID = rolId,
                 State_ID = stateId
-                // Phone, Avatar pueden ir null
             };
 
             _db.Users.Add(nuevo);
@@ -72,14 +68,13 @@ namespace PruebaConecta.Repositories
             return nuevo.User_ID;
         }
 
-        // ====================== CREAR TERAPEUTA ======================
         public void CrearTerapeuta(int userId, RegisterDto dto)
         {
             var terapeuta = new Therapist
             {
                 User_ID = userId,
                 Document_Type = dto.TipoDocumento_Terapeuta,
-                Document = dto.NumeroDocumento_Terapeuta,
+                Document = EncryptionService.Encrypt(dto.NumeroDocumento_Terapeuta),
                 Professional_Certificate = dto.Profesion,
                 Specialty = dto.Especialidad,
                 Verification_Status = "Pendiente"
@@ -89,14 +84,13 @@ namespace PruebaConecta.Repositories
             _db.SaveChanges();
         }
 
-        // ====================== CREAR TUTOR ======================
         public void CrearTutor(int userId, RegisterDto dto)
         {
             var tutor = new Tutor
             {
                 User_ID = userId,
                 Document_Type = dto.TipoDocumento_Tutor,
-                Document = dto.NumeroDocumento_Tutor,
+                Document = EncryptionService.Encrypt(dto.NumeroDocumento_Tutor),
                 Address = dto.Direccion_Tutor
             };
 
@@ -104,7 +98,7 @@ namespace PruebaConecta.Repositories
             _db.SaveChanges();
         }
 
-        // ====================== VALIDAR LOGIN ======================
+        // ====================== VALIDAR LOGIN (ARREGLADO) ======================
         public User ValidarUsuario(string email, string password)
         {
             var user = _db.Users.FirstOrDefault(u => u.Email == email);
@@ -112,12 +106,54 @@ namespace PruebaConecta.Repositories
             if (user == null)
                 return null;
 
-            bool passwordCorrecta = Crypto.VerifyHashedPassword(user.Password, password);
+            string stored = user.Password ?? "";
 
-            return passwordCorrecta ? user : null;
+            // ✔ TU HASH ES EL NATIVO DE CRYPTO.HASHPASSWORD (BASE64)
+            // NO EMPIEZA POR $2a$ NI POR $2b$ → POR ESO FALLABA TODO
+            bool ok = false;
+
+            try
+            {
+                ok = Crypto.VerifyHashedPassword(stored, password);
+            }
+            catch
+            {
+                ok = false;
+            }
+
+            if (ok)
+                return user;
+
+            // ✔ SOPORTE A CONTRASEÑAS EN TEXTO PLANO (por si queda alguna vieja)
+            if (stored == password)
+            {
+                user.Password = Crypto.HashPassword(password);
+                _db.SaveChanges();
+                return user;
+            }
+
+            return null;
+        }
+
+        public User ObtenerUsuarioPorEmail(string email)
+        {
+            return _db.Users.FirstOrDefault(u => u.Email == email);
+        }
+
+        public void ActualizarPassword(int userId, string nuevaPasswordPlano)
+        {
+            var user = _db.Users.FirstOrDefault(u => u.User_ID == userId);
+
+            if (user == null)
+                throw new Exception("Usuario no encontrado para actualización de contraseña.");
+
+            user.Password = Crypto.HashPassword(nuevaPasswordPlano);
+            _db.SaveChanges();
         }
     }
 }
+
+
 
 
 

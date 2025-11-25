@@ -226,6 +226,7 @@
       <DependentUpon>ModelTherapyDB.tt</DependentUpon>
     </Compile>
     <Compile Include="Repositories\UserRepository.cs" />
+    <Compile Include="Services\EncryptionService.cs" />
     <Compile Include="Services\HomeService.cs" />
     <Compile Include="Services\RegistroService.cs" />
     <Compile Include="Utilities\GestorCorreo.cs" />
@@ -239,6 +240,7 @@
     <Content Include="Content\animals\animal6.png" />
     <Content Include="Content\animals\animal7.png" />
     <Content Include="Content\animals\animal8.png" />
+    <Content Include="Content\Audio\musica.mp3.mp3" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
     <Content Include="Content\bootstrap-grid.rtl.css" />
